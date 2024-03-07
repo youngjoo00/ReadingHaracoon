@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingViewController.swift
 //  ReadingHaracoon
 //
 //  Created by youngjoo on 3/7/24.
@@ -7,13 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SettingViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
