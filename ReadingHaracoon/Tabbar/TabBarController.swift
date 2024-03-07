@@ -12,7 +12,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let firstTab = UINavigationController(rootViewController: FavoriteViewController())
+        let firstTab = UINavigationController(rootViewController: StorageBookViewController())
         let firstTabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         firstTab.tabBarItem = firstTabBarItem
         

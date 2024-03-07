@@ -29,10 +29,23 @@
 		8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E22B99951E000BBD65 /* BaseViewController.swift */; };
 		8E2810E52B999540000BBD65 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E42B999540000BBD65 /* BaseView.swift */; };
 		8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E62B999568000BBD65 /* BaseCollectionViewCell.swift */; };
-		8E2810E92B9995D6000BBD65 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E82B9995D6000BBD65 /* FavoriteViewController.swift */; };
+		8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */; };
 		8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810EC2B999624000BBD65 /* SearchViewController.swift */; };
 		8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810EE2B99962D000BBD65 /* StatsViewController.swift */; };
 		8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810F02B999634000BBD65 /* SettingViewController.swift */; };
+		8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FC2B999D0F000BBD65 /* Recommend.swift */; };
+		8E2810FF2B999D19000BBD65 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FE2B999D19000BBD65 /* Search.swift */; };
+		8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811002B999D4B000BBD65 /* Inquiry.swift */; };
+		8E2811032B999D86000BBD65 /* AladdinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811022B999D86000BBD65 /* AladdinAPI.swift */; };
+		8E2811052B999D92000BBD65 /* AladdinAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */; };
+		8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811072B999DDB000BBD65 /* RealmModel.swift */; };
+		8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */; };
+		8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28110B2B99A589000BBD65 /* StorageBookView.swift */; };
+		8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28110D2B99A768000BBD65 /* SearchView.swift */; };
+		8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28110F2B99A8BF000BBD65 /* Observable.swift */; };
+		8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */; };
+		8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811132B99A914000BBD65 /* SearchViewModel.swift */; };
+		8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,10 +65,23 @@
 		8E2810E22B99951E000BBD65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E2810E42B999540000BBD65 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8E2810E62B999568000BBD65 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		8E2810E82B9995D6000BBD65 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookViewController.swift; sourceTree = "<group>"; };
 		8E2810EC2B999624000BBD65 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8E2810EE2B99962D000BBD65 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		8E2810F02B999634000BBD65 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8E2810FC2B999D0F000BBD65 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		8E2810FE2B999D19000BBD65 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		8E2811002B999D4B000BBD65 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
+		8E2811022B999D86000BBD65 /* AladdinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladdinAPI.swift; sourceTree = "<group>"; };
+		8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladdinAPIManager.swift; sourceTree = "<group>"; };
+		8E2811072B999DDB000BBD65 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStatus.swift; sourceTree = "<group>"; };
+		8E28110B2B99A589000BBD65 /* StorageBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookView.swift; sourceTree = "<group>"; };
+		8E28110D2B99A768000BBD65 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8E28110F2B99A8BF000BBD65 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookViewModel.swift; sourceTree = "<group>"; };
+		8E2811132B99A914000BBD65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +127,8 @@
 			children = (
 				8E2810DD2B9992B7000BBD65 /* Tabbar */,
 				8E2810F92B999BE3000BBD65 /* View */,
-				8E2810FA2B999BE9000BBD65 /* ViewModel */,
 				8E2810E02B9994E1000BBD65 /* Controllers */,
+				8E2810FA2B999BE9000BBD65 /* ViewModel */,
 				8E2810F82B999BAF000BBD65 /* Repository */,
 				8E2810F52B999B86000BBD65 /* Model */,
 				8E2810F22B99995F000BBD65 /* Enum */,
@@ -150,8 +176,9 @@
 		8E2810E02B9994E1000BBD65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E2810E82B9995D6000BBD65 /* FavoriteViewController.swift */,
+				8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */,
 				8E2810EC2B999624000BBD65 /* SearchViewController.swift */,
+				8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */,
 				8E2810EE2B99962D000BBD65 /* StatsViewController.swift */,
 				8E2810F02B999634000BBD65 /* SettingViewController.swift */,
 			);
@@ -171,6 +198,7 @@
 		8E2810F22B99995F000BBD65 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -192,6 +220,8 @@
 		8E2810F52B999B86000BBD65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8E2811062B999DC9000BBD65 /* Realm */,
+				8E2810FB2B999C98000BBD65 /* Network */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +229,7 @@
 		8E2810F62B999B8A000BBD65 /* Observer */ = {
 			isa = PBXGroup;
 			children = (
+				8E28110F2B99A8BF000BBD65 /* Observable.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -220,6 +251,8 @@
 		8E2810F92B999BE3000BBD65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E28110B2B99A589000BBD65 /* StorageBookView.swift */,
+				8E28110D2B99A768000BBD65 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,8 +260,30 @@
 		8E2810FA2B999BE9000BBD65 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */,
+				8E2811132B99A914000BBD65 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E2810FB2B999C98000BBD65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8E2811022B999D86000BBD65 /* AladdinAPI.swift */,
+				8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */,
+				8E2810FC2B999D0F000BBD65 /* Recommend.swift */,
+				8E2810FE2B999D19000BBD65 /* Search.swift */,
+				8E2811002B999D4B000BBD65 /* Inquiry.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8E2811062B999DC9000BBD65 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				8E2811072B999DDB000BBD65 /* RealmModel.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,16 +383,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
+				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
+				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
+				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
+				8E2811052B999D92000BBD65 /* AladdinAPIManager.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
+				8E2811032B999D86000BBD65 /* AladdinAPI.swift in Sources */,
+				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
+				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
-				8E2810E92B9995D6000BBD65 /* FavoriteViewController.swift in Sources */,
+				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
+				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,
+				8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */,
+				8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */,
 				8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */,
+				8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */,
+				8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */,
 				8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
