@@ -39,7 +39,7 @@ extension SearchDetailViewModel {
     
     private func getSearch(_ searchText: String) {
         isLoading.value = true
-        AladdinAPIManager.shared.callRequest(type: Search.self, api: .search(query: searchText)) { [weak self] result in
+        AladinAPIManager.shared.callRequest(type: Search.self, api: .search(query: searchText)) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.outputSearchList.value = data.item

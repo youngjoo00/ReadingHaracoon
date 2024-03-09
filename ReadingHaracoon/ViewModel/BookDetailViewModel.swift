@@ -33,7 +33,7 @@ extension BookDetailViewModel {
     
     private func getInquiry(_ isbnID: String) {
         isLoading.value = true
-        AladdinAPIManager.shared.callRequest(type: Inquiry.self, api: .inquiry(id: isbnID)) { [weak self] result in
+        AladinAPIManager.shared.callRequest(type: Inquiry.self, api: .inquiry(id: isbnID)) { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let data):

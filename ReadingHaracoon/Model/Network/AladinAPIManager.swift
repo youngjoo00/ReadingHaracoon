@@ -7,13 +7,13 @@
 
 import Alamofire
 
-final class AladdinAPIManager {
+final class AladinAPIManager {
     
-    static let shared = AladdinAPIManager()
+    static let shared = AladinAPIManager()
     
     private init() { }
     
-    func callRequest<T: Decodable>(type: T.Type, api: AladdinAPI, completionHandler: @escaping (_ result: Result<T, ErrorStatus>) -> Void) {
+    func callRequest<T: Decodable>(type: T.Type, api: AladinAPI, completionHandler: @escaping (_ result: Result<T, ErrorStatus>) -> Void) {
         AF.request(api.endPoint,
                    parameters: api.parameter,
                    encoding: URLEncoding(destination: .queryString))

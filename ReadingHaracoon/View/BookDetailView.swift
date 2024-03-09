@@ -17,33 +17,44 @@ final class BookDetailView: BaseView {
     let scrollView = UIScrollView()
     let contentView = UIView()
     let coverImageView = UIImageView()
-    let titleLabel = UILabel()
-    let authorLabel = UILabel()
-    let publisherLabel = UILabel()
-    let descriptionLabel = UILabel().then {
+    let titleLabel = Bold18Label()
+    let authorLabel = Normal16Label()
+    let publisherLabel = Normal16Label()
+    let descriptionLabel = Bold18Label().then {
         $0.text = "책 소개"
     }
-    let descriptionCotentLabel = UILabel().then {
+    let descriptionCotentLabel = Normal16Label().then {
         $0.numberOfLines = 0
     }
-    let isbnLabel = UILabel().then {
+    let linkLabel = Bold18Label().then {
+        $0.text = "링크"
+    }
+    let linkButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "링크로 이동하기"
+        configuration.baseForegroundColor = .systemBlue
+        configuration.baseBackgroundColor = .white
+        $0.configuration = configuration
+    }
+    let isbnLabel = Bold18Label().then {
         $0.text = "ISBN13"
     }
-    let isbnContentLabel = UILabel()
-    let categoryLabel = UILabel().then {
+    let isbnContentLabel = Normal16Label()
+    let categoryLabel = Bold18Label().then {
         $0.text = "카테고리"
     }
-    let categoryContentLabel = UILabel()
-    let pageLabel = UILabel().then {
+    let categoryContentLabel = Normal16Label()
+    let pageLabel = Bold18Label().then {
         $0.text = "페이지"
     }
-    let pageContentLabel = UILabel()
-    let publishDateLabel = UILabel().then {
+    let pageContentLabel = Normal16Label()
+    let publishDateLabel = Bold18Label().then {
         $0.text = "출판일"
     }
-    let publishDateCotentLabel = UILabel()
+    let publishDateCotentLabel = Normal16Label()
     let aladinSourceLabel = UILabel().then {
         $0.text = "자료 제공: 알라딘"
+        $0.font = .systemFont(ofSize: 15)
     }
     
     override func configureHierarchy() {
@@ -56,6 +67,8 @@ final class BookDetailView: BaseView {
             publisherLabel,
             descriptionLabel,
             descriptionCotentLabel,
+            linkLabel,
+            linkButton,
             publishDateLabel,
             publishDateCotentLabel,
             categoryLabel,
@@ -81,30 +94,27 @@ final class BookDetailView: BaseView {
         coverImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
-            make.width.equalTo(100)
-            make.height.equalTo(140)
+            make.width.equalTo(150)
+            make.height.equalTo(200)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
             make.top.equalTo(coverImageView.snp.bottom).offset(20)
-            make.height.equalTo(20)
         }
         
         authorLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.height.equalTo(18)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
         }
         
         publisherLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(authorLabel.snp.bottom).offset(20)
-            make.height.equalTo(18)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.top.equalTo(authorLabel.snp.bottom).offset(10)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(16)
             make.top.equalTo(publisherLabel.snp.bottom).offset(20)
         }
         
@@ -113,9 +123,19 @@ final class BookDetailView: BaseView {
             make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
         }
         
-        isbnLabel.snp.makeConstraints { make in
+        linkLabel.snp.makeConstraints { make in
             make.leading.equalTo(descriptionLabel.snp.leading)
             make.top.equalTo(descriptionCotentLabel.snp.bottom).offset(20)
+        }
+        
+        linkButton.snp.makeConstraints { make in
+            make.leading.equalTo(descriptionLabel.snp.leading)
+            make.top.equalTo(linkLabel.snp.bottom).offset(10)
+        }
+        
+        isbnLabel.snp.makeConstraints { make in
+            make.leading.equalTo(descriptionLabel.snp.leading)
+            make.top.equalTo(linkButton.snp.bottom).offset(20)
         }
         
         isbnContentLabel.snp.makeConstraints { make in
@@ -156,11 +176,17 @@ final class BookDetailView: BaseView {
         aladinSourceLabel.snp.makeConstraints { make in
             make.top.equalTo(publishDateCotentLabel.snp.bottom).offset(20)
             make.bottom.equalToSuperview().offset(-20)
+            make.trailing.equalToSuperview().offset(-16)
         }
     }
     
     override func configureView() {
-        
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        authorLabel.numberOfLines = 0
+        authorLabel.textAlignment = .center
+        publisherLabel.numberOfLines = 0
+        publisherLabel.textAlignment = .center
     }
 }
 

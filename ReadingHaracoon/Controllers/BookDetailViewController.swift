@@ -34,6 +34,14 @@ final class BookDetailViewController: BaseViewController {
 extension BookDetailViewController {
     private func configureView() {
         navigationItem.titleView = mainView.navigationTitle
+        
+        mainView.linkButton.addTarget(self, action: #selector(didLinkButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func didLinkButtonTapped() {
+        let vc = AladinWebViewController()
+        vc.viewModel.inputLink.value = viewModel.outputBookData.value?.link
+        transition(viewController: vc, style: .push)
     }
     
     private func bindViewModel() {

@@ -8,7 +8,7 @@
 import Alamofire
 import Foundation
 
-enum AladdinAPI {
+enum AladinAPI {
     case recommend(queryType: String)
     case search(query: String)
     case inquiry(id: String)
@@ -25,16 +25,16 @@ enum AladdinAPI {
     var endPoint: URL {
         switch self {
         case .recommend:
-            return URL(string: AladdinAPI.baseURL + "ItemList.aspx")!
+            return URL(string: AladinAPI.baseURL + "ItemList.aspx")!
         case .search:
-            return URL(string: AladdinAPI.baseURL + "ItemSearch.aspx")!
+            return URL(string: AladinAPI.baseURL + "ItemSearch.aspx")!
         case .inquiry:
-            return URL(string: AladdinAPI.baseURL + "ItemLookUp.aspx")!
+            return URL(string: AladinAPI.baseURL + "ItemLookUp.aspx")!
         }
     }
     
     var parameter: Parameters {
-        var parameters = AladdinAPI.baseParameter
+        var parameters = AladinAPI.baseParameter
         switch self {
         case .recommend(let queryType):
             parameters["QueryType"] = queryType

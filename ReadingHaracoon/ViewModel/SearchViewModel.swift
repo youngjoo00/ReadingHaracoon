@@ -38,7 +38,7 @@ extension SearchViewModel {
     
     private func getRecommend() {
         isLoading.value = true
-        AladdinAPIManager.shared.callRequest(type: Recommend.self, api: .recommend(queryType: "Bestseller")) { [weak self] result in
+        AladinAPIManager.shared.callRequest(type: Recommend.self, api: .recommend(queryType: "Bestseller")) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.outputRecommendList.value = data.item

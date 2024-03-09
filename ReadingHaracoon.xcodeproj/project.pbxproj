@@ -36,8 +36,8 @@
 		8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FC2B999D0F000BBD65 /* Recommend.swift */; };
 		8E2810FF2B999D19000BBD65 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FE2B999D19000BBD65 /* Search.swift */; };
 		8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811002B999D4B000BBD65 /* Inquiry.swift */; };
-		8E2811032B999D86000BBD65 /* AladdinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811022B999D86000BBD65 /* AladdinAPI.swift */; };
-		8E2811052B999D92000BBD65 /* AladdinAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */; };
+		8E2811032B999D86000BBD65 /* AladinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811022B999D86000BBD65 /* AladinAPI.swift */; };
+		8E2811052B999D92000BBD65 /* AladinAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811042B999D92000BBD65 /* AladinAPIManager.swift */; };
 		8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811072B999DDB000BBD65 /* RealmModel.swift */; };
 		8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */; };
 		8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28110B2B99A589000BBD65 /* StorageBookView.swift */; };
@@ -54,6 +54,11 @@
 		8E928BDB2B9C7D8F004D44C7 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */; };
 		8E928BDD2B9C7DA8004D44C7 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */; };
 		8E928BDF2B9C7E9F004D44C7 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */; };
+		8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE02B9CB374004D44C7 /* Bold18Label.swift */; };
+		8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE42B9CB3D8004D44C7 /* Normal16Label.swift */; };
+		8E928BE72B9CB98C004D44C7 /* AladinWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */; };
+		8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */; };
+		8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +85,8 @@
 		8E2810FC2B999D0F000BBD65 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		8E2810FE2B999D19000BBD65 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8E2811002B999D4B000BBD65 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
-		8E2811022B999D86000BBD65 /* AladdinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladdinAPI.swift; sourceTree = "<group>"; };
-		8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladdinAPIManager.swift; sourceTree = "<group>"; };
+		8E2811022B999D86000BBD65 /* AladinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinAPI.swift; sourceTree = "<group>"; };
+		8E2811042B999D92000BBD65 /* AladinAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinAPIManager.swift; sourceTree = "<group>"; };
 		8E2811072B999DDB000BBD65 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStatus.swift; sourceTree = "<group>"; };
 		8E28110B2B99A589000BBD65 /* StorageBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookView.swift; sourceTree = "<group>"; };
@@ -98,6 +103,11 @@
 		8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
+		8E928BE02B9CB374004D44C7 /* Bold18Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bold18Label.swift; sourceTree = "<group>"; };
+		8E928BE42B9CB3D8004D44C7 /* Normal16Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal16Label.swift; sourceTree = "<group>"; };
+		8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewController.swift; sourceTree = "<group>"; };
+		8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebView.swift; sourceTree = "<group>"; };
+		8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +208,7 @@
 				8E2810EE2B99962D000BBD65 /* StatsViewController.swift */,
 				8E2810F02B999634000BBD65 /* SettingViewController.swift */,
 				8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */,
+				8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +266,8 @@
 		8E2810F72B999BA2000BBD65 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				8E928BE02B9CB374004D44C7 /* Bold18Label.swift */,
+				8E928BE42B9CB3D8004D44C7 /* Normal16Label.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -273,6 +286,7 @@
 				8E28110D2B99A768000BBD65 /* SearchView.swift */,
 				8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */,
 				8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */,
+				8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -286,6 +300,7 @@
 				8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */,
 				8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */,
 				8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */,
+				8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,8 +308,8 @@
 		8E2810FB2B999C98000BBD65 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8E2811022B999D86000BBD65 /* AladdinAPI.swift */,
-				8E2811042B999D92000BBD65 /* AladdinAPIManager.swift */,
+				8E2811022B999D86000BBD65 /* AladinAPI.swift */,
+				8E2811042B999D92000BBD65 /* AladinAPIManager.swift */,
 				8E2810FC2B999D0F000BBD65 /* Recommend.swift */,
 				8E2810FE2B999D19000BBD65 /* Search.swift */,
 				8E2811002B999D4B000BBD65 /* Inquiry.swift */,
@@ -417,27 +432,32 @@
 			files = (
 				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
 				8E928BDB2B9C7D8F004D44C7 /* BookDetailViewController.swift in Sources */,
+				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
 				8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */,
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
-				8E2811052B999D92000BBD65 /* AladdinAPIManager.swift in Sources */,
+				8E2811052B999D92000BBD65 /* AladinAPIManager.swift in Sources */,
 				8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
-				8E2811032B999D86000BBD65 /* AladdinAPI.swift in Sources */,
+				8E2811032B999D86000BBD65 /* AladinAPI.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
 				8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
+				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
+				8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */,
 				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,
+				8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */,
 				8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */,
+				8E928BE72B9CB98C004D44C7 /* AladinWebViewController.swift in Sources */,
 				8E928BDD2B9C7DA8004D44C7 /* BookDetailView.swift in Sources */,
 				8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */,
 				8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */,
