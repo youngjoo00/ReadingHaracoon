@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,14 @@
 		8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */; };
 		8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811132B99A914000BBD65 /* SearchViewModel.swift */; };
 		8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */; };
+		8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */; };
+		8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */; };
+		8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111C2B9A20FD000BBD65 /* TransitionStyle.swift */; };
+		8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */; };
+		8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */; };
+		8E928BDB2B9C7D8F004D44C7 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */; };
+		8E928BDD2B9C7DA8004D44C7 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */; };
+		8E928BDF2B9C7E9F004D44C7 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +90,14 @@
 		8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookViewModel.swift; sourceTree = "<group>"; };
 		8E2811132B99A914000BBD65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
+		8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		8E28111C2B9A20FD000BBD65 /* TransitionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionStyle.swift; sourceTree = "<group>"; };
+		8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
+		8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +197,7 @@
 				8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */,
 				8E2810EE2B99962D000BBD65 /* StatsViewController.swift */,
 				8E2810F02B999634000BBD65 /* SettingViewController.swift */,
+				8E928BDA2B9C7D8F004D44C7 /* BookDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2811092B99A4FE000BBD65 /* ErrorStatus.swift */,
+				8E28111C2B9A20FD000BBD65 /* TransitionStyle.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -253,6 +271,9 @@
 			children = (
 				8E28110B2B99A589000BBD65 /* StorageBookView.swift */,
 				8E28110D2B99A768000BBD65 /* SearchView.swift */,
+				8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */,
+				8E928BDC2B9C7DA8004D44C7 /* BookDetailView.swift */,
+				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +283,9 @@
 			children = (
 				8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */,
 				8E2811132B99A914000BBD65 /* SearchViewModel.swift */,
+				8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */,
+				8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */,
+				8E928BDE2B9C7E9F004D44C7 /* BookDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -284,6 +308,14 @@
 				8E2811072B999DDB000BBD65 /* RealmModel.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		8E28111E2B9A2583000BBD65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +366,7 @@
 				};
 			};
 			buildConfigurationList = 8E2810952B998410000BBD65 /* Build configuration list for PBXProject "ReadingHaracoon" */;
-			compatibilityVersion = "Xcode 15.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -384,16 +416,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
+				8E928BDB2B9C7D8F004D44C7 /* BookDetailViewController.swift in Sources */,
+				8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */,
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
 				8E2811052B999D92000BBD65 /* AladdinAPIManager.swift in Sources */,
+				8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
 				8E2811032B999D86000BBD65 /* AladdinAPI.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
+				8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
@@ -401,11 +437,15 @@
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
 				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,
+				8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */,
+				8E928BDD2B9C7DA8004D44C7 /* BookDetailView.swift in Sources */,
 				8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */,
 				8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */,
 				8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */,
 				8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */,
+				8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */,
 				8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */,
+				8E928BDF2B9C7E9F004D44C7 /* BookDetailViewModel.swift in Sources */,
 				8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -545,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

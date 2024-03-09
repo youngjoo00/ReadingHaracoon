@@ -13,7 +13,7 @@ final class SearchViewController: BaseViewController {
     let mainView = SearchView()
     let viewModel = SearchViewModel()
     
-    var list: [Recommend_Item] = []
+    var list: [RecommendItem] = []
     
     override func loadView() {
         view = mainView
@@ -31,7 +31,6 @@ final class SearchViewController: BaseViewController {
         
         viewModel.inputViewDidAppearTrigger.value = ()
     }
-
 }
 
 
@@ -52,31 +51,32 @@ extension SearchViewController {
             }
         }
         
-        viewModel.outputRecommendList.bind { value in
-            self.list = value
+        viewModel.outputRecommendList.bindOnChanged { [weak self] value in
+            self?.list = value
             print("베스트셀러 리스트 불러왔음")
         }
         
-        viewModel.outputNetworkErrorMessage.bind { message in
-            guard let message else { return }
+        viewModel.outputNetworkErrorMessage.bind { [weak self] message in
+            guard let message, let self else { return }
             
             self.showAlert(title: "오류!", message: message, btnTitle: "재시도") {
-                self.searchBarSearchButtonClicked(self.mainView.searchBar)
+                print("")
             }
         }
         
-//        viewModel.outputTransition.bind { id in
-//            guard let id else { return }
-//            let vc = ChartViewController()
-//            vc.viewModel.inputCoinID.value = id
-//            self.transition(viewController: vc, style: .push)
-//        }
+        viewModel.searchBarTextDidBeginEditingTrigger.bindOnChanged { [weak self] value in
+            guard let self else { return }
+            let vc = SearchDetailViewController()
+            vc.mainView.searchBar.becomeFirstResponder()
+            self.transition(viewController: vc, style: .push)
+        }
     }
 }
 
 // MARK: - UISearchBar
 extension SearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.inputSearchBarText.value = searchBar.text
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.searchBarTextDidBeginEditingTrigger.value = ()
     }
 }

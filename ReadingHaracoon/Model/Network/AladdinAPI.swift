@@ -18,7 +18,8 @@ enum AladdinAPI {
     static let baseParameter: Parameters = [
         "ttbkey": APIKey.ttbkey,
         "Version": "20131101",
-        "Output": "JS"
+        "Output": "JS",
+        "Cover": "Big"
     ]
     
     var endPoint: URL {

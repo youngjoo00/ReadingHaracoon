@@ -6,12 +6,13 @@
 //
 
 struct Recommend: Decodable {
-    let item: [Recommend_Item]
+    let item: [RecommendItem]
 }
 
-struct Recommend_Item: Decodable {
+struct RecommendItem: Decodable {
     let title: String
     let description: String
     let isbn13: String
+    let cover: String
     let bestRank: Int
 }

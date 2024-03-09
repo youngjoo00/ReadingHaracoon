@@ -11,12 +11,11 @@ final class SearchViewModel {
     
     // input
     var inputViewDidAppearTrigger: Observable<Void?> = Observable(nil)
-    var inputSearchBarText: Observable<String?> = Observable(nil)
+    var searchBarTextDidBeginEditingTrigger: Observable<Void?> = Observable(nil)
     
     // output
-    var outputRecommendList: Observable<[Recommend_Item]> = Observable([])
+    var outputRecommendList: Observable<[RecommendItem]> = Observable([])
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
-    var outputTransition: Observable<String?> = Observable(nil)
     var isLoading = Observable(false)
     
     init() {
@@ -24,14 +23,11 @@ final class SearchViewModel {
     }
     
     private func transform() {
-        inputViewDidAppearTrigger.bind { [weak self] _ in
-            self?.getRecommend()
+        inputViewDidAppearTrigger.bindOnChanged { [weak self] _ in
+            guard let self else { return }
+            self.getRecommend()
         }
-        
-        inputSearchBarText.bind { [weak self] searchText in
-            guard let searchText, let self else { return }
-            print(searchText)
-        }
+
     }
     
 }
