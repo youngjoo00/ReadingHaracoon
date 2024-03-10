@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3EC0388D31BAF80795A628 /* Pods_ReadingHaracoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C37A518852E7C6594E9BE6 /* Pods_ReadingHaracoon.framework */; };
 		8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28109D2B998410000BBD65 /* AppDelegate.swift */; };
 		8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28109F2B998410000BBD65 /* SceneDelegate.swift */; };
 		8E2810A52B998410000BBD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810A32B998410000BBD65 /* Main.storyboard */; };
@@ -59,9 +60,17 @@
 		8E928BE72B9CB98C004D44C7 /* AladinWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */; };
 		8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */; };
 		8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */; };
+		8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEC2B9CC348004D44C7 /* BookRepository.swift */; };
+		8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */; };
+		8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */; };
+		8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */; };
+		8EBF13CD2B9DB71D00B1FE6D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CC2B9DB71D00B1FE6D /* SearchTableViewCell.swift */; };
+		8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CE2B9DB74D00B1FE6D /* BaseTableViewCell.swift */; };
+		8EBF13D32B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13D22B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17C37A518852E7C6594E9BE6 /* Pods_ReadingHaracoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadingHaracoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28109A2B998410000BBD65 /* ReadingHaracoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingHaracoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28109D2B998410000BBD65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E28109F2B998410000BBD65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +117,15 @@
 		8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewController.swift; sourceTree = "<group>"; };
 		8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebView.swift; sourceTree = "<group>"; };
 		8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewModel.swift; sourceTree = "<group>"; };
+		8E928BEC2B9CC348004D44C7 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagerViewCell.swift; sourceTree = "<group>"; };
+		8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+.swift"; sourceTree = "<group>"; };
+		8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
+		8EBF13CC2B9DB71D00B1FE6D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8EBF13CE2B9DB74D00B1FE6D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		8EBF13D22B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookCollectionViewCell.swift; sourceTree = "<group>"; };
+		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
+		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +143,29 @@
 				8E2810CC2B998E40000BBD65 /* Toast in Frameworks */,
 				8E2810CF2B998E57000BBD65 /* Realm in Frameworks */,
 				8E2810BD2B998DD6000BBD65 /* Then in Frameworks */,
+				1F3EC0388D31BAF80795A628 /* Pods_ReadingHaracoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		258AC53DBD27A76CA4224D8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17C37A518852E7C6594E9BE6 /* Pods_ReadingHaracoon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E2810912B998410000BBD65 = {
 			isa = PBXGroup;
 			children = (
 				8E2810B42B99864F000BBD65 /* .gitignore */,
 				8E28109C2B998410000BBD65 /* ReadingHaracoon */,
 				8E28109B2B998410000BBD65 /* Products */,
+				8F342C88B0E9E102ED4E9904 /* Pods */,
+				258AC53DBD27A76CA4224D8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +248,8 @@
 				8E2810E22B99951E000BBD65 /* BaseViewController.swift */,
 				8E2810E42B999540000BBD65 /* BaseView.swift */,
 				8E2810E62B999568000BBD65 /* BaseCollectionViewCell.swift */,
+				8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */,
+				8EBF13CE2B9DB74D00B1FE6D /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -235,6 +266,7 @@
 		8E2810F32B999978000BBD65 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -275,6 +307,7 @@
 		8E2810F82B999BAF000BBD65 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				8E928BEC2B9CC348004D44C7 /* BookRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -328,9 +361,21 @@
 		8E28111E2B9A2583000BBD65 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8EBF13CC2B9DB71D00B1FE6D /* SearchTableViewCell.swift */,
+				8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */,
 				8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */,
+				8EBF13D22B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8F342C88B0E9E102ED4E9904 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */,
+				C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,9 +385,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E2810AE2B998411000BBD65 /* Build configuration list for PBXNativeTarget "ReadingHaracoon" */;
 			buildPhases = (
+				CF95983AE83FA624DBE89D5A /* [CP] Check Pods Manifest.lock */,
 				8E2810962B998410000BBD65 /* Sources */,
 				8E2810972B998410000BBD65 /* Frameworks */,
 				8E2810982B998410000BBD65 /* Resources */,
+				CF28058F58AE12703EBB1E87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,7 +428,7 @@
 				};
 			};
 			buildConfigurationList = 8E2810952B998410000BBD65 /* Build configuration list for PBXProject "ReadingHaracoon" */;
-			compatibilityVersion = "Xcode 15.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -425,6 +472,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF28058F58AE12703EBB1E87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF95983AE83FA624DBE89D5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReadingHaracoon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E2810962B998410000BBD65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -432,27 +521,34 @@
 			files = (
 				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
 				8E928BDB2B9C7D8F004D44C7 /* BookDetailViewController.swift in Sources */,
+				8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */,
 				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
 				8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */,
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
+				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
+				8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */,
 				8E2811052B999D92000BBD65 /* AladinAPIManager.swift in Sources */,
+				8EBF13D32B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift in Sources */,
 				8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
 				8E2811032B999D86000BBD65 /* AladinAPI.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
+				8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */,
 				8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
+				8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */,
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
+				8EBF13CD2B9DB71D00B1FE6D /* SearchTableViewCell.swift in Sources */,
 				8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */,
 				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,
 				8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */,
@@ -532,7 +628,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -596,7 +692,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -617,6 +713,7 @@
 		};
 		8E2810AF2B998411000BBD65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -651,6 +748,7 @@
 		};
 		8E2810B02B998411000BBD65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

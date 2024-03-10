@@ -7,6 +7,7 @@
 
 import UIKit
 import Then
+import FSPagerView
 
 final class SearchView: BaseView {
     
@@ -19,9 +20,15 @@ final class SearchView: BaseView {
         $0.placeholder = "책 이름을 검색해보세요"
     }
     
+    let tableView = UITableView().then {
+        $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
+        $0.rowHeight = UITableView.automaticDimension
+    }
+
     override func configureHierarchy() {
         [
-            searchBar
+            searchBar,
+            tableView
         ].forEach { addSubview($0) }
     }
     
@@ -29,6 +36,12 @@ final class SearchView: BaseView {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(16)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     

@@ -35,7 +35,14 @@ extension BookDetailViewController {
     private func configureView() {
         navigationItem.titleView = mainView.navigationTitle
         
+        let rightBtnItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(didRightBarFavortieButtonItemTapped))
+        
+        navigationItem.rightBarButtonItem = rightBtnItem
         mainView.linkButton.addTarget(self, action: #selector(didLinkButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func didRightBarFavortieButtonItemTapped() {
+        viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
     }
     
     @objc func didLinkButtonTapped() {
@@ -65,5 +72,11 @@ extension BookDetailViewController {
                 print("")
             }
         }
+        
+        viewModel.outputIsFavortie.bind { [weak self] bool in
+            guard let self else { return }
+            self.navigationItem.rightBarButtonItem?.image = bool ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        }
     }
+    
 }

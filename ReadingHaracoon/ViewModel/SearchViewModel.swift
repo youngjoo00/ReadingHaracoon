@@ -30,6 +30,9 @@ final class SearchViewModel {
 
     }
     
+    func numberOfItems() -> Int {
+        return outputRecommendList.value.count
+    }
 }
 
 

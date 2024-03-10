@@ -16,7 +16,6 @@ final class SearchDetailViewController: BaseViewController {
     
     var list: [SearchItem] = []
     
-    // VC 말고 다른 곳에 둘 예정
     let cellRegistration = UICollectionView.CellRegistration<SearchDetailCollectionViewCell, SearchItem> { cell, indexPath, item in
         let url = URL(string: item.cover)
         cell.bookImageView.kf.setImage(with: url)
@@ -62,7 +61,7 @@ extension SearchDetailViewController {
     }
     
     @objc private func keyboardDisMiss() {
-        view.endEditing(true)
+        keyboardEndEditing()
     }
     
     private func bindViewModel() {
@@ -120,11 +119,8 @@ extension SearchDetailViewController: UICollectionViewDelegate, UICollectionView
 // MARK: - SearchBar
 extension SearchDetailViewController: UISearchBarDelegate {
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("실행됨")
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.inputSearchBarText.value = searchBar.text
+        keyboardEndEditing()
     }
 }

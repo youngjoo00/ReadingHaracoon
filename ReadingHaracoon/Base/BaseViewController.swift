@@ -41,4 +41,7 @@ class BaseViewController: UIViewController {
         self.view.makeToast(message, duration: 2.5, position: .center, style: style)
     }
     
+    func keyboardEndEditing() {
+        view.endEditing(true)
+    }
 }
