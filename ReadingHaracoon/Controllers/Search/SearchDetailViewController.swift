@@ -88,7 +88,7 @@ extension SearchDetailViewController {
         
         viewModel.didSelectItemAtBookDetailTransition.bind { [weak self] isbn in
             guard let isbn, let self else { return }
-            let vc = BookDetailViewController()
+            let vc = DetailBookViewController()
             vc.viewModel.inputISBN.value = isbn
             self.transition(viewController: vc, style: .push)
         }

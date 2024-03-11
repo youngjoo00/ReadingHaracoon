@@ -35,6 +35,11 @@ final class BookRepository {
     func fetchBookTable() -> Results<Book> {
         return realm.objects(Book.self)
     }
+    
+    func fetchBookArrayList() -> [Book] {
+        return Array(fetchBookTable())
+    }
+    
 //    func fetchTable<T: Object>() -> Results<T> {
 //        return realm.objects(T.self)
 //    }

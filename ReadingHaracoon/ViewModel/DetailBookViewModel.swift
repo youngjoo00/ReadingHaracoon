@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class BookDetailViewModel {
+final class DetailBookViewModel {
     
     let repository = BookRepository()
     
@@ -43,7 +43,7 @@ final class BookDetailViewModel {
     }
 }
 
-extension BookDetailViewModel {
+extension DetailBookViewModel {
     
     private func getInquiry(_ isbnID: String) {
         isLoading.value = true

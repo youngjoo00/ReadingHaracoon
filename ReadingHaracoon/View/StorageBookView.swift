@@ -19,6 +19,16 @@ final class StorageBookView: BaseView {
         $0.placeholder = "보관한 책을 검색해보세요"
     }
     
+    let stateSegmentControl = UISegmentedControl()
+    
+    let filterButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "필터링"
+        configuration.baseForegroundColor = .white
+        configuration.baseBackgroundColor = .black
+        $0.configuration = configuration
+    }
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
         $0.register(StorageBookCollectionViewCell.self, forCellWithReuseIdentifier: StorageBookCollectionViewCell.identifier)
         $0.backgroundColor = .clear

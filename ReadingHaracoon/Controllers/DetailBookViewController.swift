@@ -8,10 +8,10 @@
 import UIKit
 import SVProgressHUD
 
-final class BookDetailViewController: BaseViewController {
+final class DetailBookViewController: BaseViewController {
     
-    let mainView = BookDetailView()
-    let viewModel = BookDetailViewModel()
+    let mainView = DetailBookView()
+    let viewModel = DetailBookViewModel()
     
     override func loadView() {
         view = mainView
@@ -31,7 +31,7 @@ final class BookDetailViewController: BaseViewController {
     }
 }
 
-extension BookDetailViewController {
+extension DetailBookViewController {
     private func configureView() {
         navigationItem.titleView = mainView.navigationTitle
         
@@ -62,7 +62,7 @@ extension BookDetailViewController {
         
         viewModel.outputBookData.bindOnChanged { [weak self] data in
             guard let self, let data else { return }
-            self.mainView.updateView(data)
+            self.mainView.updateView(.InquiryItem(data))
         }
         
         viewModel.outputNetworkErrorMessage.bind { [weak self] message in

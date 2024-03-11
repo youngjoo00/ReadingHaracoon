@@ -18,7 +18,6 @@ struct InquiryItem: Decodable {
     let cover: String
     let categoryName: String
     let publisher: String
-    let pubDate: String
     let subInfo: SubInfo
 }
 

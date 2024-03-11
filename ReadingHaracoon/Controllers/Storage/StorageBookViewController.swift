@@ -12,7 +12,7 @@ final class StorageBookViewController: BaseViewController {
     let mainView = StorageBookView()
     let viewModel = StorageBookViewModel()
     
-    var list: [Book] = []
+    private var list: [Book] = []
     
     override func loadView() {
         view = mainView
@@ -33,16 +33,18 @@ final class StorageBookViewController: BaseViewController {
 }
 
 
+// MARK: - Custom Func
 extension StorageBookViewController {
     
-    func configureView() {
+    private func configureView() {
         navigationItem.titleView = mainView.navigationTitle
         
+        mainView.searchBar.delegate = self
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.outputBookList.bind { [weak self] list in
             guard let self else { return }
             self.list = list
@@ -51,6 +53,8 @@ extension StorageBookViewController {
     }
 }
 
+
+// MARK: - CollectionView
 extension StorageBookViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,5 +70,19 @@ extension StorageBookViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailStorageBookViewController()
+        vc.viewModel.bookData.value = list[indexPath.item]
+        vc.hidesBottomBarWhenPushed = true
+        transition(viewController: vc, style: .push)
+    }
+}
+
+
+// MARK: - SearchBar
+extension StorageBookViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.inputSearchBarTextDidChange.value = searchText
+    }
 }

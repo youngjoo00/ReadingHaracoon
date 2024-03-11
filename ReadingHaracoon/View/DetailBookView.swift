@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-final class BookDetailView: BaseView {
+final class DetailBookView: BaseView {
     
     let navigationTitle = UILabel().then {
         $0.text = "Book Detail"
@@ -48,10 +48,6 @@ final class BookDetailView: BaseView {
         $0.text = "페이지"
     }
     let pageContentLabel = Normal16Label()
-    let publishDateLabel = Bold18Label().then {
-        $0.text = "출판일"
-    }
-    let publishDateCotentLabel = Normal16Label()
     let aladinSourceLabel = UILabel().then {
         $0.text = "자료 제공: 알라딘"
         $0.font = .systemFont(ofSize: 15)
@@ -69,8 +65,6 @@ final class BookDetailView: BaseView {
             descriptionCotentLabel,
             linkLabel,
             linkButton,
-            publishDateLabel,
-            publishDateCotentLabel,
             categoryLabel,
             categoryContentLabel,
             pageLabel,
@@ -163,18 +157,8 @@ final class BookDetailView: BaseView {
             make.top.equalTo(pageLabel.snp.bottom).offset(10)
         }
         
-        publishDateLabel.snp.makeConstraints { make in
-            make.leading.equalTo(descriptionLabel.snp.leading)
-            make.top.equalTo(pageContentLabel.snp.bottom).offset(20)
-        }
-        
-        publishDateCotentLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16)
-            make.top.equalTo(publishDateLabel.snp.bottom).offset(10)
-        }
-        
         aladinSourceLabel.snp.makeConstraints { make in
-            make.top.equalTo(publishDateCotentLabel.snp.bottom).offset(20)
+            make.top.equalTo(pageContentLabel.snp.bottom).offset(20)
             make.bottom.equalToSuperview().offset(-20)
             make.trailing.equalToSuperview().offset(-16)
         }
@@ -190,9 +174,18 @@ final class BookDetailView: BaseView {
     }
 }
 
-extension BookDetailView {
+extension DetailBookView {
     
-    func updateView(_ data: InquiryItem) {
+    func updateView(_ data: UpdateView) {
+        switch data {
+        case .InquiryItem(let data):
+            updateView(data)
+        case .Book(let data):
+            updateView(data)
+        }
+    }
+    
+    private func updateView(_ data: InquiryItem) {
         let url = URL(string: data.cover)
         coverImageView.kf.setImage(with: url)
         
@@ -200,9 +193,21 @@ extension BookDetailView {
         authorLabel.text = data.author
         publisherLabel.text = data.publisher
         descriptionCotentLabel.text = data.description
-        publishDateCotentLabel.text = data.pubDate
         categoryContentLabel.text = data.categoryName
         pageContentLabel.text = "\(data.subInfo.itemPage)"
         isbnContentLabel.text = data.isbn13
+    }
+    
+    private func updateView(_ data: Book) {
+        let url = URL(string: data.cover)
+        coverImageView.kf.setImage(with: url)
+        
+        titleLabel.text = data.title
+        authorLabel.text = data.author
+        publisherLabel.text = data.publisher
+        descriptionCotentLabel.text = data.descript
+        categoryContentLabel.text = data.categoryName
+        pageContentLabel.text = "\(data.page)"
+        isbnContentLabel.text = data.isbn
     }
 }

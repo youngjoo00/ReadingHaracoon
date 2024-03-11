@@ -121,7 +121,7 @@ extension SearchViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        let vc = BookDetailViewController()
+        let vc = DetailBookViewController()
         vc.viewModel.inputISBN.value = list[index].isbn13
         vc.hidesBottomBarWhenPushed = true
         transition(viewController: vc, style: .push)
