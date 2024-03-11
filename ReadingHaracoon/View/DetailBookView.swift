@@ -16,7 +16,7 @@ final class DetailBookView: BaseView {
     
     let scrollView = UIScrollView()
     let contentView = UIView()
-    let coverImageView = UIImageView()
+    let bookImageView = BookImageView(frame: .zero)
     let titleLabel = Bold18Label()
     let authorLabel = Normal16Label()
     let publisherLabel = Normal16Label()
@@ -57,7 +57,7 @@ final class DetailBookView: BaseView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         [
-            coverImageView,
+            bookImageView,
             titleLabel,
             authorLabel,
             publisherLabel,
@@ -85,7 +85,7 @@ final class DetailBookView: BaseView {
             make.width.equalToSuperview()
         }
         
-        coverImageView.snp.makeConstraints { make in
+        bookImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
             make.width.equalTo(150)
@@ -94,7 +94,7 @@ final class DetailBookView: BaseView {
         
         titleLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
-            make.top.equalTo(coverImageView.snp.bottom).offset(20)
+            make.top.equalTo(bookImageView.snp.bottom).offset(20)
         }
         
         authorLabel.snp.makeConstraints { make in
@@ -187,7 +187,7 @@ extension DetailBookView {
     
     private func updateView(_ data: InquiryItem) {
         let url = URL(string: data.cover)
-        coverImageView.kf.setImage(with: url)
+        bookImageView.kf.setImage(with: url)
         
         titleLabel.text = data.title
         authorLabel.text = data.author
@@ -200,7 +200,7 @@ extension DetailBookView {
     
     private func updateView(_ data: Book) {
         let url = URL(string: data.cover)
-        coverImageView.kf.setImage(with: url)
+        bookImageView.kf.setImage(with: url)
         
         titleLabel.text = data.title
         authorLabel.text = data.author

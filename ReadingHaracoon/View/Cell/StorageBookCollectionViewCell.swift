@@ -10,15 +10,7 @@ import Then
 
 final class StorageBookCollectionViewCell: BaseCollectionViewCell {
     
-    let coverImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        
-        $0.layer.shadowOffset = CGSize(width: 5, height: 5)
-        $0.layer.shadowOpacity = 0.5
-        $0.layer.shadowRadius = 5
-        $0.layer.shadowColor = UIColor.black.cgColor
-        $0.backgroundColor = .clear
-    }
+    let coverImageView = BookImageView(frame: .zero)
     
     let titleLabel = Normal16Label().then {
         $0.numberOfLines = 2

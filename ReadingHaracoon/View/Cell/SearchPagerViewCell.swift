@@ -10,7 +10,8 @@ import Kingfisher
 
 final class SearchPagerViewCell: BasePagerViewCell {
     
-    let bookImageView = UIImageView()
+    let bookImageView = BookImageView(frame: .zero)
+    
     let titleLabel = Bold18Label()
     let descriptionLabel = Normal16Label()
     

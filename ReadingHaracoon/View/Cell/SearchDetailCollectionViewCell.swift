@@ -10,7 +10,7 @@ import Then
 
 class SearchDetailCollectionViewCell: BaseCollectionViewCell {
     
-    let bookImageView = UIImageView()
+    let bookImageView = BookImageView(frame: .zero)
     let titleLabel = UILabel()
     let authorLabel = UILabel()
     let publisherLabel = UILabel()
