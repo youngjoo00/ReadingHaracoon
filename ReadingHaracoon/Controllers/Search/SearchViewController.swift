@@ -14,7 +14,7 @@ final class SearchViewController: BaseViewController {
     let mainView = SearchView()
     let viewModel = SearchViewModel()
     
-    var list: [RecommendItem] = []
+    var list: [[RecommendItem]] = []
     
     override func loadView() {
         view = mainView
@@ -83,7 +83,7 @@ extension SearchViewController {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return RecommendSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,12 +95,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.pagerView.dataSource = self
         cell.pagerView.delegate = self
+        cell.pagerView.tag = indexPath.section
+        cell.updateView(RecommendSection.allCases[indexPath.section].RecommendString)
         cell.pagerView.reloadData()
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 400
     }
 }
 
@@ -108,13 +110,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: FSPagerViewDelegate, FSPagerViewDataSource {
 
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return viewModel.numberOfItems()
+        return viewModel.numberOfItems(pagerView.tag)
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         guard let cell = pagerView.dequeueReusableCell(withReuseIdentifier: SearchPagerViewCell.identifier, at: index) as? SearchPagerViewCell else { return FSPagerViewCell() }
         
-        let item = list[index]
+        let item = list[pagerView.tag][index]
         cell.updateView(item)
 
         return cell
@@ -122,7 +124,7 @@ extension SearchViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         let vc = DetailBookViewController()
-        vc.viewModel.inputISBN.value = list[index].isbn13
+        vc.viewModel.inputISBN.value = list[pagerView.tag][index].isbn13
         vc.hidesBottomBarWhenPushed = true
         transition(viewController: vc, style: .push)
     }

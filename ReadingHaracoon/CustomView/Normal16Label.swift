@@ -24,7 +24,7 @@ final class Normal16Label: UILabel {
 extension Normal16Label {
     
     func configureView() {
-        textColor = .black
+        textColor = .point
         font = .systemFont(ofSize: 16)
     }
 }

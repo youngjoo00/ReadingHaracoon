@@ -24,8 +24,9 @@ final class StorageBookView: BaseView {
     let filterButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
         configuration.title = "필터링"
+        //configuration.image = UIImage(resource: .test)
         configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .black
+        configuration.baseBackgroundColor = .point
         $0.configuration = configuration
     }
     
@@ -37,6 +38,7 @@ final class StorageBookView: BaseView {
     override func configureHierarchy() {
         [
             searchBar,
+            filterButton,
             collectionView
         ].forEach { addSubview($0) }
     }
@@ -47,8 +49,13 @@ final class StorageBookView: BaseView {
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(16)
         }
         
+        filterButton.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom)
+            make.trailing.equalTo(searchBar).offset(-10)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.top.equalTo(filterButton.snp.bottom).offset(10)
             make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
@@ -62,10 +69,10 @@ extension StorageBookView {
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 12
+        let spacing: CGFloat = 20
     
         let cellWidth = (UIScreen.main.bounds.width - (spacing * 4)) / 3
-        let cellHeight = cellWidth * 1.4
+        let cellHeight = cellWidth * 1.6
         
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)

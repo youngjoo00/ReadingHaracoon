@@ -1,20 +1,17 @@
 //
-//  BaseView.swift
+//  Normal14Label.swift
 //  ReadingHaracoon
 //
-//  Created by youngjoo on 3/7/24.
+//  Created by youngjoo on 3/12/24.
 //
 
 import UIKit
-import SnapKit
-import Then
 
-class BaseView: UIView {
+final class Normal14Label: UILabel {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureHierarchy()
-        configureLayout()
         configureView()
     }
     
@@ -22,9 +19,12 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() { }
+}
+
+extension Normal14Label {
     
-    func configureLayout() { }
-    
-    func configureView() { }
+    func configureView() {
+        textColor = .point
+        font = .systemFont(ofSize: 14)
+    }
 }

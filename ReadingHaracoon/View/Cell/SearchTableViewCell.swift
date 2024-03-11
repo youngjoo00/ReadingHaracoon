@@ -12,7 +12,6 @@ final class SearchTableViewCell: BaseTableViewCell {
     
     let sectionLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 20)
-        $0.text = "베스트셀러"
     }
     
     let pagerView = FSPagerView().then {
@@ -57,5 +56,7 @@ final class SearchTableViewCell: BaseTableViewCell {
 
 extension SearchTableViewCell {
     
-    
+    func updateView(_ text: String) {
+        sectionLabel.text = text
+    }
 }

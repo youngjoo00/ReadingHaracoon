@@ -14,7 +14,7 @@ final class SearchViewModel {
     var searchBarTextDidBeginEditingTrigger: Observable<Void?> = Observable(nil)
     
     // output
-    var outputRecommendList: Observable<[RecommendItem]> = Observable([])
+    var outputRecommendList: Observable<[[RecommendItem]]> = Observable(Array(repeating: [RecommendItem](), count: RecommendSection.allCases.count))
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
     var isLoading = Observable(false)
     
@@ -30,8 +30,8 @@ final class SearchViewModel {
 
     }
     
-    func numberOfItems() -> Int {
-        return outputRecommendList.value.count
+    func numberOfItems(_ tag: Int) -> Int {
+        return outputRecommendList.value[tag].count
     }
 }
 
@@ -41,15 +41,32 @@ extension SearchViewModel {
     
     private func getRecommend() {
         isLoading.value = true
-        AladinAPIManager.shared.callRequest(type: Recommend.self, api: .recommend(queryType: "Bestseller")) { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.outputRecommendList.value = data.item
-            case .failure(let failure):
-                self?.outputNetworkErrorMessage.value = failure.rawValue
+    
+        let group = DispatchGroup()
+        
+        let section = RecommendSection.allCases
+        var tempList = Array(repeating: [RecommendItem](), count: section.count)
+        
+        for i in 0..<section.count {
+            group.enter()
+            AladinAPIManager.shared.callRequest(type: Recommend.self, api: .recommend(queryType: section[i].rawValue)) { [weak self] result in
+                guard let self else { return }
+                switch result {
+                case .success(let data):
+                    tempList[i] = data.item
+                    print(data.item)
+                case .failure(let failure):
+                    self.outputNetworkErrorMessage.value = failure.rawValue
+                }
+                group.leave()
             }
-            self?.isLoading.value = false
         }
+        
+        group.notify(queue: .main) {
+            self.outputRecommendList.value = tempList
+            self.isLoading.value = false
+        }
+        
     }
     
 }

@@ -14,5 +14,5 @@ struct RecommendItem: Decodable {
     let description: String
     let isbn13: String
     let cover: String
-    let bestRank: Int
+    let bestRank: Int?
 }
