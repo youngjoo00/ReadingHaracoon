@@ -19,6 +19,9 @@
 		8E012E7A2BA0C04900DF7512 /* CustomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */; };
 		8E012E7C2BA0C1DC00DF7512 /* StorageModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */; };
 		8E012E7E2BA0C22500DF7512 /* StorageModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */; };
+		8E012E842BA1EC2300DF7512 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E832BA1EC2300DF7512 /* NotificationName.swift */; };
+		8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */; };
+		8E012E882BA202F300DF7512 /* StorageFilterModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */; };
 		8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28109D2B998410000BBD65 /* AppDelegate.swift */; };
 		8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28109F2B998410000BBD65 /* SceneDelegate.swift */; };
 		8E2810A52B998410000BBD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810A32B998410000BBD65 /* Main.storyboard */; };
@@ -95,6 +98,9 @@
 		8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioningDelegate.swift; sourceTree = "<group>"; };
 		8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModalViewController.swift; sourceTree = "<group>"; };
 		8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModalView.swift; sourceTree = "<group>"; };
+		8E012E832BA1EC2300DF7512 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFilterModalViewController.swift; sourceTree = "<group>"; };
+		8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFilterModalView.swift; sourceTree = "<group>"; };
 		8E28109A2B998410000BBD65 /* ReadingHaracoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingHaracoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28109D2B998410000BBD65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E28109F2B998410000BBD65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +193,6 @@
 			children = (
 				8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */,
 				8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */,
-				8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */,
 			);
 			path = CustomModal;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				8E2810F22B99995F000BBD65 /* Enum */,
 				8E2810F32B999978000BBD65 /* Extension */,
 				8E2810F42B999988000BBD65 /* Manager */,
+				8E012E782BA0C02300DF7512 /* CustomModal */,
 				8E2810F72B999BA2000BBD65 /* CustomView */,
 				8E2810E12B9994F2000BBD65 /* Base */,
 				8E2810F62B999B8A000BBD65 /* Observer */,
@@ -288,7 +294,6 @@
 				8E012E802BA0C2AA00DF7512 /* Setting */,
 				8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */,
 				8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */,
-				8E012E782BA0C02300DF7512 /* CustomModal */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */,
+				8E012E832BA1EC2300DF7512 /* NotificationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */,
 				8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */,
 				8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */,
+				8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -449,6 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */,
+				8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */,
+				8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -631,11 +640,13 @@
 				8E012E752BA0B25200DF7512 /* CustomPresentationController.swift in Sources */,
 				8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */,
 				8E012E732BA09F0700DF7512 /* BlockView.swift in Sources */,
+				8E012E842BA1EC2300DF7512 /* NotificationName.swift in Sources */,
 				8E2811052B999D92000BBD65 /* AladinAPIManager.swift in Sources */,
 				8EBF13D32B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift in Sources */,
 				8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */,
 				8E012E6B2BA01DB000DF7512 /* TransitionDetailBook.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
+				8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
 				8E2811032B999D86000BBD65 /* AladinAPI.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
@@ -668,6 +679,7 @@
 				8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */,
 				8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */,
 				8E928BDF2B9C7E9F004D44C7 /* DetailBookViewModel.swift in Sources */,
+				8E012E882BA202F300DF7512 /* StorageFilterModalView.swift in Sources */,
 				8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

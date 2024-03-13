@@ -14,11 +14,11 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .background
-        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .point
         self.navigationController?.navigationBar.topItem?.title = ""
 
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = .background
+        navigationBarAppearance.backgroundColor = .white
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
     }
@@ -41,8 +41,8 @@ class BaseViewController: UIViewController {
     
     func showToast(message: String) {
         var style = ToastStyle()
-        style.backgroundColor = .black
-        style.messageColor = .white
+        style.backgroundColor = .white
+        style.messageColor = .point
         self.view.makeToast(message, duration: 2.5, position: .center, style: style)
     }
     

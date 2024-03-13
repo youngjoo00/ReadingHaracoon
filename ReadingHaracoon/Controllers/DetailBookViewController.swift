@@ -13,7 +13,7 @@ final class DetailBookViewController: BaseViewController {
     let mainView = DetailBookView()
     let viewModel = DetailBookViewModel()
     
-    private var customTransitioningDelegate = CustomTransitioningDelegate(.bottom)
+    private var customTransitioningDelegate = CustomTransitioningDelegate(.center)
     
     override func loadView() {
         view = mainView
@@ -61,6 +61,12 @@ extension DetailBookViewController {
         let storageModalViewController = StorageModalViewController()
         storageModalViewController.modalPresentationStyle = .custom
         storageModalViewController.transitioningDelegate = customTransitioningDelegate
+        storageModalViewController.selectedBookClosure = { [weak self] tag in
+            guard let self else { return }
+            self.viewModel.inputBookStatus.value = tag
+            self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
+        }
+        
         present(storageModalViewController, animated: true, completion: nil)
     }
     
@@ -78,7 +84,7 @@ extension DetailBookViewController {
         }
     }
     
-
+    
 }
 
 
@@ -117,9 +123,14 @@ extension DetailBookViewController {
             self.navigationItem.rightBarButtonItem?.image = bool ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         }
         
-        viewModel.outputIsPOP.bindOnChanged { [weak self] bool in
+        viewModel.outputSucessWriteDataResult.bindOnChanged { [weak self] message in
             guard let self else { return }
-            self.navigationController?.popViewController(animated: true)
+            
+            self.showToast(message: message)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

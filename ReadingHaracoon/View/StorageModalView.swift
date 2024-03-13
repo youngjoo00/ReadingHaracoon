@@ -32,6 +32,7 @@ final class StorageModalView: BaseView {
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .point
         $0.layer.cornerRadius = 16
+        $0.tag = 0
     }
     
     let readingButton = UIButton().then {
@@ -39,6 +40,7 @@ final class StorageModalView: BaseView {
         $0.setTitleColor(.point, for: .normal)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
+        $0.tag = 1
     }
     
     let readButton = UIButton().then {
@@ -46,6 +48,7 @@ final class StorageModalView: BaseView {
         $0.setTitleColor(.point, for: .normal)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
+        $0.tag = 2
     }
     
     let storageButton = UIButton().then {
@@ -84,13 +87,13 @@ final class StorageModalView: BaseView {
         }
         
         buttonStackView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(16)
-            make.height.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.height.equalTo(100)
         }
         
         storageButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalToSuperview().offset(-16)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -98,5 +101,20 @@ final class StorageModalView: BaseView {
     
     override func configureView() {
         
+    }
+}
+
+
+extension StorageModalView {
+    
+    func updateButton(_ selectedButton: UIButton) {
+
+        [toReadButton, readingButton, readButton].forEach { button in
+            button.backgroundColor = .white
+            button.setTitleColor(.point, for: .normal)
+        }
+
+        selectedButton.backgroundColor = .point
+        selectedButton.setTitleColor(.white, for: .normal)
     }
 }

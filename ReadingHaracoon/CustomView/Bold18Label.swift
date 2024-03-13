@@ -24,7 +24,7 @@ final class Bold18Label: UILabel {
 extension Bold18Label {
     
     func configureView() {
-        textColor = .black
+        textColor = .point
         font = .boldSystemFont(ofSize: 18)
     }
 }

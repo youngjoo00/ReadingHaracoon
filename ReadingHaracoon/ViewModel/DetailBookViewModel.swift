@@ -15,12 +15,13 @@ final class DetailBookViewModel {
     var inputViewWillAppearTrigger: Observable<Void?> = Observable(nil)
     var inputISBN: Observable<String?> = Observable(nil)
     var inputDidRightBarFavortieButtonItemTappedTrigger: Observable<Void?> = Observable(nil)
+    var inputBookStatus: Observable<Int?> = Observable(nil)
     
     // output
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
     var outputAPIBookData: Observable<InquiryItem?> = Observable(nil)
     var outputIsFavortie = Observable(false)
-    var outputIsPOP = Observable(false)
+    var outputSucessWriteDataResult = Observable("")
     
     var isLoading = Observable(false)
     var RealmBookData: Observable<Book?> = Observable(nil)
@@ -81,13 +82,19 @@ extension DetailBookViewModel {
     }
     
     private func createBookItem() {
-        guard let data = self.outputAPIBookData.value else { return }
+        guard let data = self.outputAPIBookData.value, let bookStatus = self.inputBookStatus.value else { return }
         
-        let item = Book(title: data.title, link: data.link, author: data.author, descript: data.description, isbn: data.isbn13, cover: data.cover, categoryName: data.categoryName, publisher: data.publisher, regDate: Date(), bookStatus: 0, page: data.subInfo.itemPage, totalReadingTime: 0)
+        let item = Book(title: data.title, link: data.link, author: data.author, descript: data.description, isbn: data.isbn13, cover: data.cover, categoryName: data.categoryName, publisher: data.publisher, regDate: Date(), bookStatus: bookStatus, page: data.subInfo.itemPage, totalReadingTime: 0)
         
-        repository.createItem(item)
-        updateFavoriteStatus(item.isbn)
-        self.outputIsPOP.value = true
+        do {
+            try repository.createItem(item)
+            updateFavoriteStatus(item.isbn)
+            self.outputSucessWriteDataResult.value = "책을 저장했다쿤!"
+        } catch {
+            self.outputSucessWriteDataResult.value = "책 저장에 실패했다쿤.."
+        }
+        
+        
     }
     
     private func deleteBookItem(_ isbn: String) {
@@ -96,9 +103,9 @@ extension DetailBookViewModel {
         do {
             try repository.deleteItem(item)
             updateFavoriteStatus(isbn)
-            self.outputIsPOP.value = true
+            self.outputSucessWriteDataResult.value = "책을 삭제했다쿤!"
         } catch {
-            print(error)
+            self.outputSucessWriteDataResult.value = "책 삭제에 실패했다쿤.."
         }
     }
 }
