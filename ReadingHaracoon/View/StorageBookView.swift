@@ -34,7 +34,7 @@ final class StorageBookView: BaseView {
         $0.register(StorageBookCollectionViewCell.self, forCellWithReuseIdentifier: StorageBookCollectionViewCell.identifier)
         $0.backgroundColor = .clear
     }
-    
+        
     override func configureHierarchy() {
         [
             searchBar,

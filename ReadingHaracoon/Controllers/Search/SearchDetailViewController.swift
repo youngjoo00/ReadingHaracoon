@@ -90,6 +90,7 @@ extension SearchDetailViewController {
             guard let isbn, let self else { return }
             let vc = DetailBookViewController()
             vc.viewModel.inputISBN.value = isbn
+            vc.viewModel.viewMode.value = .search
             self.transition(viewController: vc, style: .push)
         }
     }

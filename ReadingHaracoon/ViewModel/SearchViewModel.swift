@@ -54,7 +54,6 @@ extension SearchViewModel {
                 switch result {
                 case .success(let data):
                     tempList[i] = data.item
-                    print(data.item)
                 case .failure(let failure):
                     self.outputNetworkErrorMessage.value = failure.rawValue
                 }

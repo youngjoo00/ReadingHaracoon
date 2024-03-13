@@ -16,6 +16,11 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .background
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
+
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .background
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
     }
 
     func showAlert(title: String, message: String, btnTitle: String, complectionHandler: @escaping () -> Void) {

@@ -162,6 +162,7 @@ final class DetailBookView: BaseView {
             make.bottom.equalToSuperview().offset(-20)
             make.trailing.equalToSuperview().offset(-16)
         }
+        
     }
     
     override func configureView() {

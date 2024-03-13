@@ -11,14 +11,20 @@ final class DetailBookViewModel {
     
     let repository = BookRepository()
     
+    // input
     var inputViewWillAppearTrigger: Observable<Void?> = Observable(nil)
     var inputISBN: Observable<String?> = Observable(nil)
     var inputDidRightBarFavortieButtonItemTappedTrigger: Observable<Void?> = Observable(nil)
     
+    // output
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
-    var outputBookData: Observable<InquiryItem?> = Observable(nil)
+    var outputAPIBookData: Observable<InquiryItem?> = Observable(nil)
     var outputIsFavortie = Observable(false)
+    var outputIsPOP = Observable(false)
+    
     var isLoading = Observable(false)
+    var RealmBookData: Observable<Book?> = Observable(nil)
+    var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
     
     init() {
         transform()
@@ -26,20 +32,30 @@ final class DetailBookViewModel {
     
     private func transform() {
         inputViewWillAppearTrigger.bind { [weak self] _ in
-            guard let self, let isbn = inputISBN.value else { return }
-            self.getInquiry(isbn)
-            self.updateFavoriteStatus(isbn)
+            guard let self, let mode = viewMode.value else  { return }
+            switch mode {
+            case .storage:
+                guard let book = RealmBookData.value else { return }
+                self.updateFavoriteStatus(book.isbn)
+            case .search:
+                guard let isbn = inputISBN.value else { return }
+                self.getInquiry(isbn)
+                self.updateFavoriteStatus(isbn)
+            }
         }
         
         inputDidRightBarFavortieButtonItemTappedTrigger.bindOnChanged { [weak self] _ in
-            guard let self else { return }
-            if outputIsFavortie.value {
-                self.deleteBookItem()
-            } else {
-                self.createBookItem()
+            guard let self, let mode = viewMode.value else { return }
+            switch mode {
+            case .storage:
+                guard let isbn = RealmBookData.value?.isbn else { return }
+                self.deleteBookItem(isbn)
+            case .search:
+                guard let isbn = inputISBN.value else { return }
+                outputIsFavortie.value ? self.deleteBookItem(isbn) : self.createBookItem()
             }
-            
         }
+        
     }
 }
 
@@ -51,7 +67,7 @@ extension DetailBookViewModel {
             guard let self else { return }
             switch result {
             case .success(let data):
-                self.outputBookData.value = data.item.first
+                self.outputAPIBookData.value = data.item.first
             case .failure(let failure):
                 self.outputNetworkErrorMessage.value = failure.rawValue
             }
@@ -65,20 +81,22 @@ extension DetailBookViewModel {
     }
     
     private func createBookItem() {
-        guard let data = self.outputBookData.value else { return }
+        guard let data = self.outputAPIBookData.value else { return }
         
         let item = Book(title: data.title, link: data.link, author: data.author, descript: data.description, isbn: data.isbn13, cover: data.cover, categoryName: data.categoryName, publisher: data.publisher, regDate: Date(), bookStatus: 0, page: data.subInfo.itemPage, totalReadingTime: 0)
         
         repository.createItem(item)
         updateFavoriteStatus(item.isbn)
+        self.outputIsPOP.value = true
     }
     
-    private func deleteBookItem() {
-        guard let isbn = inputISBN.value, let item = repository.fetchBookItem(isbn) else { return }
+    private func deleteBookItem(_ isbn: String) {
+        guard let item = repository.fetchBookItem(isbn) else { return }
         
         do {
             try repository.deleteItem(item)
             updateFavoriteStatus(isbn)
+            self.outputIsPOP.value = true
         } catch {
             print(error)
         }

@@ -71,8 +71,9 @@ extension StorageBookViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailStorageBookViewController()
-        vc.viewModel.bookData.value = list[indexPath.item]
+        let vc = DetailBookViewController()
+        vc.viewModel.RealmBookData.value = list[indexPath.item]
+        vc.viewModel.viewMode.value = .storage
         vc.hidesBottomBarWhenPushed = true
         transition(viewController: vc, style: .push)
     }
