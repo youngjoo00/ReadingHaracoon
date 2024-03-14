@@ -5,6 +5,9 @@
 //  Created by youngjoo on 3/9/24.
 //
 
+protocol BookStatusDelegate: AnyObject {
+}
+
 import UIKit
 import SVProgressHUD
 
@@ -44,6 +47,9 @@ extension DetailBookViewController {
         
         navigationItem.rightBarButtonItem = rightBtnItem
         mainView.linkButton.addTarget(self, action: #selector(didLinkButtonTapped), for: .touchUpInside)
+        mainView.bookStatusButton.addTarget(self, action: #selector(didBookStatusButtonTapped), for: .touchUpInside)
+        mainView.memoButton.addTarget(self, action: #selector(didMemoButtonTapped), for: .touchUpInside)
+        mainView.timerButton.addTarget(self, action: #selector(didTimerButtonTapped), for: .touchUpInside)
     }
     
     @objc func didRightBarFavortieButtonItemTapped() {
@@ -53,20 +59,24 @@ extension DetailBookViewController {
             }
         } else {
             // 화면 중앙에 책을 어떻게 저장할지에 대한 모달 등장
-            presentStorageModalViewController()
+            presentStorageModalViewController(false)
         }
     }
     
-    private func presentStorageModalViewController() {
-        let storageModalViewController = StorageModalViewController()
+    private func presentStorageModalViewController(_ isFavorite: Bool) {
+        let storageModalViewController = DetailBookModalViewController()
         storageModalViewController.modalPresentationStyle = .custom
         storageModalViewController.transitioningDelegate = customTransitioningDelegate
+        storageModalViewController.isFavorite = isFavorite
         storageModalViewController.selectedBookClosure = { [weak self] tag in
             guard let self else { return }
             self.viewModel.inputBookStatus.value = tag
-            self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
+            if isFavorite {
+                self.viewModel.inputUpdateItemTrigger.value = ()
+            } else {
+                self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
+            }
         }
-        
         present(storageModalViewController, animated: true, completion: nil)
     }
     
@@ -84,7 +94,18 @@ extension DetailBookViewController {
         }
     }
     
+    // 업데이트
+    @objc func didBookStatusButtonTapped() {
+        presentStorageModalViewController(true)
+    }
     
+    @objc func didMemoButtonTapped() {
+        
+    }
+    
+    @objc func didTimerButtonTapped() {
+        
+    }
 }
 
 
@@ -117,13 +138,14 @@ extension DetailBookViewController {
             }
         }
         
-        viewModel.outputIsFavortie.bind { [weak self] bool in
+        viewModel.outputIsFavortie.bind { [weak self] isFavorite in
             guard let self else { return }
             
-            self.navigationItem.rightBarButtonItem?.image = bool ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+            self.navigationItem.rightBarButtonItem?.image = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+            mainView.updateBottomView(isFavorite)
         }
         
-        viewModel.outputSucessWriteDataResult.bindOnChanged { [weak self] message in
+        viewModel.outputCreateORDeleteDataResult.bindOnChanged { [weak self] message in
             guard let self else { return }
             
             self.showToast(message: message)
@@ -131,6 +153,12 @@ extension DetailBookViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigationController?.popViewController(animated: true)
             }
+        }
+        
+        viewModel.outputUpdateDataResult.bindOnChanged { [weak self] message in
+            guard let self else { return }
+            
+            self.showToast(message: message)
         }
     }
 }

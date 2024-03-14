@@ -10,7 +10,7 @@ import Foundation
 final class SearchViewModel {
     
     // input
-    var inputViewDidAppearTrigger: Observable<Void?> = Observable(nil)
+    var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var searchBarTextDidBeginEditingTrigger: Observable<Void?> = Observable(nil)
     
     // output
@@ -23,7 +23,7 @@ final class SearchViewModel {
     }
     
     private func transform() {
-        inputViewDidAppearTrigger.bindOnChanged { [weak self] _ in
+        inputViewDidLoadTrigger.bindOnChanged { [weak self] _ in
             guard let self else { return }
             self.getRecommend()
         }

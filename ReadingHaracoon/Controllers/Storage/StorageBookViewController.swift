@@ -44,6 +44,7 @@ extension StorageBookViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         mainView.filterButton.addTarget(self, action: #selector(didFilterButtonTapped), for: .touchUpInside)
+        configureTapGesture()
     }
     
     private func configureNavigationLeftImages() {
@@ -66,6 +67,16 @@ extension StorageBookViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: container)
     }
 
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardDisMiss))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func keyboardDisMiss() {
+        keyboardEndEditing()
+    }
+    
     private func bindViewModel() {
         viewModel.outputBookList.bind { [weak self] list in
             guard let self else { return }
@@ -126,5 +137,9 @@ extension StorageBookViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.inputSearchBarTextDidChange.value = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        keyboardEndEditing()
     }
 }

@@ -25,12 +25,13 @@ final class SearchViewController: BaseViewController {
         
         configureView()
         bindViewModel()
+        viewModel.inputViewDidLoadTrigger.value = ()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.inputViewDidAppearTrigger.value = ()
+        
     }
 }
 

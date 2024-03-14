@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().tintColor = .point
         UITabBar.appearance().unselectedItemTintColor = .systemGray2
-        sleep(2)
+//        sleep(2)
         return true
     }
 

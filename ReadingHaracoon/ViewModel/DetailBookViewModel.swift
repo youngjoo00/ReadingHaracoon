@@ -16,13 +16,14 @@ final class DetailBookViewModel {
     var inputISBN: Observable<String?> = Observable(nil)
     var inputDidRightBarFavortieButtonItemTappedTrigger: Observable<Void?> = Observable(nil)
     var inputBookStatus: Observable<Int?> = Observable(nil)
+    var inputUpdateItemTrigger: Observable<Void?> = Observable(nil)
     
     // output
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
     var outputAPIBookData: Observable<InquiryItem?> = Observable(nil)
     var outputIsFavortie = Observable(false)
-    var outputSucessWriteDataResult = Observable("")
-    
+    var outputCreateORDeleteDataResult = Observable("")
+    var outputUpdateDataResult = Observable("")
     var isLoading = Observable(false)
     var RealmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
@@ -57,6 +58,18 @@ final class DetailBookViewModel {
             }
         }
         
+        // 업데이트 할 때 필요한건
+        inputUpdateItemTrigger.bindOnChanged { [weak self] _ in
+            guard let self, let bookStatus = inputBookStatus.value, let mode = viewMode.value else { return }
+            switch mode {
+            case .storage:
+                guard let isbn = RealmBookData.value?.isbn else { return }
+                self.updateBookStatus(isbn, bookStatus: bookStatus)
+            case .search:
+                guard let isbn = inputISBN.value else { return }
+                self.updateBookStatus(isbn, bookStatus: bookStatus)
+            }
+        }
     }
 }
 
@@ -89,9 +102,9 @@ extension DetailBookViewModel {
         do {
             try repository.createItem(item)
             updateFavoriteStatus(item.isbn)
-            self.outputSucessWriteDataResult.value = "책을 저장했다쿤!"
+            self.outputCreateORDeleteDataResult.value = "책을 저장했다쿤!"
         } catch {
-            self.outputSucessWriteDataResult.value = "책 저장에 실패했다쿤.."
+            self.outputCreateORDeleteDataResult.value = "책 저장에 실패했다쿤.."
         }
         
         
@@ -103,9 +116,20 @@ extension DetailBookViewModel {
         do {
             try repository.deleteItem(item)
             updateFavoriteStatus(isbn)
-            self.outputSucessWriteDataResult.value = "책을 삭제했다쿤!"
+            self.outputCreateORDeleteDataResult.value = "책을 삭제했다쿤!"
         } catch {
-            self.outputSucessWriteDataResult.value = "책 삭제에 실패했다쿤.."
+            self.outputCreateORDeleteDataResult.value = "책 삭제에 실패했다쿤.."
+        }
+    }
+    
+    private func updateBookStatus(_ isbn: String, bookStatus: Int) {
+        do {
+            try repository.updateBookStatus(isbn, newStatus: bookStatus)
+            self.outputUpdateDataResult.value = "책 상태 수정을 성공했다쿤!"
+        } catch BookError.bookNotFound {
+            self.outputUpdateDataResult.value = "책을 찾을 수 없다쿤.."
+        } catch {
+            self.outputUpdateDataResult.value = "알 수 없는 오류로 인해 수정에 실패했다쿤.."
         }
     }
 }

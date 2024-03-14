@@ -53,8 +53,57 @@ final class DetailBookView: BaseView {
         $0.font = .systemFont(ofSize: 15)
     }
     
+    let bottomView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
+    let bottomStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.spacing = 10
+    }
+    
+    let bookStatusButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "책 상태"
+        configuration.image = UIImage(systemName: "book.closed")
+        configuration.baseForegroundColor = .point
+        configuration.baseBackgroundColor = .background
+        configuration.imagePadding = 10
+        $0.configuration = configuration
+    }
+    
+    let memoButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "메모"
+        configuration.image = UIImage(systemName: "pencil")
+        configuration.baseForegroundColor = .point
+        configuration.baseBackgroundColor = .background
+        configuration.imagePadding = 10
+        $0.configuration = configuration
+    }
+    
+    let timerButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "타이머"
+        configuration.image = UIImage(systemName: "timer")
+        configuration.baseForegroundColor = .point
+        configuration.baseBackgroundColor = .background
+        configuration.imagePadding = 10
+        $0.configuration = configuration
+    }
+    
+    let overSafeAreabottomView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
     override func configureHierarchy() {
-        addSubview(scrollView)
+        [
+            scrollView,
+            bottomView,
+            overSafeAreabottomView,
+        ].forEach { addSubview($0) }
+        
         scrollView.addSubview(contentView)
         [
             bookImageView,
@@ -73,6 +122,14 @@ final class DetailBookView: BaseView {
             isbnContentLabel,
             aladinSourceLabel,
         ].forEach { contentView.addSubview($0) }
+        
+        bottomView.addSubview(bottomStackView)
+        
+        [
+            bookStatusButton,
+            memoButton,
+            timerButton
+        ].forEach { bottomStackView.addArrangedSubview($0) }
     }
     
     override func configureLayout() {
@@ -163,6 +220,22 @@ final class DetailBookView: BaseView {
             make.trailing.equalToSuperview().offset(-16)
         }
         
+        bottomView.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
+        bottomStackView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.centerY.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
+        }
+        
+        overSafeAreabottomView.snp.makeConstraints { make in
+            make.top.equalTo(bottomView.snp.bottom)
+            make.bottom.horizontalEdges.equalToSuperview()
+        }
     }
     
     override func configureView() {
@@ -175,7 +248,17 @@ final class DetailBookView: BaseView {
     }
 }
 
+
+
 extension DetailBookView {
+    
+    func updateBottomView(_ isFavorite: Bool) {
+        if isFavorite {
+            bottomView.isHidden = false
+        } else {
+            bottomView.isHidden = true
+        }
+    }
     
     func updateView(_ data: UpdateView) {
         switch data {
@@ -211,4 +294,6 @@ extension DetailBookView {
         pageContentLabel.text = "\(data.page)"
         isbnContentLabel.text = data.isbn
     }
+    
+
 }

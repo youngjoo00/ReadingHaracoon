@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StorageModalView: BaseView {
+final class DetailBookModalView: BaseView {
     
     let titleLabel = Bold18Label().then {
         $0.text = "책 상태를 설정하라쿤!"
@@ -51,7 +51,7 @@ final class StorageModalView: BaseView {
         $0.tag = 2
     }
     
-    let storageButton = UIButton().then {
+    let confirmButton = UIButton().then {
         var configuration = UIButton.Configuration.plain()
         configuration.title = "저장하기"
         configuration.baseForegroundColor = .white
@@ -66,7 +66,7 @@ final class StorageModalView: BaseView {
             titleLabel,
             closeButton,
             buttonStackView,
-            storageButton,
+            confirmButton,
         ].forEach { addSubview($0) }
         
         [
@@ -92,7 +92,7 @@ final class StorageModalView: BaseView {
             make.height.equalTo(100)
         }
         
-        storageButton.snp.makeConstraints { make in
+        confirmButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-16)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(50)
@@ -105,7 +105,7 @@ final class StorageModalView: BaseView {
 }
 
 
-extension StorageModalView {
+extension DetailBookModalView {
     
     func updateButton(_ selectedButton: UIButton) {
 
@@ -116,5 +116,9 @@ extension StorageModalView {
 
         selectedButton.backgroundColor = .point
         selectedButton.setTitleColor(.white, for: .normal)
+    }
+    
+    func configureConfirmButton(_ isFavorite: Bool) {
+        confirmButton.configuration?.title = isFavorite ? "수정하기" : "저장하기"
     }
 }

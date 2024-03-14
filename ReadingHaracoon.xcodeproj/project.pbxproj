@@ -17,8 +17,8 @@
 		8E012E732BA09F0700DF7512 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E722BA09F0700DF7512 /* BlockView.swift */; };
 		8E012E752BA0B25200DF7512 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */; };
 		8E012E7A2BA0C04900DF7512 /* CustomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */; };
-		8E012E7C2BA0C1DC00DF7512 /* StorageModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */; };
-		8E012E7E2BA0C22500DF7512 /* StorageModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */; };
+		8E012E7C2BA0C1DC00DF7512 /* DetailBookModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7B2BA0C1DC00DF7512 /* DetailBookModalViewController.swift */; };
+		8E012E7E2BA0C22500DF7512 /* DetailBookModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E7D2BA0C22500DF7512 /* DetailBookModalView.swift */; };
 		8E012E842BA1EC2300DF7512 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E832BA1EC2300DF7512 /* NotificationName.swift */; };
 		8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */; };
 		8E012E882BA202F300DF7512 /* StorageFilterModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */; };
@@ -96,8 +96,8 @@
 		8E012E722BA09F0700DF7512 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioningDelegate.swift; sourceTree = "<group>"; };
-		8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModalViewController.swift; sourceTree = "<group>"; };
-		8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModalView.swift; sourceTree = "<group>"; };
+		8E012E7B2BA0C1DC00DF7512 /* DetailBookModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookModalViewController.swift; sourceTree = "<group>"; };
+		8E012E7D2BA0C22500DF7512 /* DetailBookModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookModalView.swift; sourceTree = "<group>"; };
 		8E012E832BA1EC2300DF7512 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFilterModalViewController.swift; sourceTree = "<group>"; };
 		8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFilterModalView.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 				8EBF13DB2B9F228700B1FE6D /* Search */,
 				8E012E7F2BA0C2A000DF7512 /* Stats */,
 				8E012E802BA0C2AA00DF7512 /* Setting */,
-				8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */,
+				8E693E652BA337790099597A /* DetailBook */,
 				8E928BE62B9CB98C004D44C7 /* AladinWebViewController.swift */,
 			);
 			path = Controllers;
@@ -384,7 +384,7 @@
 				8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */,
 				8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */,
 				8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */,
-				8E012E7D2BA0C22500DF7512 /* StorageModalView.swift */,
+				8E012E7D2BA0C22500DF7512 /* DetailBookModalView.swift */,
 				8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
@@ -452,11 +452,19 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		8E693E652BA337790099597A /* DetailBook */ = {
+			isa = PBXGroup;
+			children = (
+				8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */,
+				8E012E7B2BA0C1DC00DF7512 /* DetailBookModalViewController.swift */,
+			);
+			path = DetailBook;
+			sourceTree = "<group>";
+		};
 		8EBF13DA2B9F227900B1FE6D /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */,
-				8E012E7B2BA0C1DC00DF7512 /* StorageModalViewController.swift */,
 				8E012E852BA2029000DF7512 /* StorageFilterModalViewController.swift */,
 			);
 			path = Storage;
@@ -667,13 +675,13 @@
 				8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */,
 				8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */,
 				8EBF13DF2B9F326B00B1FE6D /* UpdateView.swift in Sources */,
-				8E012E7C2BA0C1DC00DF7512 /* StorageModalViewController.swift in Sources */,
+				8E012E7C2BA0C1DC00DF7512 /* DetailBookModalViewController.swift in Sources */,
 				8E012E7A2BA0C04900DF7512 /* CustomTransitioningDelegate.swift in Sources */,
 				8E928BE72B9CB98C004D44C7 /* AladinWebViewController.swift in Sources */,
 				8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */,
 				8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */,
 				8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */,
-				8E012E7E2BA0C22500DF7512 /* StorageModalView.swift in Sources */,
+				8E012E7E2BA0C22500DF7512 /* DetailBookModalView.swift in Sources */,
 				8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */,
 				8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */,
 				8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */,

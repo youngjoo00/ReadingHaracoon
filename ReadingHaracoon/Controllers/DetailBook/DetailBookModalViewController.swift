@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class StorageModalViewController: BaseViewController {
+final class DetailBookModalViewController: BaseViewController {
     
-    private let mainView = StorageModalView()
+    private let mainView = DetailBookModalView()
     private let viewModel = DetailBookViewModel()
     private var selectedTag = 0
-
+    var isFavorite = false
     var selectedBookClosure: ((Int) -> Void)?
 
     override func loadView() {
@@ -28,14 +28,15 @@ final class StorageModalViewController: BaseViewController {
 }
 
 
-extension StorageModalViewController {
+extension DetailBookModalViewController {
     
     private func configureView() {
         mainView.closeButton.addTarget(self, action: #selector(didCloseButtonTapped), for: .touchUpInside)
         mainView.toReadButton.addTarget(self, action: #selector(didSelectButtonTapped), for: .touchUpInside)
         mainView.readingButton.addTarget(self, action: #selector(didSelectButtonTapped), for: .touchUpInside)
         mainView.readButton.addTarget(self, action: #selector(didSelectButtonTapped), for: .touchUpInside)
-        mainView.storageButton.addTarget(self, action: #selector(didStorageButtonTapped), for: .touchUpInside)
+        mainView.confirmButton.addTarget(self, action: #selector(didStorageButtonTapped), for: .touchUpInside)
+        mainView.configureConfirmButton(isFavorite)
     }
     
     @objc func didCloseButtonTapped() {
