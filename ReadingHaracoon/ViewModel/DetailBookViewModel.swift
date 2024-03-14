@@ -22,8 +22,10 @@ final class DetailBookViewModel {
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
     var outputAPIBookData: Observable<InquiryItem?> = Observable(nil)
     var outputIsFavortie = Observable(false)
-    var outputCreateORDeleteDataResult = Observable("")
+    var outputCreateDataResult = Observable("")
     var outputUpdateDataResult = Observable("")
+    var outputDeleteDataResult = Observable("")
+    
     var isLoading = Observable(false)
     var RealmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
@@ -102,9 +104,9 @@ extension DetailBookViewModel {
         do {
             try repository.createItem(item)
             updateFavoriteStatus(item.isbn)
-            self.outputCreateORDeleteDataResult.value = "책을 저장했다쿤!"
+            self.outputCreateDataResult.value = "책을 저장했다쿤!"
         } catch {
-            self.outputCreateORDeleteDataResult.value = "책 저장에 실패했다쿤.."
+            self.outputCreateDataResult.value = "책 저장에 실패했다쿤.."
         }
         
         
@@ -116,9 +118,9 @@ extension DetailBookViewModel {
         do {
             try repository.deleteItem(item)
             updateFavoriteStatus(isbn)
-            self.outputCreateORDeleteDataResult.value = "책을 삭제했다쿤!"
+            self.outputDeleteDataResult.value = "책을 삭제했다쿤!"
         } catch {
-            self.outputCreateORDeleteDataResult.value = "책 삭제에 실패했다쿤.."
+            self.outputDeleteDataResult.value = "책 삭제에 실패했다쿤.."
         }
     }
     

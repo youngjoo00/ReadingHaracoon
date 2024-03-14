@@ -145,12 +145,18 @@ extension DetailBookViewController {
             mainView.updateBottomView(isFavorite)
         }
         
-        viewModel.outputCreateORDeleteDataResult.bindOnChanged { [weak self] message in
+        viewModel.outputCreateDataResult.bindOnChanged { [weak self] message in
             guard let self else { return }
             
             self.showToast(message: message)
+        }
+        
+        viewModel.outputDeleteDataResult.bindOnChanged { [weak self] message in
+            guard let self else { return }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.showToast(message: message)
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.navigationController?.popViewController(animated: true)
             }
         }
