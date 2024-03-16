@@ -47,6 +47,8 @@ final class StorageBookViewModel {
 
 
 extension StorageBookViewModel {
+    
+    // 필터링 된 상태에서 가져와야할듯
     private func loadInitialBookList() {
         let bookList = repository.fetchBookArrayList()
         outputBookList.value = bookList

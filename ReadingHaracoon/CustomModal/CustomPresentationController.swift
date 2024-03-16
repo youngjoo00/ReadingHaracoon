@@ -10,6 +10,7 @@ import UIKit
 enum CustomModalPresentationStyle {
     case bottom
     case center
+    case Alert
 }
 
 final class CustomPresentationController: UIPresentationController {
@@ -31,6 +32,13 @@ final class CustomPresentationController: UIPresentationController {
             
             return CGRect(origin: origin, size: size)
         case .center:
+            let size = CGSize(width: containerView.bounds.width * 0.8,
+                              height: containerView.bounds.height * 0.4)
+            
+            let origin = CGPoint(x: containerView.bounds.width * 0.1, y: (containerView.bounds.height - size.height) / 2)
+            
+            return CGRect(origin: origin, size: size)
+        case .Alert:
             let size = CGSize(width: containerView.bounds.width * 0.8,
                               height: containerView.bounds.height * 0.4)
             

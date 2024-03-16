@@ -29,6 +29,7 @@ final class DetailBookViewModel {
     var isLoading = Observable(false)
     var RealmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
+    var isbn = ""
     
     init() {
         transform()
@@ -40,11 +41,13 @@ final class DetailBookViewModel {
             switch mode {
             case .storage:
                 guard let book = RealmBookData.value else { return }
-                self.updateFavoriteStatus(book.isbn)
+                self.isbn = book.isbn
+                self.updateFavoriteStatus(self.isbn)
             case .search:
                 guard let isbn = inputISBN.value else { return }
-                self.getInquiry(isbn)
-                self.updateFavoriteStatus(isbn)
+                self.isbn = isbn
+                self.getInquiry(self.isbn)
+                self.updateFavoriteStatus(self.isbn)
             }
         }
         
@@ -52,25 +55,15 @@ final class DetailBookViewModel {
             guard let self, let mode = viewMode.value else { return }
             switch mode {
             case .storage:
-                guard let isbn = RealmBookData.value?.isbn else { return }
                 self.deleteBookItem(isbn)
             case .search:
-                guard let isbn = inputISBN.value else { return }
                 outputIsFavortie.value ? self.deleteBookItem(isbn) : self.createBookItem()
             }
         }
         
-        // 업데이트 할 때 필요한건
         inputUpdateItemTrigger.bindOnChanged { [weak self] _ in
             guard let self, let bookStatus = inputBookStatus.value, let mode = viewMode.value else { return }
-            switch mode {
-            case .storage:
-                guard let isbn = RealmBookData.value?.isbn else { return }
-                self.updateBookStatus(isbn, bookStatus: bookStatus)
-            case .search:
-                guard let isbn = inputISBN.value else { return }
-                self.updateBookStatus(isbn, bookStatus: bookStatus)
-            }
+            self.updateBookStatus(isbn, bookStatus: bookStatus)
         }
     }
 }
@@ -102,7 +95,7 @@ extension DetailBookViewModel {
         let item = Book(title: data.title, link: data.link, author: data.author, descript: data.description, isbn: data.isbn13, cover: data.cover, categoryName: data.categoryName, publisher: data.publisher, regDate: Date(), bookStatus: bookStatus, page: data.subInfo.itemPage, totalReadingTime: 0)
         
         do {
-            try repository.createItem(item)
+            try repository.createBookItem(item)
             updateFavoriteStatus(item.isbn)
             self.outputCreateDataResult.value = "책을 저장했다쿤!"
         } catch {

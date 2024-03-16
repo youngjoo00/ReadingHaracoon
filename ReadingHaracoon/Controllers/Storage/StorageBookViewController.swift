@@ -49,7 +49,7 @@ extension StorageBookViewController {
     
     private func configureNavigationLeftImages() {
 
-        let logoImage = UIImage(resource: .logo)
+        let logoImage = UIImage(resource: .독서하라쿤Logo)
         let logoImageView = UIImageView(image: logoImage)
         logoImageView.contentMode = .scaleAspectFill
         

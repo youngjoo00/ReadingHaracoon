@@ -49,19 +49,18 @@ class Book: Object {
 class Memo: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var title: String // 메모 제목
-    @Persisted var memo: String? // 메모 내용
+    @Persisted var content: String? // 메모 내용
     @Persisted var photo: String? // 메모에 넣을 사진
     @Persisted var regDate: Date // 메모 등록일
 
     @Persisted(originProperty: "memoList") var superTable: LinkingObjects<Book>
     
-    convenience init(title: String, memo: String? = nil, photo: String? = nil, regDate: Date, superTable: LinkingObjects<Book>) {
+    convenience init(title: String, content: String? = nil, photo: String? = nil, regDate: Date) {
         self.init()
         self.title = title
-        self.memo = memo
+        self.content = content
         self.photo = photo
         self.regDate = regDate
-        self.superTable = superTable
     }
 }
 

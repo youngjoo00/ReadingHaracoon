@@ -16,14 +16,14 @@ final class BookRepository {
     
     let realm = try! Realm()
     
-    func createItem<T: Object>(_ item: T) throws {
+    func createBookItem<T: Object>(_ item: T) throws {
         do {
             try realm.write {
                 realm.add(item)
                 print(realm.configuration.fileURL!)
             }
         } catch {
-            print("생성 실패")
+            print("Book 생성 실패")
             throw error
         }
     }
@@ -74,8 +74,4 @@ final class BookRepository {
             throw error
         }
     }
-}
-
-extension BookRepository {
-    
 }

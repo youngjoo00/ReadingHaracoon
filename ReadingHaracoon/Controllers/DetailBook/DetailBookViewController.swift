@@ -94,13 +94,15 @@ extension DetailBookViewController {
         }
     }
     
-    // 업데이트
+    // 책 상태 업데이트
     @objc func didBookStatusButtonTapped() {
         presentStorageModalViewController(true)
     }
     
     @objc func didMemoButtonTapped() {
-        
+        let vc = MemoViewController()
+        vc.viewModel.inputISBN.value = viewModel.isbn
+        transition(viewController: vc, style: .push)
     }
     
     @objc func didTimerButtonTapped() {
