@@ -49,4 +49,12 @@ class BaseViewController: UIViewController {
     func keyboardEndEditing() {
         view.endEditing(true)
     }
+    
+//    func showCustomAlert(style: CustomModalPresentationStyle = .Alert, title: String, message: String, actionTitle: String) {
+//        let alertViewContrller = CustomAlertViewController(title: title, message: message, actionTitle: actionTitle)
+//        let transitionDelegate = CustomTransitioningDelegate(style)
+//        alertViewContrller.modalPresentationStyle = .custom
+//        alertViewContrller.transitioningDelegate = transitionDelegate
+//        self.present(alertViewContrller, animated: true)
+//    }
 }

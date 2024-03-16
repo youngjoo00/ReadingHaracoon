@@ -12,6 +12,8 @@ final class DetailMemoViewController: BaseViewController {
     let mainView = DetailMemoView()
     let viewModel = DetailMemoViewModel()
     
+    weak var delegate: PassResultMessageDelegate?
+    
     override func loadView() {
         view = mainView
     }
@@ -54,18 +56,25 @@ extension DetailMemoViewController {
         let title = mainView.titleTextField.text
         let content = mainView.contentTextView.text
 
-        viewModel.inputSaveMemo.value = (title, content, nil)
+        showCustomAlert(title: "메모를 저장하시겠습니까?", message: "제목은 꼭 입력하셔야 합니다.", actionTitle: "저장") {
+            self.viewModel.inputSaveMemo.value = (title, content, nil)
+        }
     }
     
     @objc func didUpdateButtonTapped() {
         let title = mainView.titleTextField.text
         let content = mainView.contentTextView.text
 
-        viewModel.inputUpdateMemo.value = (title, content, nil)
+        showCustomAlert(title: "메모를 수정하시겠습니까?", message: "제목은 꼭 입력하셔야 합니다.", actionTitle: "수정") {
+            self.viewModel.inputUpdateMemo.value = (title, content, nil)
+        }
     }
     
     @objc func didDeleteButtonTapped() {
-        viewModel.inputDeleteMemo.value = ()
+        
+        showCustomAlert(title: "메모를 삭제하시겠습니까?", message: nil, actionTitle: "삭제") {
+            self.viewModel.inputDeleteMemo.value = ()
+        }
     }
     
     private func bindViewModel() {
@@ -76,11 +85,8 @@ extension DetailMemoViewController {
             switch result {
             case .success(let message):
                 let message = message
-                self.showToast(message: message)
-                // 여기서 pop 하면서 나갈때 딜리게이트에 메세지 값을 넣어줘야할듯?
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.navigationController?.popViewController(animated: true)
-                }
+                self.delegate?.resultMessageReceived(message: message)
+                self.navigationController?.popViewController(animated: true)
             case .fail(let message):
                 self.showToast(message: message)
             }

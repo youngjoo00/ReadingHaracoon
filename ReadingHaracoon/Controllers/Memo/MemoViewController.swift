@@ -11,7 +11,7 @@ final class MemoViewController: BaseViewController {
     
     let mainView = MemoView()
     let viewModel = MemoViewModel()
-    
+        
     override func loadView() {
         view = mainView
     }
@@ -27,8 +27,6 @@ final class MemoViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 계속 뷰를 업데이트 해줘야하나..?
-        //mainView.configureView()
         viewModel.inputViewWillApeearTrigger.value = ()
     }
 }
@@ -46,6 +44,7 @@ extension MemoViewController {
         let vc = DetailMemoViewController()
         vc.viewModel.bookData = viewModel.bookData
         vc.viewModel.viewMode = .create
+        vc.delegate = self
         transition(viewController: vc, style: .push)
     }
     
@@ -70,6 +69,13 @@ extension MemoViewController: UICollectionViewDelegate {
         vc.mainView.contentTextView.text = data.content
         vc.viewModel.viewMode = .read
         vc.viewModel.memo = data
+        vc.delegate = self
         transition(viewController: vc, style: .push)
+    }
+}
+
+extension MemoViewController: PassResultMessageDelegate {
+    func resultMessageReceived(message: String) {
+        showToast(message: message)
     }
 }

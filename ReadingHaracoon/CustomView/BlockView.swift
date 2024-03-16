@@ -10,7 +10,7 @@ import Then
 
 final class BlockView: BaseView {
 
-    let customModalView = CustomModalView()
+    let customModalView = CustomAlertView()
     
     override func configureHierarchy() {
         [

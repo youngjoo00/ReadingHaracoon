@@ -13,7 +13,7 @@
 		8E012E5C2B9F7D7A00DF7512 /* BookImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */; };
 		8E012E6B2BA01DB000DF7512 /* TransitionDetailBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E6A2BA01DB000DF7512 /* TransitionDetailBook.swift */; };
 		8E012E6D2BA01F7000DF7512 /* 2번째.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E012E6C2BA01F7000DF7512 /* 2번째.png */; };
-		8E012E6F2BA0403700DF7512 /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E6E2BA0403700DF7512 /* CustomModalView.swift */; };
+		8E012E6F2BA0403700DF7512 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E6E2BA0403700DF7512 /* CustomAlertView.swift */; };
 		8E012E732BA09F0700DF7512 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E722BA09F0700DF7512 /* BlockView.swift */; };
 		8E012E752BA0B25200DF7512 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */; };
 		8E012E7A2BA0C04900DF7512 /* CustomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */; };
@@ -91,6 +91,9 @@
 		8ECE5DBF2BA4405700FE95ED /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DBE2BA4405700FE95ED /* MemoViewModel.swift */; };
 		8ECE5DC12BA4415200FE95ED /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DC02BA4415200FE95ED /* MemoRepository.swift */; };
 		8ECE5DC82BA4915A00FE95ED /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DC72BA4915A00FE95ED /* UITextField+.swift */; };
+		8ECE5DCC2BA57BF300FE95ED /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DCB2BA57BF300FE95ED /* CustomAlertViewController.swift */; };
+		8ECE5DCE2BA57FA900FE95ED /* UIViewContorller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DCD2BA57FA900FE95ED /* UIViewContorller+.swift */; };
+		8ECE5DD12BA5A46400FE95ED /* PassResultMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DD02BA5A46400FE95ED /* PassResultMessageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,7 +103,7 @@
 		8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImageView.swift; sourceTree = "<group>"; };
 		8E012E6A2BA01DB000DF7512 /* TransitionDetailBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDetailBook.swift; sourceTree = "<group>"; };
 		8E012E6C2BA01F7000DF7512 /* 2번째.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2번째.png"; sourceTree = "<group>"; };
-		8E012E6E2BA0403700DF7512 /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
+		8E012E6E2BA0403700DF7512 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		8E012E722BA09F0700DF7512 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioningDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +173,9 @@
 		8ECE5DBE2BA4405700FE95ED /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
 		8ECE5DC02BA4415200FE95ED /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		8ECE5DC72BA4915A00FE95ED /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		8ECE5DCB2BA57BF300FE95ED /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		8ECE5DCD2BA57FA900FE95ED /* UIViewContorller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContorller+.swift"; sourceTree = "<group>"; };
+		8ECE5DD02BA5A46400FE95ED /* PassResultMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassResultMessageDelegate.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +264,7 @@
 				8E2810FA2B999BE9000BBD65 /* ViewModel */,
 				8E2810F82B999BAF000BBD65 /* Repository */,
 				8E2810F52B999B86000BBD65 /* Model */,
+				8ECE5DCF2BA5A44B00FE95ED /* Protocol */,
 				8E2810F22B99995F000BBD65 /* Enum */,
 				8E2810F32B999978000BBD65 /* Extension */,
 				8E2810F42B999988000BBD65 /* Manager */,
@@ -311,6 +318,7 @@
 				8E693E652BA337790099597A /* DetailBook */,
 				8E693E662BA34DDF0099597A /* Memo */,
 				8E693E672BA34DEF0099597A /* Aladin */,
+				8ECE5DCB2BA57BF300FE95ED /* CustomAlertViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 			children = (
 				8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */,
 				8ECE5DC72BA4915A00FE95ED /* UITextField+.swift */,
+				8ECE5DCD2BA57FA900FE95ED /* UIViewContorller+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -380,7 +389,6 @@
 				8E012E572B9F61F800DF7512 /* Normal14Label.swift */,
 				8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */,
 				8E012E722BA09F0700DF7512 /* BlockView.swift */,
-				8E012E6E2BA0403700DF7512 /* CustomModalView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 				8E012E872BA202F300DF7512 /* StorageFilterModalView.swift */,
 				8E693E6A2BA34E450099597A /* MemoView.swift */,
 				8E693E702BA36D430099597A /* DetailMemoView.swift */,
+				8E012E6E2BA0403700DF7512 /* CustomAlertView.swift */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -517,6 +526,14 @@
 				8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		8ECE5DCF2BA5A44B00FE95ED /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5DD02BA5A46400FE95ED /* PassResultMessageDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		8F342C88B0E9E102ED4E9904 /* Pods */ = {
@@ -674,7 +691,7 @@
 				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
 				8E012E5C2B9F7D7A00DF7512 /* BookImageView.swift in Sources */,
 				8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */,
-				8E012E6F2BA0403700DF7512 /* CustomModalView.swift in Sources */,
+				8E012E6F2BA0403700DF7512 /* CustomAlertView.swift in Sources */,
 				8E012E5A2B9F6B2100DF7512 /* RecommendSection.swift in Sources */,
 				8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */,
 				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
@@ -702,16 +719,19 @@
 				8E693E6F2BA36D150099597A /* DetailMemoViewController.swift in Sources */,
 				8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
+				8ECE5DCC2BA57BF300FE95ED /* CustomAlertViewController.swift in Sources */,
 				8E693E6D2BA358430099597A /* MemoCollectionViewCell.swift in Sources */,
 				8E2811032B999D86000BBD65 /* AladinAPI.swift in Sources */,
 				8E693E692BA34E100099597A /* MemoViewController.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
 				8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */,
 				8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */,
+				8ECE5DCE2BA57FA900FE95ED /* UIViewContorller+.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
+				8ECE5DD12BA5A46400FE95ED /* PassResultMessageDelegate.swift in Sources */,
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
 				8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */,
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
