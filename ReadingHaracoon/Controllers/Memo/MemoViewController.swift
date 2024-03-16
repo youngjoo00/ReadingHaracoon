@@ -2,7 +2,7 @@
 //  MemoViewController.swift
 //  ReadingHaracoon
 //
-//  Created by youngjoo on 3/15/24.
+//  Created by youngjoo on 3/16/24.
 //
 
 import UIKit
@@ -11,7 +11,9 @@ final class MemoViewController: BaseViewController {
     
     let mainView = MemoView()
     let viewModel = MemoViewModel()
-        
+    
+    var memoList: [Memo] = []
+    
     override func loadView() {
         view = mainView
     }
@@ -37,7 +39,8 @@ extension MemoViewController {
     
     private func configureView() {
         mainView.writeButton.addTarget(self, action: #selector(didWriteButtonTapped), for: .touchUpInside)
-        mainView.collectionView.delegate = self
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
     
     @objc func didWriteButtonTapped() {
@@ -52,19 +55,34 @@ extension MemoViewController {
         
         viewModel.outputMemoList.bind { [weak self] memoList in
             guard let self else { return }
-            self.mainView.memoList = memoList
-            self.mainView.updateSnapShot()
+            self.memoList = memoList
+            self.mainView.tableView.reloadData()
         }
     }
 }
 
 
-// MARK: - CollectionView
-extension MemoViewController: UICollectionViewDelegate {
+// MARK: - TableView
+extension MemoViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memoList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoTableViewCell.identifier, for: indexPath) as? MemoTableViewCell else { return UITableViewCell() }
+        
+        // 동적 높이 할당을 사용하기 위해 즉시 레이아웃 업데이트
+        cell.layoutIfNeeded()
+        let item = memoList[indexPath.row]
+        cell.updateView(item)
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailMemoViewController()
-        let data = mainView.memoList[indexPath.item]
+        let data = memoList[indexPath.item]
         vc.mainView.titleTextField.text = data.title
         vc.mainView.contentTextView.text = data.content
         vc.viewModel.viewMode = .read
@@ -73,6 +91,8 @@ extension MemoViewController: UICollectionViewDelegate {
         transition(viewController: vc, style: .push)
     }
 }
+
+
 
 extension MemoViewController: PassResultMessageDelegate {
     func resultMessageReceived(message: String) {
