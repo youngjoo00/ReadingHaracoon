@@ -68,6 +68,7 @@ extension DetailBookViewController {
         storageModalViewController.modalPresentationStyle = .custom
         storageModalViewController.transitioningDelegate = customTransitioningDelegate
         storageModalViewController.isFavorite = isFavorite
+        storageModalViewController.selectedTag = self.viewModel.inputBookStatus.value ?? 0
         storageModalViewController.selectedBookClosure = { [weak self] tag in
             guard let self else { return }
             self.viewModel.inputBookStatus.value = tag
@@ -85,7 +86,7 @@ extension DetailBookViewController {
         switch mode {
         case .storage:
             let vc = AladinWebViewController()
-            vc.viewModel.inputLink.value = viewModel.RealmBookData.value?.link
+            vc.viewModel.inputLink.value = viewModel.realmBookData.value?.link
             transition(viewController: vc, style: .push)
         case .search:
             let vc = AladinWebViewController()
@@ -127,7 +128,7 @@ extension DetailBookViewController {
             self.mainView.updateView(.InquiryItem(data))
         }
         
-        viewModel.RealmBookData.bind { [weak self] data in
+        viewModel.realmBookData.bind { [weak self] data in
             guard let self, let data else { return }
             self.mainView.updateView(.Book(data))
         }

@@ -11,7 +11,7 @@ final class DetailBookModalViewController: BaseViewController {
     
     private let mainView = DetailBookModalView()
     private let viewModel = DetailBookViewModel()
-    private var selectedTag = 0
+    var selectedTag = 0
     var isFavorite = false
     var selectedBookClosure: ((Int) -> Void)?
 
@@ -23,6 +23,7 @@ final class DetailBookModalViewController: BaseViewController {
         super.viewDidLoad()
         
         configureView()
+        mainView.updateButton(selectedTag)
     }
     
 }
@@ -44,7 +45,7 @@ extension DetailBookModalViewController {
     }
     
     @objc func didSelectButtonTapped(_ sender: UIButton) {
-        mainView.updateButton(sender)
+        mainView.updateButton(sender.tag)
         selectedTag = sender.tag
     }
     

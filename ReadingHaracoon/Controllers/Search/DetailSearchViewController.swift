@@ -16,14 +16,8 @@ final class DetailSearchViewController: BaseViewController {
     
     var list: [SearchItem] = []
     
-    let cellRegistration = UICollectionView.CellRegistration<SearchDetailCollectionViewCell, SearchItem> { cell, indexPath, item in
-        let url = URL(string: item.cover)
-        cell.bookImageView.kf.setImage(with: url)
-        
-        cell.titleLabel.text = item.title
-        cell.authorLabel.text = item.author
-        cell.publisherLabel.text = item.publisher
-        cell.descriptionLabel.text = item.description
+    let cellRegistration = UICollectionView.CellRegistration<DetailSearchCollectionViewCell, SearchItem> { cell, indexPath, item in
+        cell.updateView(item)
     }
     
     override func loadView() {

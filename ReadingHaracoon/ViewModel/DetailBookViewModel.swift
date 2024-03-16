@@ -27,7 +27,7 @@ final class DetailBookViewModel {
     var outputDeleteDataResult = Observable("")
     
     var isLoading = Observable(false)
-    var RealmBookData: Observable<Book?> = Observable(nil)
+    var realmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
     var isbn = ""
     
@@ -40,7 +40,7 @@ final class DetailBookViewModel {
             guard let self, let mode = viewMode.value else  { return }
             switch mode {
             case .storage:
-                guard let book = RealmBookData.value else { return }
+                guard let book = realmBookData.value else { return }
                 self.isbn = book.isbn
                 self.updateFavoriteStatus(self.isbn)
             case .search:
@@ -48,6 +48,11 @@ final class DetailBookViewModel {
                 self.isbn = isbn
                 self.getInquiry(self.isbn)
                 self.updateFavoriteStatus(self.isbn)
+            }
+            
+            if self.outputIsFavortie.value {
+                getBookItem(isbn)
+                self.inputBookStatus.value = self.realmBookData.value?.bookStatus
             }
         }
         
@@ -62,7 +67,7 @@ final class DetailBookViewModel {
         }
         
         inputUpdateItemTrigger.bindOnChanged { [weak self] _ in
-            guard let self, let bookStatus = inputBookStatus.value, let mode = viewMode.value else { return }
+            guard let self, let bookStatus = inputBookStatus.value else { return }
             self.updateBookStatus(isbn, bookStatus: bookStatus)
         }
     }
@@ -115,6 +120,11 @@ extension DetailBookViewModel {
         } catch {
             self.outputDeleteDataResult.value = "책 삭제에 실패했다쿤.."
         }
+    }
+    
+    private func getBookItem(_ isbn: String) {
+        guard let book = repository.fetchBookItem(isbn) else { return }
+        self.realmBookData.value = book
     }
     
     private func updateBookStatus(_ isbn: String, bookStatus: Int) {

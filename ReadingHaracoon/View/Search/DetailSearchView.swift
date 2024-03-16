@@ -56,4 +56,5 @@ extension DetailSearchView {
         
         return layout
     }
+    
 }

@@ -8,13 +8,13 @@
 import UIKit
 import Then
 
-class SearchDetailCollectionViewCell: BaseCollectionViewCell {
+final class DetailSearchCollectionViewCell: BaseCollectionViewCell {
     
-    let bookImageView = BookImageView(frame: .zero)
-    let titleLabel = Bold18Label()
-    let authorLabel = Normal14Label()
-    let publisherLabel = Normal14Label()
-    let descriptionLabel = Normal16Label().then {
+    private let bookImageView = BookImageView(frame: .zero)
+    private let titleLabel = Bold18Label()
+    private let authorLabel = Normal14Label()
+    private let publisherLabel = Normal14Label()
+    private let descriptionLabel = Normal16Label().then {
         $0.numberOfLines = 0
     }
     
@@ -64,5 +64,19 @@ class SearchDetailCollectionViewCell: BaseCollectionViewCell {
     
     override func configureView() {
 
+    }
+}
+
+
+extension DetailSearchCollectionViewCell {
+    
+    func updateView(_ item: SearchItem) {
+        let url = URL(string: item.cover)
+        bookImageView.kf.setImage(with: url)
+        
+        titleLabel.text = item.title
+        authorLabel.text = item.author
+        publisherLabel.text = item.publisher
+        descriptionLabel.text = item.description
     }
 }

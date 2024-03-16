@@ -107,15 +107,17 @@ final class DetailBookModalView: BaseView {
 
 extension DetailBookModalView {
     
-    func updateButton(_ selectedButton: UIButton) {
+    func updateButton(_ selectedButtonTag: Int) {
 
         [toReadButton, readingButton, readButton].forEach { button in
-            button.backgroundColor = .white
-            button.setTitleColor(.point, for: .normal)
+            if selectedButtonTag == button.tag {
+                button.backgroundColor = .point
+                button.setTitleColor(.white, for: .normal)
+            } else {
+                button.backgroundColor = .white
+                button.setTitleColor(.point, for: .normal)
+            }
         }
-
-        selectedButton.backgroundColor = .point
-        selectedButton.setTitleColor(.white, for: .normal)
     }
     
     func configureConfirmButton(_ isFavorite: Bool) {
