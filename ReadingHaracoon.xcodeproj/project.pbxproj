@@ -58,9 +58,9 @@
 		8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28110F2B99A8BF000BBD65 /* Observable.swift */; };
 		8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */; };
 		8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811132B99A914000BBD65 /* SearchViewModel.swift */; };
-		8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */; };
-		8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */; };
-		8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */; };
+		8E2811162B99FF1B000BBD65 /* DetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811152B99FF1B000BBD65 /* DetailSearchViewController.swift */; };
+		8E2811192B9A1976000BBD65 /* DetailSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811182B9A1976000BBD65 /* DetailSearchViewModel.swift */; };
+		8E28111B2B9A1980000BBD65 /* DetailSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111A2B9A1980000BBD65 /* DetailSearchView.swift */; };
 		8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111C2B9A20FD000BBD65 /* TransitionStyle.swift */; };
 		8E2811202B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */; };
 		8E3B70282B9F559700DFEE7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */; };
@@ -143,9 +143,9 @@
 		8E28110F2B99A8BF000BBD65 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookViewModel.swift; sourceTree = "<group>"; };
 		8E2811132B99A914000BBD65 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
-		8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
-		8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		8E2811152B99FF1B000BBD65 /* DetailSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchViewController.swift; sourceTree = "<group>"; };
+		8E2811182B9A1976000BBD65 /* DetailSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchViewModel.swift; sourceTree = "<group>"; };
+		8E28111A2B9A1980000BBD65 /* DetailSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchView.swift; sourceTree = "<group>"; };
 		8E28111C2B9A20FD000BBD65 /* TransitionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionStyle.swift; sourceTree = "<group>"; };
 		8E28111F2B9A259B000BBD65 /* SearchDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -427,7 +427,7 @@
 			children = (
 				8E2811112B99A90C000BBD65 /* StorageBookViewModel.swift */,
 				8E2811132B99A914000BBD65 /* SearchViewModel.swift */,
-				8E2811182B9A1976000BBD65 /* SearchDetailViewModel.swift */,
+				8E2811182B9A1976000BBD65 /* DetailSearchViewModel.swift */,
 				8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */,
 				8E928BDE2B9C7E9F004D44C7 /* DetailBookViewModel.swift */,
 				8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */,
@@ -527,7 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2810EC2B999624000BBD65 /* SearchViewController.swift */,
-				8E2811152B99FF1B000BBD65 /* SearchDetailViewController.swift */,
+				8E2811152B99FF1B000BBD65 /* DetailSearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -553,7 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				8E28110D2B99A768000BBD65 /* SearchView.swift */,
-				8E28111A2B9A1980000BBD65 /* SearchDetailView.swift */,
+				8E28111A2B9A1980000BBD65 /* DetailSearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -784,7 +784,7 @@
 				8E693E692BA34E100099597A /* MemoViewController_CollectionViewVersion.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
 				8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */,
-				8E28111B2B9A1980000BBD65 /* SearchDetailView.swift in Sources */,
+				8E28111B2B9A1980000BBD65 /* DetailSearchView.swift in Sources */,
 				8ECE5DCE2BA57FA900FE95ED /* UIViewContorller+.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
@@ -811,8 +811,8 @@
 				8E012E7E2BA0C22500DF7512 /* DetailBookModalView.swift in Sources */,
 				8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */,
 				8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */,
-				8E2811192B9A1976000BBD65 /* SearchDetailViewModel.swift in Sources */,
-				8E2811162B99FF1B000BBD65 /* SearchDetailViewController.swift in Sources */,
+				8E2811192B9A1976000BBD65 /* DetailSearchViewModel.swift in Sources */,
+				8E2811162B99FF1B000BBD65 /* DetailSearchViewController.swift in Sources */,
 				8E928BDF2B9C7E9F004D44C7 /* DetailBookViewModel.swift in Sources */,
 				8E012E882BA202F300DF7512 /* StorageFilterModalView.swift in Sources */,
 				8E2810A02B998410000BBD65 /* SceneDelegate.swift in Sources */,

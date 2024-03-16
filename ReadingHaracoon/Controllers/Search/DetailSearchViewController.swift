@@ -9,10 +9,10 @@ import UIKit
 import SVProgressHUD
 import Kingfisher
 
-final class SearchDetailViewController: BaseViewController {
+final class DetailSearchViewController: BaseViewController {
     
-    let mainView = SearchDetailView()
-    let viewModel = SearchDetailViewModel()
+    let mainView = DetailSearchView()
+    let viewModel = DetailSearchViewModel()
     
     var list: [SearchItem] = []
     
@@ -45,7 +45,7 @@ final class SearchDetailViewController: BaseViewController {
     }
 }
 
-extension SearchDetailViewController {
+extension DetailSearchViewController {
     private func configureView() {
         navigationItem.titleView = mainView.navigationTitle
         
@@ -104,7 +104,7 @@ extension SearchDetailViewController {
 
 
 // MARK: - CollectionView
-extension SearchDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
+extension DetailSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
@@ -128,7 +128,7 @@ extension SearchDetailViewController: UICollectionViewDelegate, UICollectionView
 
 
 // MARK: - SearchBar
-extension SearchDetailViewController: UISearchBarDelegate {
+extension DetailSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.inputSearchBarText.value = searchBar.text

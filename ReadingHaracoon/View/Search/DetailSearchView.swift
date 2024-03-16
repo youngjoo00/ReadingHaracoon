@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-final class SearchDetailView: BaseView {
+final class DetailSearchView: BaseView {
     
     let navigationTitle = UILabel().then {
         $0.text = "SearchDetail"
@@ -46,7 +46,7 @@ final class SearchDetailView: BaseView {
 }
 
 // MARK: - Custom Func
-extension SearchDetailView {
+extension DetailSearchView {
     
     private func configureCollectionViewLayout() -> UICollectionViewLayout {
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)

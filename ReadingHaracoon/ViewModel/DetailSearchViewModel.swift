@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SearchDetailViewModel {
+final class DetailSearchViewModel {
     
     // input
     var inputViewDidAppearTrigger: Observable<Void?> = Observable(nil)
@@ -52,7 +52,7 @@ final class SearchDetailViewModel {
 
 
 
-extension SearchDetailViewModel {
+extension DetailSearchViewModel {
     
     private func getSearch(_ searchText: String) {
         isLoading.value = true

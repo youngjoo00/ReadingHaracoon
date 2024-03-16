@@ -73,7 +73,7 @@ extension SearchViewController {
         
         viewModel.searchBarTextDidBeginEditingTrigger.bindOnChanged { [weak self] value in
             guard let self else { return }
-            let vc = SearchDetailViewController()
+            let vc = DetailSearchViewController()
             vc.mainView.searchBar.becomeFirstResponder()
             vc.hidesBottomBarWhenPushed = true
             self.transition(viewController: vc, style: .push)
