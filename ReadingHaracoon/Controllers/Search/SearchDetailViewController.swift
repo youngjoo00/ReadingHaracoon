@@ -52,6 +52,7 @@ extension SearchDetailViewController {
         mainView.searchBar.delegate = self
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
+        mainView.collectionView.prefetchDataSource = self
     }
     
     private func configureTapGesture() {
@@ -93,28 +94,37 @@ extension SearchDetailViewController {
             vc.viewModel.viewMode.value = .search
             self.transition(viewController: vc, style: .push)
         }
+        
+        viewModel.outputScrollMoveToTopTrigger.bindOnChanged { [weak self] _ in
+            guard let self else { return }
+            self.mainView.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        }
     }
 }
 
 
 // MARK: - CollectionView
-extension SearchDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SearchDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: list[indexPath.item])
         
+        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: list[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectItemAtBookDetailTransition.value = list[indexPath.item].isbn13
     }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        viewModel.inputPreFetchItemsAt.value = indexPaths
+    }
 }
+
 
 
 // MARK: - SearchBar

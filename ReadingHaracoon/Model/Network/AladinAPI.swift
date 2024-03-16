@@ -10,7 +10,7 @@ import Foundation
 
 enum AladinAPI {
     case recommend(queryType: String)
-    case search(query: String)
+    case search(query: String, startIndex: Int)
     case inquiry(id: String)
     
     static let baseURL = "http://www.aladin.co.kr/ttb/api/"
@@ -40,9 +40,11 @@ enum AladinAPI {
             parameters["QueryType"] = queryType
             parameters["SearchTarget"] = "Book"
             return parameters
-        case .search(let query):
+        case .search(let query, let startIndex):
             parameters["Query"] = query
             parameters["itemPage"] = "true"
+            parameters["MaxResults"] = "50"
+            parameters["startIndex"] = startIndex
             return parameters
         case .inquiry(let id):
             parameters["itemId"] = id

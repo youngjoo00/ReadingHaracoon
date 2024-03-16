@@ -6,6 +6,8 @@
 //
 
 struct Search: Decodable {
+    let totalResults: Int
+    let startIndex: Int
     let item: [SearchItem]
 }
 

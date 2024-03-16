@@ -35,7 +35,7 @@ final class SearchDetailView: BaseView {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(20)
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
             make.bottom.horizontalEdges.equalTo(safeAreaLayoutGuide)
         }
     }
