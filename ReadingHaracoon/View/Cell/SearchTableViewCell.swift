@@ -35,7 +35,7 @@ final class SearchTableViewCell: BaseTableViewCell {
         }
         
         pagerView.snp.makeConstraints { make in
-            make.top.equalTo(sectionLabel.snp.bottom).offset(10)
+            make.top.equalTo(sectionLabel.snp.bottom).offset(20)
             make.horizontalEdges.bottom.equalTo(contentView)
         }
     }
@@ -49,7 +49,7 @@ final class SearchTableViewCell: BaseTableViewCell {
         
         pagerView.itemSize = CGSize(
             width: contentView.frame.width * 0.65,
-            height: contentView.frame.height - 30
+            height: contentView.frame.height - 40
         )
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func showCustomAlert(style: CustomModalPresentationStyle = .Alert,
+    func showCustomAlert(style: CustomModalPresentationStyle = .alert,
                          title: String,
                          message: String?,
                          actionTitle: String,
@@ -18,6 +18,16 @@ extension UIViewController {
         let transitionDelegate = CustomTransitioningDelegate(style)
         alertViewContrller.modalPresentationStyle = .custom
         alertViewContrller.transitioningDelegate = transitionDelegate
+
         self.present(alertViewContrller, animated: true)
+    }
+    
+    func showCustomModal(style: CustomModalPresentationStyle, viewController: UIViewController) {
+        let modalViewController = viewController
+        let transitionDelegate = CustomTransitioningDelegate(style)
+        modalViewController.modalPresentationStyle = .custom
+        modalViewController.transitioningDelegate = transitionDelegate
+        
+        self.present(modalViewController, animated: true)
     }
 }

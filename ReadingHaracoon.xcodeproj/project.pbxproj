@@ -97,6 +97,10 @@
 		8ECE5DD92BA5B45400FE95ED /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DD82BA5B45400FE95ED /* MemoView.swift */; };
 		8ECE5DDB2BA5B4AF00FE95ED /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DDA2BA5B4AF00FE95ED /* MemoTableViewCell.swift */; };
 		8ECE5DDD2BA5B63B00FE95ED /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DDC2BA5B63B00FE95ED /* MemoViewController.swift */; };
+		8ECE5DE12BA6E77B00FE95ED /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE02BA6E77B00FE95ED /* TimerView.swift */; };
+		8ECE5DE62BA6EA3000FE95ED /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE52BA6EA3000FE95ED /* TimerViewController.swift */; };
+		8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */; };
+		8ECE5DEC2BA7260800FE95ED /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +186,10 @@
 		8ECE5DD82BA5B45400FE95ED /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		8ECE5DDA2BA5B4AF00FE95ED /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		8ECE5DDC2BA5B63B00FE95ED /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		8ECE5DE02BA6E77B00FE95ED /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		8ECE5DE52BA6EA3000FE95ED /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRepository.swift; sourceTree = "<group>"; };
+		8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,8 +331,9 @@
 				8E012E802BA0C2AA00DF7512 /* Setting */,
 				8E693E652BA337790099597A /* DetailBook */,
 				8E693E662BA34DDF0099597A /* Memo */,
+				8ECE5DE32BA6EA0100FE95ED /* Timer */,
 				8E693E672BA34DEF0099597A /* Aladin */,
-				8ECE5DCB2BA57BF300FE95ED /* CustomAlertViewController.swift */,
+				8ECE5DE42BA6EA0D00FE95ED /* Alert */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 			children = (
 				8E928BEC2B9CC348004D44C7 /* BookRepository.swift */,
 				8ECE5DC02BA4415200FE95ED /* MemoRepository.swift */,
+				8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -417,6 +427,7 @@
 				8ECE5DD72BA5AFC300FE95ED /* Memo */,
 				8ECE5DD62BA5AFAC00FE95ED /* Aladin */,
 				8ECE5DD52BA5AF7900FE95ED /* Alert */,
+				8ECE5DE22BA6E78800FE95ED /* Timer */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -433,6 +444,7 @@
 				8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */,
 				8ECE5DBE2BA4405700FE95ED /* MemoViewModel.swift */,
 				8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */,
+				8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -591,6 +603,30 @@
 				8E693E702BA36D430099597A /* DetailMemoView.swift */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		8ECE5DE22BA6E78800FE95ED /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5DE02BA6E77B00FE95ED /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8ECE5DE32BA6EA0100FE95ED /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5DE52BA6EA3000FE95ED /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8ECE5DE42BA6EA0D00FE95ED /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5DCB2BA57BF300FE95ED /* CustomAlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		8F342C88B0E9E102ED4E9904 /* Pods */ = {
@@ -754,14 +790,17 @@
 				8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */,
 				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
 				8ECE5DDD2BA5B63B00FE95ED /* MemoViewController.swift in Sources */,
+				8ECE5DE12BA6E77B00FE95ED /* TimerView.swift in Sources */,
 				8ECE5DC82BA4915A00FE95ED /* UITextField+.swift in Sources */,
 				8ECE5DC12BA4415200FE95ED /* MemoRepository.swift in Sources */,
+				8ECE5DEC2BA7260800FE95ED /* TimerViewModel.swift in Sources */,
 				8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */,
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E693E6B2BA34E450099597A /* MemoViewCollectionViewVersion.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
+				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
 				8E693E712BA36D430099597A /* DetailMemoView.swift in Sources */,
@@ -792,6 +831,7 @@
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
 				8ECE5DD12BA5A46400FE95ED /* PassResultMessageDelegate.swift in Sources */,
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
+				8ECE5DE62BA6EA3000FE95ED /* TimerViewController.swift in Sources */,
 				8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */,
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E012E582B9F61F800DF7512 /* Normal14Label.swift in Sources */,

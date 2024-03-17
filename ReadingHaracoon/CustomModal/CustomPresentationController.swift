@@ -10,7 +10,7 @@ import UIKit
 enum CustomModalPresentationStyle {
     case bottom
     case center
-    case Alert
+    case alert
 }
 
 final class CustomPresentationController: UIPresentationController {
@@ -19,6 +19,7 @@ final class CustomPresentationController: UIPresentationController {
     var customModalPresentationStyle: CustomModalPresentationStyle?
     
     override var frameOfPresentedViewInContainerView: CGRect {
+        // 컨테이너뷰가 최상위 뷰, 프레젠티드뷰가 우리가 띄울 뷰
         guard let containerView = self.containerView, let presentStyle = customModalPresentationStyle else { return .zero }
         
         switch presentStyle {
@@ -38,9 +39,10 @@ final class CustomPresentationController: UIPresentationController {
             let origin = CGPoint(x: containerView.bounds.width * 0.1, y: (containerView.bounds.height - size.height) / 2)
             
             return CGRect(origin: origin, size: size)
-        case .Alert:
+        case .alert:
+            let dynamicHeight = calculateDynamicHeight()
             let size = CGSize(width: containerView.bounds.width * 0.8,
-                              height: containerView.bounds.height * 0.15)
+                              height: dynamicHeight)
             
             let origin = CGPoint(x: containerView.bounds.width * 0.1, y: (containerView.bounds.height - size.height) / 2)
             
@@ -48,11 +50,17 @@ final class CustomPresentationController: UIPresentationController {
         }
     }
     
+    // 나중에 커스텀 AlertView 의 내부 뷰 높이만큼 동적으로 높이 할당되게끔 바꿔봅시다..
+    private func calculateDynamicHeight() -> CGFloat {
+        guard let containerView = self.containerView else { return 0 }
+        return 130
+    }
+    
     // 화면이 시작될 때
     override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
         
-        guard let containerView = containerView, let presentedView = presentedView else { return }
+        guard let containerView = containerView, let presentedView = presentedView, let presentStyle = customModalPresentationStyle else { return }
         
         // 모달 뷰 모서리 세팅
         presentedView.layer.cornerRadius = 16
@@ -66,9 +74,16 @@ final class CustomPresentationController: UIPresentationController {
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         containerView.insertSubview(backgroundView, at: 0)
         
-        // 바깥 영역 터치 시 모달 닫기
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissController))
-        backgroundView.addGestureRecognizer(tapGesture)
+        switch presentStyle {
+        case .bottom:
+            // 바깥 영역 터치 시 모달 닫기
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissController))
+            backgroundView.addGestureRecognizer(tapGesture)
+        case .center:
+            return
+        case .alert:
+            return
+        }
     }
     
     @objc private func dismissController() {
@@ -79,4 +94,5 @@ final class CustomPresentationController: UIPresentationController {
     override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
     }
+    
 }

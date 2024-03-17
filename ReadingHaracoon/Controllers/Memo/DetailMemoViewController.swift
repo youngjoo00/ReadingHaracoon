@@ -56,23 +56,23 @@ extension DetailMemoViewController {
         let title = mainView.titleTextField.text
         let content = mainView.contentTextView.text
 
-        showCustomAlert(title: "메모를 저장하시겠습니까?", message: "제목은 꼭 입력하셔야 합니다.", actionTitle: "저장") {
+        showCustomAlert(title: "메모를 저장한다쿤!", message: "제목은 꼭 입력해야 한다쿤!", actionTitle: "저장") {
             self.viewModel.inputSaveMemo.value = (title, content, nil)
         }
-    }
+    }    
     
     @objc func didUpdateButtonTapped() {
         let title = mainView.titleTextField.text
         let content = mainView.contentTextView.text
 
-        showCustomAlert(title: "메모를 수정하시겠습니까?", message: "제목은 꼭 입력하셔야 합니다.", actionTitle: "수정") {
+        showCustomAlert(title: "메모를 수정한다쿤?", message: "제목은 꼭 입력해야 한다쿤!", actionTitle: "수정") {
             self.viewModel.inputUpdateMemo.value = (title, content, nil)
         }
     }
     
     @objc func didDeleteButtonTapped() {
         
-        showCustomAlert(title: "메모를 삭제하시겠습니까?", message: nil, actionTitle: "삭제") {
+        showCustomAlert(title: "메모를 삭제한다쿤?", message: nil, actionTitle: "삭제") {
             self.viewModel.inputDeleteMemo.value = ()
         }
     }

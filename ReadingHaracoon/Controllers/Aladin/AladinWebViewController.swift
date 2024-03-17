@@ -5,7 +5,7 @@
 //  Created by youngjoo on 3/10/24.
 //
 
-import Foundation
+import UIKit
 
 final class AladinWebViewController: BaseViewController {
     
@@ -31,6 +31,8 @@ final class AladinWebViewController: BaseViewController {
     }
 }
 
+
+// MARK: - Custom Func
 extension AladinWebViewController {
     
     func configureView() {
@@ -43,4 +45,6 @@ extension AladinWebViewController {
             self.mainView.webView.load(urlRequest)
         }
     }
+    
+    
 }

@@ -7,10 +7,20 @@
 
 import UIKit
 
+//protocol CustomAlertViewDelegate: AnyObject {
+//    func didCalculateDynamicHeight(_ height: CGFloat)
+//}
+
 final class CustomAlertView: BaseView {
     
-    let titleLabel = Bold18Label()
-    let messageLabel = Normal16Label()
+//    weak var delegate: CustomAlertViewDelegate?
+    
+    let titleLabel = Bold18Label().then {
+        $0.numberOfLines = 0
+    }
+    let messageLabel = Normal16Label().then {
+        $0.numberOfLines = 0
+    }
     
     let buttonStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -28,7 +38,6 @@ final class CustomAlertView: BaseView {
     
     let actionButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
-        configuration.title = ""
         configuration.baseForegroundColor = .white
         configuration.baseBackgroundColor = .lightGray
         $0.configuration = configuration
@@ -49,24 +58,32 @@ final class CustomAlertView: BaseView {
     
     override func configureLayout() {
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
             make.top.equalToSuperview().offset(10)
         }
         
         messageLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
         }
         
         buttonStackView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-5)
             make.horizontalEdges.equalToSuperview().inset(16)
-            make.height.equalTo(50)
+            make.height.equalTo(44)
         }
     }
     
     override func configureView() {
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        let totalHegiht = totalHegiht()
+//        print(totalHegiht)
+//        delegate?.didCalculateDynamicHeight(totalHegiht)
+//    }
 }
 
 extension CustomAlertView {
@@ -76,4 +93,9 @@ extension CustomAlertView {
         messageLabel.text = message
         actionButton.configuration?.title = actionTitle
     }
+    
+//    func totalHegiht() -> CGFloat {
+//        let totalHeight = titleLabel.intrinsicContentSize.height + messageLabel.intrinsicContentSize.height + buttonStackView.intrinsicContentSize.height + 30
+//        return totalHeight
+//    }
 }
