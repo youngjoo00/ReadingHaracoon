@@ -17,9 +17,11 @@ final class CustomAlertView: BaseView {
     
     let titleLabel = Bold18Label().then {
         $0.numberOfLines = 0
+        $0.textAlignment = .center
     }
     let messageLabel = Normal16Label().then {
         $0.numberOfLines = 0
+        $0.textAlignment = .center
     }
     
     let buttonStackView = UIStackView().then {

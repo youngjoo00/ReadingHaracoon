@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum MemoResult {
-    case success(String)
-    case fail(String)
-}
-
 enum DetailMemoViewMode {
     case create
     case read
@@ -27,7 +22,7 @@ final class DetailMemoViewModel {
     var inputUpdateMemo: Observable<(String?, String?, String?)> = Observable((nil, nil, nil))
     var inputDeleteMemo: Observable<Void?> = Observable(nil)
     
-    var outputDataBaseReslutMessage = Observable<MemoResult>(.success(""))
+    var outputDataBaseReslutMessage = Observable<DatabaseResultMessage>(.success(""))
     
     init() {
         do {

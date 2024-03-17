@@ -109,7 +109,8 @@ extension DetailBookViewController {
     @objc func didTimerButtonTapped() {
         let vc = TimerViewController()
         vc.viewModel.bookData = viewModel.realmBookData.value
-        showCustomModal(style: .bottom, viewController: vc)
+        vc.delegate = self
+        showCustomModal(style: .timer, viewController: vc)
     }
 }
 
@@ -172,4 +173,13 @@ extension DetailBookViewController {
             self.showToast(message: message)
         }
     }
+}
+
+
+extension DetailBookViewController: PassResultMessageDelegate {
+    func resultMessageReceived(message: String) {
+        showToast(message: message)
+    }
+    
+    
 }

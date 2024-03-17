@@ -15,6 +15,7 @@ final class TimerViewModel {
     var startTime: Date?
     var stopTime: Date?
     var scheculedTimer: Timer!
+    var currentTime = 0
     
     let userDefaluts = UserDefaults.standard
     let startTimeKey = "startTime"
@@ -24,9 +25,11 @@ final class TimerViewModel {
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var inputDidStartStopButtonTappedTrigger: Observable<Void?> = Observable(nil)
     var inputDidResetButtonTappedTrigger: Observable<Void?> = Observable(nil)
+    var inputDidSaveButtonTappedTrigger: Observable<Void?> = Observable(nil)
     
     var outputStartStopButtonState = Observable(false)
     var outputTimeLabelText = Observable("")
+    var outputDataBaseReslutMessage = Observable<DatabaseResultMessage>(.success(""))
     
     init() {
         
@@ -87,12 +90,34 @@ final class TimerViewModel {
             outputTimeLabelText.value = timeString
             stopTimer()
         }
+        
+        inputDidSaveButtonTappedTrigger.bindOnChanged { [weak self] _ in
+            guard let self, currentTime != 0 else {
+                self?.outputDataBaseReslutMessage.value = .fail("저장할 시간이 없다쿤!")
+                return
+            }
+            
+            createStats()
+        }
     }
     
 }
 
 extension TimerViewModel {
 
+    private func createStats() {
+        guard let book = bookData else { return }
+        do {
+            let stats = Stats(readingTime: currentTime, readingDate: Date())
+            try repository?.createStatsItem(book, stats: stats)
+            outputDataBaseReslutMessage.value = .success("타이머 저장에 성공했다쿤!")
+            inputDidResetButtonTappedTrigger.value = ()
+        } catch {
+            outputDataBaseReslutMessage.value = .fail("타이머 저장에 실패했다쿤..")
+        }
+        
+    }
+    
     private func startTimer() {
         scheculedTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(refershValue), userInfo: nil, repeats: true)
         setTimeCounting(true)
@@ -119,6 +144,7 @@ extension TimerViewModel {
     }
     
     private func setTimeLabel(_ value: Int) {
+        currentTime = value
         let time = secondsToHoursMinutesSeconds(value)
         let timeString = makeTimeString(hour: time.0, min: time.1, sec: time.2)
         outputTimeLabelText.value = timeString

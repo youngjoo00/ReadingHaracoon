@@ -11,6 +11,7 @@ enum CustomModalPresentationStyle {
     case bottom
     case center
     case alert
+    case timer
 }
 
 final class CustomPresentationController: UIPresentationController {
@@ -45,6 +46,13 @@ final class CustomPresentationController: UIPresentationController {
                               height: dynamicHeight)
             
             let origin = CGPoint(x: containerView.bounds.width * 0.1, y: (containerView.bounds.height - size.height) / 2)
+            
+            return CGRect(origin: origin, size: size)
+        case .timer:
+            let size = CGSize(width: containerView.bounds.width,
+                              height: containerView.bounds.height * 0.4)
+            
+            let origin = CGPoint(x: .zero, y: containerView.bounds.height * 0.6)
             
             return CGRect(origin: origin, size: size)
         }
@@ -82,6 +90,8 @@ final class CustomPresentationController: UIPresentationController {
         case .center:
             return
         case .alert:
+            return
+        case .timer:
             return
         }
     }

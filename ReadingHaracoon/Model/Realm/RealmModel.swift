@@ -66,12 +66,12 @@ class Memo: Object {
 
 class Stats: Object {
     @Persisted(primaryKey: true) var id: ObjectId
-    @Persisted var readingTime: Double // 읽은 시간
+    @Persisted var readingTime: Int // 읽은 시간
     @Persisted var readingDate: Date // 읽은 날짜
 
     @Persisted(originProperty: "statsList") var superTable: LinkingObjects<Book>
     
-    convenience init(readingTime: Double, readingDate: Date) {
+    convenience init(readingTime: Int, readingDate: Date) {
         self.init()
         self.readingTime = readingTime
         self.readingDate = readingDate

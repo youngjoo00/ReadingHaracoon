@@ -12,6 +12,8 @@ final class TimerViewController: BaseViewController {
     let mainView = TimerView()
     let viewModel = TimerViewModel()
     
+    weak var delegate: PassResultMessageDelegate?
+    
     override func loadView() {
         view = mainView
     }
@@ -34,6 +36,7 @@ extension TimerViewController {
         mainView.startStopButton.addTarget(self, action: #selector(didStartStopButtonTapped), for: .touchUpInside)
         mainView.resetButton.addTarget(self, action: #selector(didResetButtonTapped), for: .touchUpInside)
         mainView.saveButton.addTarget(self, action: #selector(didSaveButtonTapped), for: .touchUpInside)
+        mainView.cancelButton.addTarget(self, action: #selector(didCancelButtonTapped), for: .touchUpInside)
     }
     
     @objc func didStartStopButtonTapped() {
@@ -46,7 +49,19 @@ extension TimerViewController {
     
     @objc func didSaveButtonTapped() {
         showCustomAlert(title: "타이머를 저장한다쿤!", message: "저장저장!", actionTitle: "저장") {
-            print(self.viewModel.bookData)
+            self.viewModel.inputDidSaveButtonTappedTrigger.value = ()
+        }
+    }
+    
+    @objc func didCancelButtonTapped() {
+
+        if (viewModel.startTime != nil) || (viewModel.stopTime != nil) {
+            showCustomAlert(title: "타이머가 남아있다쿤!", message: "취소하면 타이머는 사라진다쿤!", actionTitle: "확인") {
+                self.viewModel.inputDidResetButtonTappedTrigger.value = ()
+                self.presentingViewController?.dismiss(animated: true)
+            }
+        } else {
+            dismiss(animated: true)
         }
     }
 }
@@ -73,5 +88,16 @@ extension TimerViewController {
             self.mainView.timeLabel.text = text
         }
 
+        viewModel.outputDataBaseReslutMessage.bindOnChanged { [weak self] message in
+            guard let self else { return }
+            switch message {
+            case .success(let message):
+                showToast(message: message)
+                self.delegate?.resultMessageReceived(message: message)
+                self.presentingViewController?.dismiss(animated: true)
+            case .fail(let message):
+                self.showToast(message: message)
+            }
+        }
     }
 }

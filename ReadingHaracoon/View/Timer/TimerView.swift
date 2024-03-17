@@ -14,12 +14,19 @@ final class TimerView: BaseView {
         $0.textAlignment = .center
     }
     
+    let verticalButtonStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.distribution = .fillEqually
+        $0.spacing = 30
+    }
+    
     let timeLabel = Bold18Label().then {
         $0.text = "00:00:00"
         $0.textAlignment = .center
+        $0.font = .boldSystemFont(ofSize: 60)
     }
     
-    let buttonStackView = UIStackView().then {
+    let horizontalButtonStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
         $0.spacing = 10
@@ -45,6 +52,22 @@ final class TimerView: BaseView {
         $0.configuration = configuration
     }
     
+    let bottomButtonStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.spacing = 10
+    }
+    
+    let cancelButton = UIButton().then {
+        var configuration = UIButton.Configuration.gray()
+        configuration.title = "취소"
+        configuration.image = UIImage(systemName: "xmark")
+        configuration.baseForegroundColor = .white
+        configuration.baseBackgroundColor = .lightGray
+        configuration.imagePadding = 10
+        $0.configuration = configuration
+    }
+    
     let saveButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
         configuration.title = "저장하기"
@@ -58,15 +81,23 @@ final class TimerView: BaseView {
     override func configureHierarchy() {
         [
             titleLabel,
-            timeLabel,
-            buttonStackView,
-            saveButton,
+            verticalButtonStackView,
+            bottomButtonStackView,
         ].forEach { addSubview($0) }
         
         [
+            timeLabel,
+            horizontalButtonStackView,
+        ].forEach { verticalButtonStackView.addArrangedSubview($0) }
+        [
+            resetButton,
             startStopButton,
-            resetButton
-        ].forEach { buttonStackView.addArrangedSubview($0) }
+        ].forEach { horizontalButtonStackView.addArrangedSubview($0) }
+        
+        [
+            cancelButton,
+            saveButton,
+        ].forEach { bottomButtonStackView.addArrangedSubview($0) }
     }
     
     override func configureLayout() {
@@ -75,19 +106,19 @@ final class TimerView: BaseView {
             make.horizontalEdges.equalToSuperview().inset(16)
         }
         
-        timeLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+        verticalButtonStackView.snp.makeConstraints { make in
+            make.top.greaterThanOrEqualTo(titleLabel.snp.bottom).offset(20)
+//            make.bottom.lessThanOrEqualTo(bottomButtonStackView.snp.top).offset(-20)
+//            make.centerY.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(16)
         }
-        
-        buttonStackView.snp.makeConstraints { make in
-            make.top.equalTo(timeLabel.snp.bottom).offset(20)
-            make.horizontalEdges.equalToSuperview().inset(16)
+
+        horizontalButtonStackView.snp.makeConstraints { make in
             make.height.equalTo(44)
         }
         
-        saveButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-16)
+        bottomButtonStackView.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(44)
         }

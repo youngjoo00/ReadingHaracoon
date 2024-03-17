@@ -25,7 +25,7 @@ final class DetailBookViewModel {
     var outputCreateDataResult = Observable("")
     var outputUpdateDataResult = Observable("")
     var outputDeleteDataResult = Observable("")
-    
+        
     var isLoading = Observable(false)
     var realmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)

@@ -101,6 +101,7 @@
 		8ECE5DE62BA6EA3000FE95ED /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE52BA6EA3000FE95ED /* TimerViewController.swift */; };
 		8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */; };
 		8ECE5DEC2BA7260800FE95ED /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */; };
+		8ECE5DF02BA762D700FE95ED /* DatabaseResultMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DEF2BA762D700FE95ED /* DatabaseResultMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,7 @@
 		8ECE5DE52BA6EA3000FE95ED /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRepository.swift; sourceTree = "<group>"; };
 		8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		8ECE5DEF2BA762D700FE95ED /* DatabaseResultMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResultMessage.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +360,7 @@
 				8EBF13DE2B9F326B00B1FE6D /* UpdateView.swift */,
 				8E012E592B9F6B2100DF7512 /* RecommendSection.swift */,
 				8E012E6A2BA01DB000DF7512 /* TransitionDetailBook.swift */,
+				8ECE5DEF2BA762D700FE95ED /* DatabaseResultMessage.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
 				8E693E6F2BA36D150099597A /* DetailMemoViewController.swift in Sources */,
+				8ECE5DF02BA762D700FE95ED /* DatabaseResultMessage.swift in Sources */,
 				8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
 				8ECE5DCC2BA57BF300FE95ED /* CustomAlertViewController.swift in Sources */,
