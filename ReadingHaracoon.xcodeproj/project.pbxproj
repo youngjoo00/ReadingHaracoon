@@ -112,6 +112,10 @@
 		8ECE5E052BA8296300FE95ED /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */; };
 		8ECE5E092BA83C1800FE95ED /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E082BA83C1800FE95ED /* TimeManager.swift */; };
 		8ECE5E0B2BA83E7C00FE95ED /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */; };
+		8ECE5E0D2BA84D5D00FE95ED /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E0C2BA84D5D00FE95ED /* ChartViewModel.swift */; };
+		8ECE5E132BA8A4DB00FE95ED /* ChartMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E122BA8A4DB00FE95ED /* ChartMarker.swift */; };
+		8ECE5E162BA8B39600FE95ED /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E152BA8B39600FE95ED /* SettingView.swift */; };
+		8ECE5E182BA8B41400FE95ED /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E172BA8B41400FE95ED /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +215,10 @@
 		8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		8ECE5E082BA83C1800FE95ED /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8ECE5E0C2BA84D5D00FE95ED /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		8ECE5E122BA8A4DB00FE95ED /* ChartMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMarker.swift; sourceTree = "<group>"; };
+		8ECE5E152BA8B39600FE95ED /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		8ECE5E172BA8B41400FE95ED /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -352,10 +360,10 @@
 				8EBF13DA2B9F227900B1FE6D /* Storage */,
 				8EBF13DB2B9F228700B1FE6D /* Search */,
 				8E012E7F2BA0C2A000DF7512 /* Stats */,
-				8E012E802BA0C2AA00DF7512 /* Setting */,
 				8E693E652BA337790099597A /* DetailBook */,
 				8E693E662BA34DDF0099597A /* Memo */,
 				8ECE5DE32BA6EA0100FE95ED /* Timer */,
+				8E012E802BA0C2AA00DF7512 /* Setting */,
 				8E693E672BA34DEF0099597A /* Aladin */,
 				8ECE5DE42BA6EA0D00FE95ED /* Alert */,
 			);
@@ -456,6 +464,7 @@
 				8ECE5DD52BA5AF7900FE95ED /* Alert */,
 				8ECE5DE22BA6E78800FE95ED /* Timer */,
 				8ECE5DFB2BA8182100FE95ED /* Stats */,
+				8ECE5E142BA8B38800FE95ED /* Setting */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -474,6 +483,7 @@
 				8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */,
 				8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */,
 				8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */,
+				8ECE5E0C2BA84D5D00FE95ED /* ChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -508,6 +518,7 @@
 				8ECE5DDA2BA5B4AF00FE95ED /* MemoTableViewCell.swift */,
 				8E693E6C2BA358430099597A /* MemoCollectionViewCell.swift */,
 				8ECE5E002BA823D800FE95ED /* CalendarTableViewCell.swift */,
+				8ECE5E172BA8B41400FE95ED /* SettingTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -665,8 +676,17 @@
 				8ECE5DFC2BA8183400FE95ED /* StatsTabView.swift */,
 				8ECE5DFE2BA822AC00FE95ED /* CalendarView.swift */,
 				8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */,
+				8ECE5E122BA8A4DB00FE95ED /* ChartMarker.swift */,
 			);
 			path = Stats;
+			sourceTree = "<group>";
+		};
+		8ECE5E142BA8B38800FE95ED /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5E152BA8B39600FE95ED /* SettingView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		8F342C88B0E9E102ED4E9904 /* Pods */ = {
@@ -847,6 +867,7 @@
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
 				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
+				8ECE5E0D2BA84D5D00FE95ED /* ChartViewModel.swift in Sources */,
 				8E2811012B999D4B000BBD65 /* Inquiry.swift in Sources */,
 				8E693E712BA36D430099597A /* DetailMemoView.swift in Sources */,
 				8E012E752BA0B25200DF7512 /* CustomPresentationController.swift in Sources */,
@@ -856,6 +877,7 @@
 				8EBF13D32B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift in Sources */,
 				8ECE5DBF2BA4405700FE95ED /* MemoViewModel.swift in Sources */,
 				8E2811202B9A259B000BBD65 /* DetailSearchCollectionViewCell.swift in Sources */,
+				8ECE5E162BA8B39600FE95ED /* SettingView.swift in Sources */,
 				8E012E6B2BA01DB000DF7512 /* TransitionDetailBook.swift in Sources */,
 				8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */,
 				8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */,
@@ -878,6 +900,7 @@
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
+				8ECE5E132BA8A4DB00FE95ED /* ChartMarker.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
 				8ECE5DD12BA5A46400FE95ED /* PassResultMessageDelegate.swift in Sources */,
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
@@ -886,6 +909,7 @@
 				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E012E582B9F61F800DF7512 /* Normal14Label.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
+				8ECE5E182BA8B41400FE95ED /* SettingTableViewCell.swift in Sources */,
 				8EBF13CD2B9DB71D00B1FE6D /* SearchTableViewCell.swift in Sources */,
 				8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */,
 				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,

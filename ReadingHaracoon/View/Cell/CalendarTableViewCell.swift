@@ -62,7 +62,7 @@ extension CalendarTableViewCell {
         titleLabel.text = book.title
         
         let time = TimeManager.shared.secondsToHoursMinutesSeconds(item.readingTime)
-        let timeString = TimeManager.shared.makeTimeString(hour: time.0, min: time.1, sec: time.2)
+        let timeString = TimeManager.shared.formatTimeLargestUnitString(hour: time.0, min: time.1, sec: time.2)
         timeLabel.text = "읽은 시간: " + timeString
     }
 }

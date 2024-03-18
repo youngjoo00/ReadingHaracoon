@@ -86,7 +86,7 @@ final class TimerViewModel {
             
             setStopTime(date: nil)
             setStartTime(date: nil)
-            let timeString = TimeManager.shared.makeTimeString(hour: 0, min: 0, sec: 0)
+            let timeString = TimeManager.shared.formatTimeString(hour: 0, min: 0, sec: 0)
             outputTimeLabelText.value = timeString
             stopTimer()
         }
@@ -147,7 +147,7 @@ extension TimerViewModel {
     private func setTimeLabel(_ value: Int) {
         currentTime = value
         let time = TimeManager.shared.secondsToHoursMinutesSeconds(value)
-        let timeString = TimeManager.shared.makeTimeString(hour: time.0, min: time.1, sec: time.2)
+        let timeString = TimeManager.shared.formatTimeString(hour: time.0, min: time.1, sec: time.2)
         outputTimeLabelText.value = timeString
     }
     

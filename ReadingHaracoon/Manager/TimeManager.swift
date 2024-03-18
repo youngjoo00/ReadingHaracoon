@@ -21,7 +21,24 @@ final class TimeManager {
         return (hour, min, sec)
     }
     
-    func makeTimeString(hour: Int, min: Int, sec: Int) -> String {
+    func formatTimeLargestUnitString(hour: Int, min: Int, sec: Int) -> String {
+        var timeString = ""
+        if hour > 0 {
+            timeString += "\(hour)"
+            timeString += "시간 "
+        }
+        if min > 0 {
+            timeString += "\(min)"
+            timeString += "분 "
+        }
+        if timeString.isEmpty {
+            timeString += "\(sec)"
+            timeString += "초"
+        }
+        return timeString
+    }
+    
+    func formatTimeString(hour: Int, min: Int, sec: Int) -> String {
         var timeString = ""
         timeString += String(format: "%02d", hour)
         timeString += ":"

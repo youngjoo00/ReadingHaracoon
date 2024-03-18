@@ -28,6 +28,7 @@ final class CalendarViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         mainView.calendar.reloadData()
+        mainView.tableView.reloadData()
     }
 }
 
