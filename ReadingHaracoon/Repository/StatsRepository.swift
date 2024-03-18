@@ -27,7 +27,7 @@ final class StatsRepository {
         }
     }
     
-    func fetchStatsTable() {
-        
+    func fetchStatsTable() -> Results<Stats> {
+        return realm.objects(Stats.self)
     }
 }

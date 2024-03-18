@@ -28,7 +28,7 @@ final class TabBarController: UITabBarController {
         }
         secondTab.tabBarItem = secondTabBarItem
         
-        let thirdTab = UINavigationController(rootViewController: StatsViewController())
+        let thirdTab = UINavigationController(rootViewController: StatsTabViewController())
         let thirdTabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "chart.bar"), tag: 2)
         if let image = UIImage(systemName: "chart.bar", withConfiguration: UIImage.SymbolConfiguration(weight: .medium)) {
             thirdTabBarItem.image = image.imageWithoutBaseline()

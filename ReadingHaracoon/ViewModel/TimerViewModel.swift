@@ -17,10 +17,10 @@ final class TimerViewModel {
     var scheculedTimer: Timer!
     var currentTime = 0
     
-    let userDefaluts = UserDefaults.standard
-    let startTimeKey = "startTime"
-    let stopTimeKey = "stopTime"
-    let timerCheckKey = "timerCheck"
+    private let userDefaluts = UserDefaults.standard
+    private let startTimeKey = "startTime"
+    private let stopTimeKey = "stopTime"
+    private let timerCheckKey = "timerCheck"
 
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var inputDidStartStopButtonTappedTrigger: Observable<Void?> = Observable(nil)
@@ -86,7 +86,7 @@ final class TimerViewModel {
             
             setStopTime(date: nil)
             setStartTime(date: nil)
-            let timeString = makeTimeString(hour: 0, min: 0, sec: 0)
+            let timeString = TimeManager.shared.makeTimeString(hour: 0, min: 0, sec: 0)
             outputTimeLabelText.value = timeString
             stopTimer()
         }
@@ -102,6 +102,7 @@ final class TimerViewModel {
     }
     
 }
+
 
 extension TimerViewModel {
 
@@ -145,27 +146,9 @@ extension TimerViewModel {
     
     private func setTimeLabel(_ value: Int) {
         currentTime = value
-        let time = secondsToHoursMinutesSeconds(value)
-        let timeString = makeTimeString(hour: time.0, min: time.1, sec: time.2)
+        let time = TimeManager.shared.secondsToHoursMinutesSeconds(value)
+        let timeString = TimeManager.shared.makeTimeString(hour: time.0, min: time.1, sec: time.2)
         outputTimeLabelText.value = timeString
-    }
-    
-    private func secondsToHoursMinutesSeconds(_ ms: Int) -> (Int, Int, Int) {
-        let hour = ms / 3600
-        let min = (ms % 3600) / 60
-        let sec = (ms % 3600) % 60
-        
-        return (hour, min, sec)
-    }
-    
-    private func makeTimeString(hour: Int, min: Int, sec: Int) -> String {
-        var timeString = ""
-        timeString += String(format: "%02d", hour)
-        timeString += ":"
-        timeString += String(format: "%02d", min)
-        timeString += ":"
-        timeString += String(format: "%02d", sec)
-        return timeString
     }
     
     private func calcRestartTime(start: Date, stop: Date) -> Date {

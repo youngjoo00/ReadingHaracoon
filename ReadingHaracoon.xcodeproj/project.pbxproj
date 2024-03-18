@@ -44,7 +44,7 @@
 		8E2810E72B999568000BBD65 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E62B999568000BBD65 /* BaseCollectionViewCell.swift */; };
 		8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */; };
 		8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810EC2B999624000BBD65 /* SearchViewController.swift */; };
-		8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810EE2B99962D000BBD65 /* StatsViewController.swift */; };
+		8E2810EF2B99962D000BBD65 /* StatsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810EE2B99962D000BBD65 /* StatsTabViewController.swift */; };
 		8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810F02B999634000BBD65 /* SettingViewController.swift */; };
 		8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FC2B999D0F000BBD65 /* Recommend.swift */; };
 		8E2810FF2B999D19000BBD65 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810FE2B999D19000BBD65 /* Search.swift */; };
@@ -102,6 +102,16 @@
 		8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */; };
 		8ECE5DEC2BA7260800FE95ED /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */; };
 		8ECE5DF02BA762D700FE95ED /* DatabaseResultMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DEF2BA762D700FE95ED /* DatabaseResultMessage.swift */; };
+		8ECE5DF62BA813EF00FE95ED /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECE5DF52BA813EF00FE95ED /* Tabman */; };
+		8ECE5DF82BA815C600FE95ED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DF72BA815C600FE95ED /* CalendarViewController.swift */; };
+		8ECE5DFA2BA815F500FE95ED /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DF92BA815F500FE95ED /* ChartViewController.swift */; };
+		8ECE5DFD2BA8183400FE95ED /* StatsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DFC2BA8183400FE95ED /* StatsTabView.swift */; };
+		8ECE5DFF2BA822AC00FE95ED /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5DFE2BA822AC00FE95ED /* CalendarView.swift */; };
+		8ECE5E012BA823D800FE95ED /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E002BA823D800FE95ED /* CalendarTableViewCell.swift */; };
+		8ECE5E032BA8282800FE95ED /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E022BA8282800FE95ED /* DateManager.swift */; };
+		8ECE5E052BA8296300FE95ED /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */; };
+		8ECE5E092BA83C1800FE95ED /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E082BA83C1800FE95ED /* TimeManager.swift */; };
+		8ECE5E0B2BA83E7C00FE95ED /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,7 +144,7 @@
 		8E2810E62B999568000BBD65 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E2810E82B9995D6000BBD65 /* StorageBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageBookViewController.swift; sourceTree = "<group>"; };
 		8E2810EC2B999624000BBD65 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8E2810EE2B99962D000BBD65 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		8E2810EE2B99962D000BBD65 /* StatsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTabViewController.swift; sourceTree = "<group>"; };
 		8E2810F02B999634000BBD65 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8E2810FC2B999D0F000BBD65 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		8E2810FE2B999D19000BBD65 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -192,6 +202,15 @@
 		8ECE5DE72BA6F96300FE95ED /* StatsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRepository.swift; sourceTree = "<group>"; };
 		8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8ECE5DEF2BA762D700FE95ED /* DatabaseResultMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResultMessage.swift; sourceTree = "<group>"; };
+		8ECE5DF72BA815C600FE95ED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8ECE5DF92BA815F500FE95ED /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		8ECE5DFC2BA8183400FE95ED /* StatsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTabView.swift; sourceTree = "<group>"; };
+		8ECE5DFE2BA822AC00FE95ED /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8ECE5E002BA823D800FE95ED /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		8ECE5E022BA8282800FE95ED /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		8ECE5E082BA83C1800FE95ED /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +225,7 @@
 				8E2810C32B998E0E000BBD65 /* SVProgressHUD in Frameworks */,
 				8E2810D42B998E65000BBD65 /* FSCalendar in Frameworks */,
 				8E2810D12B998E57000BBD65 /* RealmSwift in Frameworks */,
+				8ECE5DF62BA813EF00FE95ED /* Tabman in Frameworks */,
 				8E2810BA2B998DD0000BBD65 /* SnapKit in Frameworks */,
 				8E2810C02B998DF5000BBD65 /* DGCharts in Frameworks */,
 				8E2810CC2B998E40000BBD65 /* Toast in Frameworks */,
@@ -238,7 +258,9 @@
 		8E012E7F2BA0C2A000DF7512 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
-				8E2810EE2B99962D000BBD65 /* StatsViewController.swift */,
+				8E2810EE2B99962D000BBD65 /* StatsTabViewController.swift */,
+				8ECE5DF72BA815C600FE95ED /* CalendarViewController.swift */,
+				8ECE5DF92BA815F500FE95ED /* ChartViewController.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -378,6 +400,8 @@
 		8E2810F42B999988000BBD65 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8ECE5E022BA8282800FE95ED /* DateManager.swift */,
+				8ECE5E082BA83C1800FE95ED /* TimeManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -431,6 +455,7 @@
 				8ECE5DD62BA5AFAC00FE95ED /* Aladin */,
 				8ECE5DD52BA5AF7900FE95ED /* Alert */,
 				8ECE5DE22BA6E78800FE95ED /* Timer */,
+				8ECE5DFB2BA8182100FE95ED /* Stats */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
 			);
 			path = View;
@@ -448,6 +473,7 @@
 				8ECE5DBE2BA4405700FE95ED /* MemoViewModel.swift */,
 				8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */,
 				8ECE5DEB2BA7260800FE95ED /* TimerViewModel.swift */,
+				8ECE5E042BA8296300FE95ED /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -481,6 +507,7 @@
 				8E28111F2B9A259B000BBD65 /* DetailSearchCollectionViewCell.swift */,
 				8ECE5DDA2BA5B4AF00FE95ED /* MemoTableViewCell.swift */,
 				8E693E6C2BA358430099597A /* MemoCollectionViewCell.swift */,
+				8ECE5E002BA823D800FE95ED /* CalendarTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -632,6 +659,16 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		8ECE5DFB2BA8182100FE95ED /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE5DFC2BA8183400FE95ED /* StatsTabView.swift */,
+				8ECE5DFE2BA822AC00FE95ED /* CalendarView.swift */,
+				8ECE5E0A2BA83E7C00FE95ED /* ChartView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
 		8F342C88B0E9E102ED4E9904 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +707,7 @@
 				8E2810CE2B998E57000BBD65 /* Realm */,
 				8E2810D02B998E57000BBD65 /* RealmSwift */,
 				8E2810D32B998E65000BBD65 /* FSCalendar */,
+				8ECE5DF52BA813EF00FE95ED /* Tabman */,
 			);
 			productName = ReadingHaracoon;
 			productReference = 8E28109A2B998410000BBD65 /* ReadingHaracoon.app */;
@@ -710,6 +748,7 @@
 				8E2810CA2B998E40000BBD65 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8E2810CD2B998E57000BBD65 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				8E2810D22B998E65000BBD65 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				8ECE5DF42BA813EF00FE95ED /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 8E28109B2B998410000BBD65 /* Products */;
 			projectDirPath = "";
@@ -790,18 +829,21 @@
 				8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */,
 				8E012E6F2BA0403700DF7512 /* CustomAlertView.swift in Sources */,
 				8E012E5A2B9F6B2100DF7512 /* RecommendSection.swift in Sources */,
+				8ECE5DFA2BA815F500FE95ED /* ChartViewController.swift in Sources */,
 				8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */,
 				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
 				8ECE5DDD2BA5B63B00FE95ED /* MemoViewController.swift in Sources */,
 				8ECE5DE12BA6E77B00FE95ED /* TimerView.swift in Sources */,
 				8ECE5DC82BA4915A00FE95ED /* UITextField+.swift in Sources */,
 				8ECE5DC12BA4415200FE95ED /* MemoRepository.swift in Sources */,
+				8ECE5E092BA83C1800FE95ED /* TimeManager.swift in Sources */,
 				8ECE5DEC2BA7260800FE95ED /* TimerViewModel.swift in Sources */,
 				8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */,
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
 				8E693E6B2BA34E450099597A /* MemoViewCollectionViewVersion.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
+				8ECE5E012BA823D800FE95ED /* CalendarTableViewCell.swift in Sources */,
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
 				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
@@ -820,6 +862,7 @@
 				8E693E6F2BA36D150099597A /* DetailMemoViewController.swift in Sources */,
 				8ECE5DF02BA762D700FE95ED /* DatabaseResultMessage.swift in Sources */,
 				8E012E862BA2029000DF7512 /* StorageFilterModalViewController.swift in Sources */,
+				8ECE5E0B2BA83E7C00FE95ED /* ChartView.swift in Sources */,
 				8E28109E2B998410000BBD65 /* AppDelegate.swift in Sources */,
 				8ECE5DCC2BA57BF300FE95ED /* CustomAlertViewController.swift in Sources */,
 				8E693E6D2BA358430099597A /* MemoCollectionViewCell.swift in Sources */,
@@ -827,8 +870,11 @@
 				8E693E692BA34E100099597A /* MemoViewController_CollectionViewVersion.swift in Sources */,
 				8E2811102B99A8BF000BBD65 /* Observable.swift in Sources */,
 				8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */,
+				8ECE5E032BA8282800FE95ED /* DateManager.swift in Sources */,
 				8E28111B2B9A1980000BBD65 /* DetailSearchView.swift in Sources */,
 				8ECE5DCE2BA57FA900FE95ED /* UIViewContorller+.swift in Sources */,
+				8ECE5E052BA8296300FE95ED /* CalendarViewModel.swift in Sources */,
+				8ECE5DFD2BA8183400FE95ED /* StatsTabView.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
 				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
@@ -844,16 +890,18 @@
 				8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */,
 				8E2811082B999DDB000BBD65 /* RealmModel.swift in Sources */,
 				8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */,
+				8ECE5DF82BA815C600FE95ED /* CalendarViewController.swift in Sources */,
 				8E28111D2B9A20FD000BBD65 /* TransitionStyle.swift in Sources */,
 				8EBF13DF2B9F326B00B1FE6D /* UpdateView.swift in Sources */,
 				8E012E7C2BA0C1DC00DF7512 /* DetailBookModalViewController.swift in Sources */,
 				8E012E7A2BA0C04900DF7512 /* CustomTransitioningDelegate.swift in Sources */,
 				8E928BE72B9CB98C004D44C7 /* AladinWebViewController.swift in Sources */,
+				8ECE5DFF2BA822AC00FE95ED /* CalendarView.swift in Sources */,
 				8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */,
 				8E2810FD2B999D0F000BBD65 /* Recommend.swift in Sources */,
 				8E2810E92B9995D6000BBD65 /* StorageBookViewController.swift in Sources */,
 				8E012E7E2BA0C22500DF7512 /* DetailBookModalView.swift in Sources */,
-				8E2810EF2B99962D000BBD65 /* StatsViewController.swift in Sources */,
+				8E2810EF2B99962D000BBD65 /* StatsTabViewController.swift in Sources */,
 				8E28110C2B99A589000BBD65 /* StorageBookView.swift in Sources */,
 				8E2811192B9A1976000BBD65 /* DetailSearchViewModel.swift in Sources */,
 				8E2811162B99FF1B000BBD65 /* DetailSearchViewController.swift in Sources */,
@@ -1165,6 +1213,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		8ECE5DF42BA813EF00FE95ED /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1217,6 +1273,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8E2810D22B998E65000BBD65 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		8ECE5DF52BA813EF00FE95ED /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ECE5DF42BA813EF00FE95ED /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
