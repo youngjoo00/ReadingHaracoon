@@ -25,7 +25,6 @@ final class StorageBookViewController: BaseViewController {
         
         configureView()
         bindViewModel()
-        configureNavigationLeftImages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,26 +44,7 @@ extension StorageBookViewController {
         mainView.collectionView.dataSource = self
         mainView.filterButton.addTarget(self, action: #selector(didFilterButtonTapped), for: .touchUpInside)
         configureTapGesture()
-    }
-    
-    private func configureNavigationLeftImages() {
-
-        let logoImage = UIImage(resource: .독서하라쿤Logo)
-        let logoImageView = UIImageView(image: logoImage)
-        logoImageView.contentMode = .scaleAspectFill
-        
-        let logoTypeImage = UIImage(resource: .logoType)
-        let logoTypeImageView = UIImageView(image: logoTypeImage)
-        logoTypeImageView.contentMode = .scaleAspectFill
-        
-        logoImageView.frame = CGRect(x: 0, y: 0, width: 33, height: 40)
-        logoTypeImageView.frame = CGRect(x: 20, y: 0, width: 150, height: 40)
-        
-        let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        container.addSubview(logoImageView)
-        container.addSubview(logoTypeImageView)
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: container)
+        configureLogo()
     }
 
     private func configureTapGesture() {

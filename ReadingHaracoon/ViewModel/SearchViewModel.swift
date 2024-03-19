@@ -12,11 +12,14 @@ final class SearchViewModel {
     // input
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var searchBarTextDidBeginEditingTrigger: Observable<Void?> = Observable(nil)
+    var inputViewWillAppearTrigger: Observable<Void?> = Observable(nil)
     
     // output
     var outputRecommendList: Observable<[[RecommendItem]]> = Observable(Array(repeating: [RecommendItem](), count: RecommendSection.allCases.count))
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
+    
     var isLoading = Observable(false)
+    var isLoadData = false
     
     init() {
         transform()
@@ -28,6 +31,10 @@ final class SearchViewModel {
             self.getRecommend()
         }
 
+        inputViewWillAppearTrigger.bindOnChanged { [weak self] _ in
+            guard let self else { return }
+            
+        }
     }
     
     func numberOfItems(_ tag: Int) -> Int {
@@ -39,7 +46,7 @@ final class SearchViewModel {
 
 extension SearchViewModel {
     
-    private func getRecommend() {
+    func getRecommend() {
         isLoading.value = true
     
         let group = DispatchGroup()
@@ -53,7 +60,7 @@ extension SearchViewModel {
                 guard let self else { return }
                 switch result {
                 case .success(let data):
-                    tempList[i] = data.item
+                    tempList[i] = data.item.filter { !$0.isbn13.isEmpty }
                 case .failure(let failure):
                     self.outputNetworkErrorMessage.value = failure.rawValue
                 }

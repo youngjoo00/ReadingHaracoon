@@ -27,13 +27,9 @@ final class DetailBookViewController: BaseViewController {
         
         configureView()
         bindViewModel()
+        viewModel.inputViewDidLoadTrigger.value = ()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        viewModel.inputViewWillAppearTrigger.value = ()
-    }
 }
 
 
@@ -139,7 +135,7 @@ extension DetailBookViewController {
         viewModel.outputNetworkErrorMessage.bind { [weak self] message in
             guard let message, let self else { return }
             
-            self.showAlert(title: "오류!", message: message, btnTitle: "재시도") {
+            showCustomAlert(title: "오류!", message: message, actionTitle: "재시도") {
                 print("")
             }
         }

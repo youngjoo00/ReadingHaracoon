@@ -27,15 +27,15 @@ final class SettingTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-        
+        selectionStyle = .none
     }
 }
 
 
 extension SettingTableViewCell {
     
-    func updateView(_ item: Memo) {
-        titleLabel.text = item.title
+    func updateView(_ title: String) {
+        titleLabel.text = title
     }
 
 }

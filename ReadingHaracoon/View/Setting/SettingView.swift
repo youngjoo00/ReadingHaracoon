@@ -13,6 +13,7 @@ final class SettingView: BaseView {
     var tableView = UITableView().then {
         $0.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
         $0.backgroundColor = .clear
+        $0.separatorStyle = .none
     }
     
     override func configureHierarchy() {

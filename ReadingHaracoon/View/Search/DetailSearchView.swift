@@ -19,7 +19,10 @@ final class DetailSearchView: BaseView {
         $0.placeholder = "책을 검색해보세요"
     }
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout()).then {
+        $0.register(DetailSearchCollectionViewCell.self, forCellWithReuseIdentifier: DetailSearchCollectionViewCell.identifier)
+        $0.backgroundColor = .clear
+    }
     
     override func configureHierarchy() {
         [

@@ -9,6 +9,19 @@ struct Search: Decodable {
     let totalResults: Int
     let startIndex: Int
     let item: [SearchItem]
+    
+    enum CodingKeys: CodingKey {
+        case totalResults
+        case startIndex
+        case item
+    }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.totalResults = try container.decode(Int.self, forKey: .totalResults)
+        self.startIndex = try container.decode(Int.self, forKey: .startIndex)
+        self.item = try container.decode([SearchItem].self, forKey: .item)
+    }
 }
 
 struct SearchItem: Decodable {

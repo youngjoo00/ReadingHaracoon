@@ -9,6 +9,8 @@ import Foundation
 
 final class DetailSearchViewModel {
     
+    private var isFetching = false
+    
     // input
     var inputViewDidAppearTrigger: Observable<Void?> = Observable(nil)
     var inputSearchBarText: Observable<String?> = Observable(nil)
@@ -30,52 +32,49 @@ final class DetailSearchViewModel {
     
     private func transform() {
         inputSearchBarText.bind { [weak self] searchText in
-            guard let searchText, let self else { return }
-            start = 1
-            self.getSearch(searchText, start: start)
+            guard let searchText, let self = self else { return }
+            self.start = 1
+            self.isFetching = true
+            self.getSearch(searchText, start: self.start)
         }
         
         inputPreFetchItemsAt.bindOnChanged { [weak self] indexPaths in
-            guard let self else { return }
+            guard let self = self, !self.isFetching else { return }
             
             let list = self.outputSearchList.value
-            for item in indexPaths {
-                if list.count - 10 == item.item && list.count < totalResult {
-                    guard let searchText = inputSearchBarText.value else { return }
-                    start += 1
-                    getSearch(searchText, start: start)
-                }
+            if let maxItem = indexPaths.map({ $0.item }).max(), list.count - 1 <= maxItem && list.count < 200 {
+                self.isFetching = true
+                guard let searchText = self.inputSearchBarText.value else { return }
+                self.start += 1
+                self.getSearch(searchText, start: self.start)
             }
         }
-        
     }
 }
-
-
 
 extension DetailSearchViewModel {
     
     private func getSearch(_ searchText: String, start: Int) {
         isLoading.value = true
+        
         AladinAPIManager.shared.callRequest(type: Search.self, api: .search(query: searchText, start: start)) { [weak self] result in
-            guard let self else { return }
+            guard let self = self else { return }
             switch result {
             case .success(let data):
-                if start == 1 {
-                    self.outputSearchList.value = data.item
+                if self.start == 1 {
+                    self.outputSearchList.value = data.item.filter { !$0.isbn13.isEmpty }
                     self.totalResult = data.totalResults
                     if data.totalResults != 0 {
                         self.outputScrollMoveToTopTrigger.value = ()
                     }
                 } else {
-                    self.outputSearchList.value.append(contentsOf: data.item)
+                    self.outputSearchList.value.append(contentsOf: data.item.filter { !$0.isbn13.isEmpty })
                 }
             case .failure(let failure):
                 self.outputNetworkErrorMessage.value = failure.rawValue
             }
+            self.isFetching = false
             self.isLoading.value = false
         }
     }
-    
-    
 }

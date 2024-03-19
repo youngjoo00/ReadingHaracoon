@@ -21,6 +21,14 @@ final class StatsTabViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureView()
+    }
+}
+
+extension StatsTabViewController {
+    
+    private func configureView() {
+        configureLogo()
         let calendarVC = CalendarViewController()
         let chartVC = ChartViewController()
         
@@ -30,7 +38,6 @@ final class StatsTabViewController: TabmanViewController {
         addBar(mainView.bar, dataSource: self, at: .custom(view: mainView.tabSpaceView, layout: nil))
     }
 }
-
 extension StatsTabViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {

@@ -12,7 +12,7 @@ final class DetailBookViewModel {
     let repository = BookRepository()
     
     // input
-    var inputViewWillAppearTrigger: Observable<Void?> = Observable(nil)
+    var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var inputISBN: Observable<String?> = Observable(nil)
     var inputDidRightBarFavortieButtonItemTappedTrigger: Observable<Void?> = Observable(nil)
     var inputBookStatus: Observable<Int?> = Observable(nil)
@@ -36,7 +36,7 @@ final class DetailBookViewModel {
     }
     
     private func transform() {
-        inputViewWillAppearTrigger.bind { [weak self] _ in
+        inputViewDidLoadTrigger.bind { [weak self] _ in
             guard let self, let mode = viewMode.value else  { return }
             switch mode {
             case .storage:

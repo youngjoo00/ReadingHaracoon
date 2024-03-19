@@ -28,10 +28,10 @@ final class SearchViewController: BaseViewController {
         viewModel.inputViewDidLoadTrigger.value = ()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
+        viewModel.inputViewWillAppearTrigger.value = ()
     }
 }
 
@@ -39,7 +39,7 @@ final class SearchViewController: BaseViewController {
 // MARK: - Custom Func
 extension SearchViewController {
     private func configureView() {
-        navigationItem.titleView = mainView.navigationTitle
+        configureLogo()
         
         mainView.searchBar.delegate = self
         mainView.tableView.delegate = self
@@ -66,8 +66,8 @@ extension SearchViewController {
         viewModel.outputNetworkErrorMessage.bind { [weak self] message in
             guard let message, let self else { return }
             
-            self.showAlert(title: "오류!", message: message, btnTitle: "재시도") {
-                print(message)
+            showCustomAlert(title: "오류!", message: message, actionTitle: "재시도") {
+                self.viewModel.getRecommend()
             }
         }
         

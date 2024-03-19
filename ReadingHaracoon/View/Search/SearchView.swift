@@ -11,10 +11,6 @@ import FSPagerView
 
 final class SearchView: BaseView {
     
-    let navigationTitle = UILabel().then {
-        $0.text = "검색"
-    }
-    
     let searchBar = UISearchBar().then {
         $0.searchBarStyle = .minimal
         $0.placeholder = "책 이름을 검색해보세요"

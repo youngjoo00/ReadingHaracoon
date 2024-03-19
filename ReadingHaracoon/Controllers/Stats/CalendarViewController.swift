@@ -27,13 +27,8 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        mainView.calendar.reloadData()
         viewModel.inputViewWillApeearTrigger.value = ()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
     }
 }
 
@@ -52,7 +47,6 @@ extension CalendarViewController {
         
         viewModel.outputStatsList.bindOnChanged { [weak self] stats in
             guard let self else { return }
-            mainView.calendar.reloadData()
             mainView.tableView.reloadData()
         }
     }
@@ -75,7 +69,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("나중에 합시다..")
+        //print("나중에 합시다..")
     }
 }
 

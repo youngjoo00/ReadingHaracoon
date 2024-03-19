@@ -16,10 +16,6 @@ final class DetailSearchViewController: BaseViewController {
     
     var list: [SearchItem] = []
     
-    let cellRegistration = UICollectionView.CellRegistration<DetailSearchCollectionViewCell, SearchItem> { cell, indexPath, item in
-        cell.updateView(item)
-    }
-    
     override func loadView() {
         view = mainView
     }
@@ -76,7 +72,7 @@ extension DetailSearchViewController {
         viewModel.outputNetworkErrorMessage.bind { [weak self] message in
             guard let message, let self else { return }
             
-            self.showAlert(title: "오류!", message: message, btnTitle: "재시도") {
+            self.showCustomAlert(title: "오류!", message: message, actionTitle: "재시도") {
                 self.searchBarSearchButtonClicked(self.mainView.searchBar)
             }
         }
@@ -105,8 +101,10 @@ extension DetailSearchViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailSearchCollectionViewCell.identifier, for: indexPath) as? DetailSearchCollectionViewCell else { return UICollectionViewCell() }
         
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: list[indexPath.item])
+        let item = list[indexPath.item]
+        cell.updateView(item)
         return cell
     }
     
@@ -116,6 +114,9 @@ extension DetailSearchViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         viewModel.inputPreFetchItemsAt.value = indexPaths
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
     }
 }
 
