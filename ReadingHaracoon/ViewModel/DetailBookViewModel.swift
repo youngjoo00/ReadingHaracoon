@@ -103,6 +103,7 @@ extension DetailBookViewModel {
             try repository.createBookItem(item)
             updateFavoriteStatus(item.isbn)
             self.outputCreateDataResult.value = "책을 저장했다쿤!"
+            self.realmBookData.value = item
         } catch {
             self.outputCreateDataResult.value = "책 저장에 실패했다쿤.."
         }
@@ -114,7 +115,7 @@ extension DetailBookViewModel {
         guard let item = repository.fetchBookItem(isbn) else { return }
         
         do {
-            try repository.deleteItem(item)
+            try repository.deleteBook(item)
             updateFavoriteStatus(isbn)
             self.outputDeleteDataResult.value = "책을 삭제했다쿤!"
         } catch {

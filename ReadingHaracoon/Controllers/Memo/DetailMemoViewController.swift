@@ -38,6 +38,7 @@ extension DetailMemoViewController {
 
     private func configureView() {
         
+        configureTapGesture()
         switch viewModel.viewMode {
         case .create:
             mainView.saveButton.isHidden = false
@@ -91,5 +92,15 @@ extension DetailMemoViewController {
                 self.showToast(message: message)
             }
         }
+    }
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardDisMiss))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func keyboardDisMiss() {
+        keyboardEndEditing()
     }
 }

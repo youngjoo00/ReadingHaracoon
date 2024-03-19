@@ -54,7 +54,7 @@ extension DetailBookViewController {
     
     @objc func didRightBarFavortieButtonItemTapped() {
         if viewModel.outputIsFavortie.value {
-            showAlert(title: "이 책을 삭제하시겠습니까?", message: "이 책과 관련된 데이터가 모두 삭제됩니다.", btnTitle: "삭제") {
+            showCustomAlert(title: "이 책을 삭제한다쿤?", message: "책과 관련된 데이터가 모두 삭제된다쿤!", actionTitle: "삭제") {
                 self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
             }
         } else {

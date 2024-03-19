@@ -16,6 +16,8 @@ final class CalendarViewModel {
     
     var repository: StatsRepository?
 
+    var inputViewWillApeearTrigger: Observable<Void?> = Observable(nil)
+    var inputDidSelectCalendar = Observable(Date())
     var outputStatsList: Observable<[CalendarStatsModel]> = Observable([])
 
     init() {
@@ -30,7 +32,15 @@ final class CalendarViewModel {
     }
     
     func transform() {
-
+        inputViewWillApeearTrigger.bindOnChanged { [weak self] _ in
+            guard let self else { return }
+            didSelectCalendar(inputDidSelectCalendar.value)
+        }
+        
+        inputDidSelectCalendar.bindOnChanged { [weak self] date in
+            guard let self else { return }
+            didSelectCalendar(date)
+        }
     }
     
     func numberOfEventsFor(_ date: Date) -> Int {

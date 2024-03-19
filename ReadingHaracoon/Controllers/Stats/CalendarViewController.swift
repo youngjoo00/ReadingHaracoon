@@ -27,8 +27,13 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        mainView.calendar.reloadData()
-        mainView.tableView.reloadData()
+        viewModel.inputViewWillApeearTrigger.value = ()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 }
 
@@ -44,8 +49,10 @@ extension CalendarViewController {
     }
  
     private func bindViewModel() {
+        
         viewModel.outputStatsList.bindOnChanged { [weak self] stats in
             guard let self else { return }
+            mainView.calendar.reloadData()
             mainView.tableView.reloadData()
         }
     }
@@ -79,6 +86,6 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        viewModel.didSelectCalendar(date)
+        viewModel.inputDidSelectCalendar.value = date
     }
 }

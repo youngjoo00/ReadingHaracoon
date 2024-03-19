@@ -63,10 +63,13 @@ final class BookRepository {
         }
     }
     
-    func deleteItem<T: Object>(_ item: T) throws {
+    func deleteBook(_ book: Book) throws {
         do {
             try realm.write {
-                realm.delete(item)
+                
+                realm.delete(book.memoList)
+                realm.delete(book.statsList)
+                realm.delete(book)
                 print("삭제 성공")
             }
         } catch {

@@ -39,10 +39,6 @@ final class CustomAlertViewController: BaseViewController {
         mainView.actionButton.addTarget(self, action: #selector(didActionButtonTapped), for: .touchUpInside)
         mainView.cancelButton.addTarget(self, action: #selector(didCancelButtonTapped), for: .touchUpInside)
     }
-    
-    deinit {
-        print(#function)
-    }
 }
 
 extension CustomAlertViewController {
