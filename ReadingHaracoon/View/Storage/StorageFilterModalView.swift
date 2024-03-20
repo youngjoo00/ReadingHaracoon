@@ -24,19 +24,13 @@ final class StorageFilterModalView: BaseView {
         $0.configuration = configuration
     }
     
-    let storageButton = UIButton().then {
-        var configuration = UIButton.Configuration.plain()
-        configuration.title = "적용하기"
-        configuration.baseForegroundColor = .white
-        configuration.background.backgroundColor = .point
-        $0.configuration = configuration
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 16
-    }
+    let storageButton = BottomConfirmButton(title: "적용하기", image: nil)
     
     let filterSegmentControl = UISegmentedControl().then {
         $0.insertSegment(withTitle: "최신순", at: 0, animated: true)
         $0.insertSegment(withTitle: "오래된 순", at: 1, animated: true)
+        $0.setTitleTextAttributes([.foregroundColor: UIColor.point], for: .selected)
+        $0.setTitleTextAttributes([.foregroundColor: UIColor.lightGray], for: .normal)
         $0.selectedSegmentIndex = 0
     }
     
@@ -142,7 +136,7 @@ extension StorageFilterModalView {
         
         buttons.forEach { button in
             button.backgroundColor = .white
-            button.setTitleColor(.point, for: .normal)
+            button.setTitleColor(.lightGray, for: .normal)
         }
         
         if let selectedButton = buttons.first(where: { $0.tag == tag }) {

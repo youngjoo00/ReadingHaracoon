@@ -25,8 +25,8 @@ class BaseViewController: UIViewController {
     
     func showToast(message: String) {
         var style = ToastStyle()
-        style.backgroundColor = .white
-        style.messageColor = .point
+        style.backgroundColor = .point
+        style.messageColor = .white
         self.view.makeToast(message, duration: 2.5, position: .center, style: style)
     }
     

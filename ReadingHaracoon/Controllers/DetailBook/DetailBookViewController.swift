@@ -13,7 +13,7 @@ final class DetailBookViewController: BaseViewController {
     let mainView = DetailBookView()
     let viewModel = DetailBookViewModel()
     
-    private var customTransitioningDelegate = CustomTransitioningDelegate(.center)
+    private var customTransitioningDelegate = CustomTransitioningDelegate(.bottom)
     
     override func loadView() {
         view = mainView
@@ -34,15 +34,14 @@ final class DetailBookViewController: BaseViewController {
 extension DetailBookViewController {
     
     private func configureView() {
-        navigationItem.titleView = mainView.navigationTitle
-        
-        let rightBtnItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(didRightBarFavortieButtonItemTapped))
+        let rightBtnItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(didRightBarFavortieButtonItemTapped))
         
         navigationItem.rightBarButtonItem = rightBtnItem
         mainView.linkButton.addTarget(self, action: #selector(didLinkButtonTapped), for: .touchUpInside)
         mainView.bookStatusButton.addTarget(self, action: #selector(didBookStatusButtonTapped), for: .touchUpInside)
         mainView.memoButton.addTarget(self, action: #selector(didMemoButtonTapped), for: .touchUpInside)
         mainView.timerButton.addTarget(self, action: #selector(didTimerButtonTapped), for: .touchUpInside)
+        mainView.storageButton.addTarget(self, action: #selector(didStorageButtonTapped), for: .touchUpInside)
     }
     
     @objc func didRightBarFavortieButtonItemTapped() {
@@ -50,10 +49,12 @@ extension DetailBookViewController {
             showCustomAlert(title: "이 책을 삭제한다쿤?", message: "책과 관련된 데이터가 모두 삭제된다쿤!", actionTitle: "삭제") {
                 self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
             }
-        } else {
-            // 화면 중앙에 책을 어떻게 저장할지에 대한 모달 등장
-            presentStorageModalViewController(false)
         }
+    }
+    
+    @objc func didStorageButtonTapped() {
+        // 화면 중앙에 책을 어떻게 저장할지에 대한 모달 등장
+        presentStorageModalViewController(false)
     }
     
     private func presentStorageModalViewController(_ isFavorite: Bool) {
@@ -133,14 +134,18 @@ extension DetailBookViewController {
             guard let message, let self else { return }
             
             showCustomAlert(title: "오류!", message: message, actionTitle: "재시도") {
-                print("")
+                self.viewModel.inputViewDidLoadTrigger.value = ()
             }
         }
         
         viewModel.outputIsFavortie.bind { [weak self] isFavorite in
             guard let self else { return }
             
-            self.navigationItem.rightBarButtonItem?.image = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+            if isFavorite {
+                self.navigationItem.rightBarButtonItem?.isHidden = false
+            } else {
+                self.navigationItem.rightBarButtonItem?.isHidden = true
+            }
             mainView.updateBottomView(isFavorite)
         }
         
@@ -154,8 +159,8 @@ extension DetailBookViewController {
             guard let self else { return }
             
             self.showToast(message: message)
-            navigationItem.rightBarButtonItem?.isEnabled = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            view.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.navigationController?.popViewController(animated: true)
             }
         }

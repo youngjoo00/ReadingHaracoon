@@ -72,6 +72,7 @@
 		8E693E712BA36D430099597A /* DetailMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E702BA36D430099597A /* DetailMemoView.swift */; };
 		8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */; };
 		8E7166BF2BAAC98B0063A4AF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166BE2BAAC98B0063A4AF /* APIKey.swift */; };
+		8E7166C12BAAE2FA0063A4AF /* BottomConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */; };
 		8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */; };
 		8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */; };
 		8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */; };
@@ -177,6 +178,7 @@
 		8E693E702BA36D430099597A /* DetailMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoView.swift; sourceTree = "<group>"; };
 		8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewModel.swift; sourceTree = "<group>"; };
 		8E7166BE2BAAC98B0063A4AF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomConfirmButton.swift; sourceTree = "<group>"; };
 		8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
@@ -256,13 +258,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8E012E782BA0C02300DF7512 /* CustomModal */ = {
+		8E012E782BA0C02300DF7512 /* CustomPresentation */ = {
 			isa = PBXGroup;
 			children = (
 				8E012E742BA0B25200DF7512 /* CustomPresentationController.swift */,
 				8E012E792BA0C04900DF7512 /* CustomTransitioningDelegate.swift */,
 			);
-			path = CustomModal;
+			path = CustomPresentation;
 			sourceTree = "<group>";
 		};
 		8E012E7F2BA0C2A000DF7512 /* Stats */ = {
@@ -315,7 +317,7 @@
 				8E2810F22B99995F000BBD65 /* Enum */,
 				8E2810F32B999978000BBD65 /* Extension */,
 				8E2810F42B999988000BBD65 /* Manager */,
-				8E012E782BA0C02300DF7512 /* CustomModal */,
+				8E012E782BA0C02300DF7512 /* CustomPresentation */,
 				8E2810F72B999BA2000BBD65 /* CustomView */,
 				8E2810E12B9994F2000BBD65 /* Base */,
 				8E32ABF72BA9F6C10073F809 /* NetworkMoniter */,
@@ -441,6 +443,7 @@
 				8E012E572B9F61F800DF7512 /* Normal14Label.swift */,
 				8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */,
 				8E012E722BA09F0700DF7512 /* BlockView.swift */,
+				8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */,
 				8E012E732BA09F0700DF7512 /* BlockView.swift in Sources */,
 				8E2811052B999D92000BBD65 /* AladinAPIManager.swift in Sources */,
+				8E7166C12BAAE2FA0063A4AF /* BottomConfirmButton.swift in Sources */,
 				8EBF13D32B9E1AB600B1FE6D /* StorageBookCollectionViewCell.swift in Sources */,
 				8ECE5DBF2BA4405700FE95ED /* MemoViewModel.swift in Sources */,
 				8E2811202B9A259B000BBD65 /* DetailSearchCollectionViewCell.swift in Sources */,

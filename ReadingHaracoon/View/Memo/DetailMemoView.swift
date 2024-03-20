@@ -21,15 +21,7 @@ final class DetailMemoView: BaseView {
         $0.font = .systemFont(ofSize: 15)
     }
     
-    let saveButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "저장하기"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
-        configuration.imagePadding = 10
-        $0.configuration = configuration
-    }
+    let saveButton = BottomConfirmButton(title: "저장하기", image: nil)
     
     let buttonStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -37,24 +29,11 @@ final class DetailMemoView: BaseView {
         $0.spacing = 10
     }
     
-    let updateButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "수정하기"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
-        configuration.imagePadding = 10
-        $0.configuration = configuration
-    }
+    let updateButton = BottomConfirmButton(title: "수정하기", image: nil)
     
-    let deleteButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "삭제하기"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
-        configuration.imagePadding = 10
-        $0.configuration = configuration
+    let deleteButton = BottomConfirmButton(title: "삭제하기", image: nil).then {
+        $0.configuration?.baseForegroundColor = .lightGray
+        $0.configuration?.baseBackgroundColor = .white
     }
     
     override func configureHierarchy() {
@@ -66,8 +45,8 @@ final class DetailMemoView: BaseView {
         ].forEach { addSubview($0) }
         
         [
+            deleteButton,
             updateButton,
-            deleteButton
         ].forEach { buttonStackView.addArrangedSubview($0) }
     }
     

@@ -12,6 +12,7 @@ final class SearchTableViewCell: BaseTableViewCell {
     
     let sectionLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 20)
+        $0.textColor = .point
     }
     
     let pagerView = FSPagerView().then {

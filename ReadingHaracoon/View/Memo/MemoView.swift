@@ -17,15 +17,7 @@ final class MemoView: BaseView {
         $0.register(MemoTableViewCell.self, forCellReuseIdentifier: MemoTableViewCell.identifier)
     }
     
-    let writeButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "메모 작성"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .point
-        configuration.baseBackgroundColor = .white
-        configuration.imagePadding = 10
-        $0.configuration = configuration
-    }
+    let writeButton = BottomConfirmButton(title: "메모 작성", image: UIImage(systemName: "pencil"))
     
     override func configureHierarchy() {
         [

@@ -12,7 +12,8 @@ import WebKit
 final class AladinWebView: BaseView {
     
     let navigationTitle = UILabel().then {
-        $0.text = "Aladin WebView"
+        $0.text = "알라딘"
+        $0.textColor = .point
     }
     
     let webView = WKWebView()

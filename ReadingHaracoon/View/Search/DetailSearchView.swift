@@ -11,7 +11,7 @@ import Then
 final class DetailSearchView: BaseView {
     
     let navigationTitle = UILabel().then {
-        $0.text = "SearchDetail"
+        $0.text = "검색"
     }
     
     let searchBar = UISearchBar().then {

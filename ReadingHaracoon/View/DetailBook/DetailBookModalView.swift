@@ -27,39 +27,23 @@ final class DetailBookModalView: BaseView {
         $0.spacing = 10
     }
     
-    let toReadButton = UIButton().then {
-        $0.setTitle("읽을 책", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .point
-        $0.layer.cornerRadius = 16
+    let toReadButton = BottomConfirmButton(title: "읽을 책", image: UIImage(systemName: "bookmark.fill")).then {
+        $0.configuration?.imagePlacement = .top
         $0.tag = 0
     }
     
-    let readingButton = UIButton().then {
-        $0.setTitle("읽고 있는 책", for: .normal)
-        $0.setTitleColor(.point, for: .normal)
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 16
+    let readingButton = BottomConfirmButton(title: "읽고 있는 책", image: UIImage(systemName: "book.fill")).then {
+        $0.configuration?.imagePlacement = .top
         $0.tag = 1
     }
     
-    let readButton = UIButton().then {
-        $0.setTitle("읽은 책", for: .normal)
-        $0.setTitleColor(.point, for: .normal)
-        $0.backgroundColor = .white
-        $0.layer.cornerRadius = 16
+    let readButton = BottomConfirmButton(title: "읽은 책", image: UIImage(systemName: "book.closed")).then {
+        $0.configuration?.imagePlacement = .top
         $0.tag = 2
     }
     
-    let confirmButton = UIButton().then {
-        var configuration = UIButton.Configuration.plain()
-        configuration.title = "저장하기"
-        configuration.baseForegroundColor = .white
-        configuration.background.backgroundColor = .point
-        $0.configuration = configuration
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 16
-    }
+    
+    let confirmButton = BottomConfirmButton(title: "저장하기", image: nil)
     
     override func configureHierarchy() {
         [
@@ -93,7 +77,7 @@ final class DetailBookModalView: BaseView {
         }
         
         confirmButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -108,14 +92,13 @@ final class DetailBookModalView: BaseView {
 extension DetailBookModalView {
     
     func updateButton(_ selectedButtonTag: Int) {
-
         [toReadButton, readingButton, readButton].forEach { button in
             if selectedButtonTag == button.tag {
-                button.backgroundColor = .point
-                button.setTitleColor(.white, for: .normal)
+                button.configuration?.baseForegroundColor = .white
+                button.configuration?.baseBackgroundColor = .point
             } else {
-                button.backgroundColor = .white
-                button.setTitleColor(.point, for: .normal)
+                button.configuration?.baseForegroundColor = .lightGray
+                button.configuration?.baseBackgroundColor = .white
             }
         }
     }

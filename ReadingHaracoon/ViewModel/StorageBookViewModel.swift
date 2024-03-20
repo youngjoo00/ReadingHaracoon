@@ -24,6 +24,7 @@ final class StorageBookViewModel {
     var isLoading = Observable(false)
     
     var stateBook: [Book] = []
+    var filterdBook: [Book] = []
     
     init() {
         transform()
@@ -76,7 +77,7 @@ extension StorageBookViewModel {
     }
     
     private func filterSearchBarTextBookList(_ searchText: String) {
-        let bookList = repository.fetchBookArrayList()
+        let bookList = filterdBook
         
         if searchText.isEmpty {
             outputBookList.value = bookList
@@ -97,9 +98,11 @@ extension StorageBookViewModel {
         switch content {
         case .regDate:
             let filterRegDateBookList = self.sortedRegDate(stateBook, sort)
+            filterdBook = filterRegDateBookList
             return outputBookList.value = filterRegDateBookList
         case .page:
             let filterPageBookList = self.sortedPageDate(stateBook, sort)
+            filterdBook = filterPageBookList
             return outputBookList.value = filterPageBookList
         }
     }

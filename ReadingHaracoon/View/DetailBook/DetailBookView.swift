@@ -10,10 +10,6 @@ import Then
 
 final class DetailBookView: BaseView {
     
-    let navigationTitle = UILabel().then {
-        $0.text = "Book Detail"
-    }
-    
     let scrollView = UIScrollView()
     let contentView = UIView()
     let bookImageView = BookImageView(frame: .zero)
@@ -51,6 +47,7 @@ final class DetailBookView: BaseView {
     let aladinSourceLabel = UILabel().then {
         $0.text = "자료 제공: 알라딘"
         $0.font = .systemFont(ofSize: 15)
+        $0.textColor = .point
     }
     
     let bottomView = UIView().then {
@@ -63,45 +60,31 @@ final class DetailBookView: BaseView {
         $0.spacing = 10
     }
     
-    let bookStatusButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "책 상태"
-        configuration.image = UIImage(systemName: "book.closed")
-        configuration.baseForegroundColor = .point
-        configuration.baseBackgroundColor = .background
-        configuration.imagePadding = 10
-        $0.configuration = configuration
+    let bookStatusButton = BottomConfirmButton(title: "책 상태", image: UIImage(systemName: "book.pages")).then {
+        $0.layer.cornerRadius = 8
     }
     
-    let memoButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "메모"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .point
-        configuration.baseBackgroundColor = .background
-        configuration.imagePadding = 10
-        $0.configuration = configuration
+    let memoButton = BottomConfirmButton(title: "메모", image: UIImage(systemName: "pencil")).then {
+        $0.layer.cornerRadius = 8
     }
     
-    let timerButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "타이머"
-        configuration.image = UIImage(systemName: "timer")
-        configuration.baseForegroundColor = .point
-        configuration.baseBackgroundColor = .background
-        configuration.imagePadding = 10
-        $0.configuration = configuration
+    let timerButton = BottomConfirmButton(title: "타이머", image: UIImage(systemName: "timer")).then {
+        $0.layer.cornerRadius = 8
     }
+    
+    let storageButton = BottomConfirmButton(title: "책 저장하기", image: nil)
     
     let overSafeAreabottomView = UIView().then {
         $0.backgroundColor = .white
     }
     
+    let scrollBottomSpaceView = UIView()
+    
     override func configureHierarchy() {
         [
             scrollView,
-            bottomView,
             overSafeAreabottomView,
+            bottomView,
         ].forEach { addSubview($0) }
         
         scrollView.addSubview(contentView)
@@ -121,9 +104,13 @@ final class DetailBookView: BaseView {
             isbnLabel,
             isbnContentLabel,
             aladinSourceLabel,
+            scrollBottomSpaceView,
         ].forEach { contentView.addSubview($0) }
         
-        bottomView.addSubview(bottomStackView)
+        [
+            storageButton,
+            bottomStackView
+        ].forEach { bottomView.addSubview($0) }
         
         [
             bookStatusButton,
@@ -216,14 +203,25 @@ final class DetailBookView: BaseView {
         
         aladinSourceLabel.snp.makeConstraints { make in
             make.top.equalTo(pageContentLabel.snp.bottom).offset(20)
-            make.bottom.equalToSuperview().offset(-20)
             make.trailing.equalToSuperview().offset(-16)
+        }
+        
+        scrollBottomSpaceView.snp.makeConstraints { make in
+            make.top.equalTo(aladinSourceLabel.snp.bottom).offset(20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.height.equalTo(44)
         }
         
         bottomView.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(60)
+        }
+
+        storageButton.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.centerY.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(16)
         }
         
         bottomStackView.snp.makeConstraints { make in
@@ -236,6 +234,7 @@ final class DetailBookView: BaseView {
             make.top.equalTo(bottomView.snp.bottom)
             make.bottom.horizontalEdges.equalToSuperview()
         }
+        
     }
     
     override func configureView() {
@@ -254,9 +253,11 @@ extension DetailBookView {
     
     func updateBottomView(_ isFavorite: Bool) {
         if isFavorite {
-            bottomView.isHidden = false
+            storageButton.isHidden = true
+            bottomStackView.isHidden = false
         } else {
-            bottomView.isHidden = true
+            storageButton.isHidden = false
+            bottomStackView.isHidden = true
         }
     }
     
