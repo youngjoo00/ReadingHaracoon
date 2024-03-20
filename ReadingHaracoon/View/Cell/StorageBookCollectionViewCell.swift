@@ -18,7 +18,9 @@ final class StorageBookCollectionViewCell: BaseCollectionViewCell {
         $0.textAlignment = .center
     }
     
-    let authorLabel = Normal14Label()
+    let authorLabel = Normal14Label().then {
+        $0.textAlignment = .center
+    }
     
     override func configureHierarchy() {
         [

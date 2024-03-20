@@ -13,11 +13,11 @@ protocol Logo {
 
 extension UIViewController: Logo {
     func configureLogo() {
-        let logoImage = UIImage(resource: .navigationLogo)
+        let logoImage = UIImage(resource: .logo)
         let logoImageView = UIImageView(image: logoImage)
         logoImageView.contentMode = .scaleAspectFill
         
-        let logoTypeImage = UIImage(resource: .navigationLogoType)
+        let logoTypeImage = UIImage(resource: .logotype)
         let logoTypeImageView = UIImageView(image: logoTypeImage)
         logoTypeImageView.contentMode = .scaleAspectFill
         

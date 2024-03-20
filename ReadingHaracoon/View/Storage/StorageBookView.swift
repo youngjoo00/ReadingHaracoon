@@ -71,7 +71,7 @@ extension StorageBookView {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 20
     
-        let cellWidth = (UIScreen.main.bounds.width - (spacing * 4)) / 3
+        let cellWidth = (UIScreen.main.bounds.width - (spacing * 4.1)) / 3
         let cellHeight = cellWidth * 1.6
         
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)

@@ -25,7 +25,6 @@
 		8E2810A52B998410000BBD65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810A32B998410000BBD65 /* Main.storyboard */; };
 		8E2810A72B998411000BBD65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810A62B998411000BBD65 /* Assets.xcassets */; };
 		8E2810B52B99864F000BBD65 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810B42B99864F000BBD65 /* .gitignore */; };
-		8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810B62B998A0F000BBD65 /* APIKey.swift */; };
 		8E2810BA2B998DD0000BBD65 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810B92B998DD0000BBD65 /* SnapKit */; };
 		8E2810BD2B998DD6000BBD65 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810BC2B998DD6000BBD65 /* Then */; };
 		8E2810C02B998DF5000BBD65 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810BF2B998DF5000BBD65 /* DGCharts */; };
@@ -72,6 +71,7 @@
 		8E693E6F2BA36D150099597A /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E6E2BA36D150099597A /* DetailMemoViewController.swift */; };
 		8E693E712BA36D430099597A /* DetailMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E702BA36D430099597A /* DetailMemoView.swift */; };
 		8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */; };
+		8E7166BF2BAAC98B0063A4AF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166BE2BAAC98B0063A4AF /* APIKey.swift */; };
 		8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */; };
 		8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */; };
 		8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */; };
@@ -140,7 +140,6 @@
 		8E2810A62B998411000BBD65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2810AB2B998411000BBD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E2810B42B99864F000BBD65 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		8E2810B62B998A0F000BBD65 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8E2810D72B99906B000BBD65 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8E2810DE2B9992E0000BBD65 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8E2810E22B99951E000BBD65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +176,7 @@
 		8E693E6E2BA36D150099597A /* DetailMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewController.swift; sourceTree = "<group>"; };
 		8E693E702BA36D430099597A /* DetailMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoView.swift; sourceTree = "<group>"; };
 		8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewModel.swift; sourceTree = "<group>"; };
+		8E7166BE2BAAC98B0063A4AF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
@@ -334,8 +334,8 @@
 				8E2810A32B998410000BBD65 /* Main.storyboard */,
 				8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */,
 				8E2810A62B998411000BBD65 /* Assets.xcassets */,
-				8E2810B62B998A0F000BBD65 /* APIKey.swift */,
 				8E2810AB2B998411000BBD65 /* Info.plist */,
+				8E7166BE2BAAC98B0063A4AF /* APIKey.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -894,6 +894,7 @@
 				8ECE5DFD2BA8183400FE95ED /* StatsTabView.swift in Sources */,
 				8E2810ED2B999624000BBD65 /* SearchViewController.swift in Sources */,
 				8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */,
+				8E7166BF2BAAC98B0063A4AF /* APIKey.swift in Sources */,
 				8E928BE52B9CB3D8004D44C7 /* Normal16Label.swift in Sources */,
 				8ECE5E132BA8A4DB00FE95ED /* ChartMarker.swift in Sources */,
 				8E2810E52B999540000BBD65 /* BaseView.swift in Sources */,
@@ -901,7 +902,6 @@
 				8E2811142B99A914000BBD65 /* SearchViewModel.swift in Sources */,
 				8ECE5DE62BA6EA3000FE95ED /* TimerViewController.swift in Sources */,
 				8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */,
-				8E2810B72B998A0F000BBD65 /* APIKey.swift in Sources */,
 				8E012E582B9F61F800DF7512 /* Normal14Label.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
 				8ECE5E182BA8B41400FE95ED /* SettingTableViewCell.swift in Sources */,
