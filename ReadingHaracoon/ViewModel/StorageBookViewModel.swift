@@ -16,11 +16,14 @@ final class StorageBookViewModel {
     var searchBarTextDidBeginEditingTrigger: Observable<Void?> = Observable(nil)
     var inputSearchBarTextDidChange: Observable<String> = Observable("")
     var inputSelectedFilter: Observable<(Int, FilterContent)> = Observable((0, .regDate))
+    var inputStateSegmentControlChangedValue = Observable(0)
     
     // output
     var outputBookList: Observable<[Book]> = Observable([])
     var outputNetworkErrorMessage: Observable<String?> = Observable(nil)
     var isLoading = Observable(false)
+    
+    var stateBook: [Book] = []
     
     init() {
         transform()
@@ -29,7 +32,7 @@ final class StorageBookViewModel {
     private func transform() {
         inputViewWillAppearTrigger.bindOnChanged { [weak self] _ in
             guard let self else { return }
-            self.loadInitialBookList()
+            self.filterBook(inputStateSegmentControlChangedValue.value)
         }
         
         inputSearchBarTextDidChange.bindOnChanged { [weak self] text in
@@ -37,9 +40,15 @@ final class StorageBookViewModel {
             self.filterSearchBarTextBookList(text)
         }
         
+        inputStateSegmentControlChangedValue.bindOnChanged { [weak self] value in
+            guard let self else { return }
+            self.filterBook(value)
+        }
+        
         inputSelectedFilter.bindOnChanged { [weak self] sort, content in
             guard let self else { return }
-            self.filterSelectBookList(sort, content)
+            
+            self.filterSelectBookList(stateBook, sort, content)
         }
     }
     
@@ -48,10 +57,22 @@ final class StorageBookViewModel {
 
 extension StorageBookViewModel {
     
+    private func filterBook(_ value: Int) {
+        if value == 0 {
+            stateBook = getBookList()
+        } else {
+            stateBook = getBookList().filter { $0.bookStatus + 1 == value }
+        }
+        
+        let sort = inputSelectedFilter.value.0
+        let content = inputSelectedFilter.value.1
+        self.filterSelectBookList(stateBook, sort, content)
+    }
+    
     // 필터링 된 상태에서 가져와야할듯
-    private func loadInitialBookList() {
+    private func getBookList() -> [Book] {
         let bookList = repository.fetchBookArrayList()
-        outputBookList.value = bookList
+        return bookList
     }
     
     private func filterSearchBarTextBookList(_ searchText: String) {
@@ -70,18 +91,15 @@ extension StorageBookViewModel {
         }
     }
     
-    // 임시 필터링
     // sort -> 0: 내림차순, 1: 오름차순
     // content -> 0: 등록일, 1: 쪽수
-    private func filterSelectBookList(_ sort: Int, _ content: FilterContent) {
-        let bookList = repository.fetchBookArrayList()
-
+    private func filterSelectBookList(_ stateBook: [Book], _ sort: Int, _ content: FilterContent) {
         switch content {
         case .regDate:
-            let filterRegDateBookList = self.sortedRegDate(bookList, sort)
+            let filterRegDateBookList = self.sortedRegDate(stateBook, sort)
             return outputBookList.value = filterRegDateBookList
         case .page:
-            let filterPageBookList = self.sortedPageDate(bookList, sort)
+            let filterPageBookList = self.sortedPageDate(stateBook, sort)
             return outputBookList.value = filterPageBookList
         }
     }

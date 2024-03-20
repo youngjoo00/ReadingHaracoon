@@ -42,6 +42,7 @@ extension StorageBookViewController {
         mainView.searchBar.delegate = self
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
+        mainView.stateSegmentControl.addTarget(self, action: #selector(stateSegmentControlValueChanged(_:)), for: .valueChanged)
         mainView.filterButton.addTarget(self, action: #selector(didFilterButtonTapped), for: .touchUpInside)
         configureTapGesture()
         configureLogo()
@@ -52,7 +53,7 @@ extension StorageBookViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
-    
+
     @objc func keyboardDisMiss() {
         keyboardEndEditing()
     }
@@ -63,6 +64,12 @@ extension StorageBookViewController {
             self.list = list
             self.mainView.collectionView.reloadData()
         }
+    }
+    
+    @objc func stateSegmentControlValueChanged(_ sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        
+        viewModel.inputStateSegmentControlChangedValue.value = selectedIndex
     }
     
     @objc func didFilterButtonTapped() {

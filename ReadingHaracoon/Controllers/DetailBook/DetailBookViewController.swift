@@ -5,9 +5,6 @@
 //  Created by youngjoo on 3/9/24.
 //
 
-protocol BookStatusDelegate: AnyObject {
-}
-
 import UIKit
 import SVProgressHUD
 

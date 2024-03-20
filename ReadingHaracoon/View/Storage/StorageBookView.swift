@@ -19,12 +19,20 @@ final class StorageBookView: BaseView {
         $0.placeholder = "보관한 책을 검색해보세요"
     }
     
-    let stateSegmentControl = UISegmentedControl()
+    let stateSegmentControl = UISegmentedControl().then {
+        $0.insertSegment(withTitle: "전체", at: 0, animated: false)
+        $0.insertSegment(withTitle: "읽을 책", at: 1, animated: false)
+        $0.insertSegment(withTitle: "읽고 있는 책", at: 2, animated: false)
+        $0.insertSegment(withTitle: "읽은 책", at: 3, animated: false)
+        $0.selectedSegmentIndex = 0
+        $0.setTitleTextAttributes([.foregroundColor: UIColor.point], for: .selected)
+        $0.setTitleTextAttributes([.foregroundColor: UIColor.lightGray], for: .normal)
+        $0.apportionsSegmentWidthsByContent = true
+    }
     
     let filterButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
         configuration.title = "필터링"
-        //configuration.image = UIImage(resource: .test)
         configuration.baseForegroundColor = .white
         configuration.baseBackgroundColor = .point
         $0.configuration = configuration
@@ -38,6 +46,7 @@ final class StorageBookView: BaseView {
     override func configureHierarchy() {
         [
             searchBar,
+            stateSegmentControl,
             filterButton,
             collectionView
         ].forEach { addSubview($0) }
@@ -47,6 +56,13 @@ final class StorageBookView: BaseView {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(16)
+        }
+        
+        stateSegmentControl.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom)
+            make.height.equalTo(filterButton)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(16)
+            make.trailing.equalTo(filterButton.snp.leading).offset(-10)
         }
         
         filterButton.snp.makeConstraints { make in
