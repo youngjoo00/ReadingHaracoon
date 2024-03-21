@@ -61,8 +61,16 @@ extension StorageBookViewController {
     private func bindViewModel() {
         viewModel.outputBookList.bind { [weak self] list in
             guard let self else { return }
-            self.list = list
-            self.mainView.collectionView.reloadData()
+            if list.isEmpty {
+                mainView.noStorageLabel.isHidden = false
+                mainView.collectionView.isHidden = true
+            } else {
+                mainView.noStorageLabel.isHidden = true
+                mainView.collectionView.isHidden = false
+                self.list = list
+                self.mainView.collectionView.reloadData()
+            }
+            
         }
     }
     

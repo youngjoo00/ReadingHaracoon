@@ -182,6 +182,16 @@ extension DetailBookViewController {
             
             self.showToast(message: message)
         }
+        
+        viewModel.inputBookStatus.bindOnChanged { [weak self] status in
+            guard let self, let status else { return }
+            if status == 0 {
+                mainView.timerButton.isHidden = true
+            } else {
+                mainView.timerButton.isHidden = false
+            }
+        }
+        
     }
 }
 

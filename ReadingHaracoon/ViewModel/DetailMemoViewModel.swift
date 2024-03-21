@@ -58,14 +58,7 @@ final class DetailMemoViewModel {
         
         inputDeleteMemo.bindOnChanged { [weak self] _ in
             guard let self, let memo else { return }
-            
             self.deleteItem(memo)
-//            if let memo = repository?.fetchMemoItem(memo) {
-//                self.deleteItem(memo)
-//            } else {
-//                self.outputDataBaseReslutMessage.value = .fail("메모를 찾을 수 없다쿤..")
-//            }
-            
         }
     }
     

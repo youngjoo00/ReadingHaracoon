@@ -38,6 +38,15 @@ final class StorageBookView: BaseView {
         $0.configuration = configuration
     }
     
+    let noStorageLabel = BasePaddingLabel().then {
+        $0.text = "검색에서 책을 저장하라쿤!"
+        $0.textAlignment = .center
+        $0.backgroundColor = .white
+        $0.textColor = .point
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 8
+    }
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
         $0.register(StorageBookCollectionViewCell.self, forCellWithReuseIdentifier: StorageBookCollectionViewCell.identifier)
         $0.backgroundColor = .clear
@@ -48,6 +57,7 @@ final class StorageBookView: BaseView {
             searchBar,
             stateSegmentControl,
             filterButton,
+            noStorageLabel,
             collectionView
         ].forEach { addSubview($0) }
     }
@@ -68,6 +78,10 @@ final class StorageBookView: BaseView {
         filterButton.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom)
             make.trailing.equalTo(searchBar).offset(-10)
+        }
+        
+        noStorageLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         
         collectionView.snp.makeConstraints { make in

@@ -85,6 +85,9 @@
 		8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */; };
 		8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEC2B9CC348004D44C7 /* BookRepository.swift */; };
 		8EA744A92BABD35900DD5B38 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744A82BABD35900DD5B38 /* UserDefaultsManager.swift */; };
+		8EA744AC2BAC239200DD5B38 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */; };
+		8EA744AE2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AD2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift */; };
+		8EA744B02BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AF2BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift */; };
 		8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */; };
 		8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */; };
 		8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */; };
@@ -193,6 +196,9 @@
 		8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewModel.swift; sourceTree = "<group>"; };
 		8E928BEC2B9CC348004D44C7 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		8EA744A82BABD35900DD5B38 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		8EA744AD2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationPolicyViewController.swift; sourceTree = "<group>"; };
+		8EA744AF2BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationPolicyView.swift; sourceTree = "<group>"; };
 		8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagerViewCell.swift; sourceTree = "<group>"; };
 		8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+.swift"; sourceTree = "<group>"; };
 		8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2810F02B999634000BBD65 /* SettingViewController.swift */,
+				8EA744AD2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -449,6 +456,7 @@
 				8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */,
 				8E012E722BA09F0700DF7512 /* BlockView.swift */,
 				8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */,
+				8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -697,6 +705,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECE5E152BA8B39600FE95ED /* SettingView.swift */,
+				8EA744AF2BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -864,6 +873,7 @@
 				8E928BE12B9CB374004D44C7 /* Bold18Label.swift in Sources */,
 				8ECE5DDD2BA5B63B00FE95ED /* MemoViewController.swift in Sources */,
 				8ECE5DE12BA6E77B00FE95ED /* TimerView.swift in Sources */,
+				8EA744AC2BAC239200DD5B38 /* PaddingLabel.swift in Sources */,
 				8ECE5DC82BA4915A00FE95ED /* UITextField+.swift in Sources */,
 				8ECE5DC12BA4415200FE95ED /* MemoRepository.swift in Sources */,
 				8ECE5E092BA83C1800FE95ED /* TimeManager.swift in Sources */,
@@ -872,12 +882,14 @@
 				8E28110A2B99A4FE000BBD65 /* ErrorStatus.swift in Sources */,
 				8E32ABF32BA9C41D0073F809 /* Logo.swift in Sources */,
 				8E2810FF2B999D19000BBD65 /* Search.swift in Sources */,
+				8EA744B02BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift in Sources */,
 				8E32ABF92BA9F6E30073F809 /* NetworkMoniter.swift in Sources */,
 				8E693E6B2BA34E450099597A /* MemoViewCollectionViewVersion.swift in Sources */,
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8ECE5E012BA823D800FE95ED /* CalendarTableViewCell.swift in Sources */,
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
 				8E7166C32BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift in Sources */,
+				8EA744AE2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift in Sources */,
 				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8ECE5E0D2BA84D5D00FE95ED /* ChartViewModel.swift in Sources */,

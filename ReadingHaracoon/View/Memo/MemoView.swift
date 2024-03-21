@@ -17,18 +17,32 @@ final class MemoView: BaseView {
         $0.register(MemoTableViewCell.self, forCellReuseIdentifier: MemoTableViewCell.identifier)
     }
     
+    let noMemoLabel = BasePaddingLabel().then {
+        $0.text = "메모가 비어있다쿤!"
+        $0.textAlignment = .center
+        $0.backgroundColor = .white
+        $0.textColor = .point
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 8
+    }
+    
     let writeButton = BottomConfirmButton(title: "메모 작성", image: UIImage(systemName: "pencil"))
     
     override func configureHierarchy() {
         [
             tableView,
-            writeButton
+            noMemoLabel,
+            writeButton,
         ].forEach { addSubview($0) }
     }
     
     override func configureLayout() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
+        }
+        
+        noMemoLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         
         writeButton.snp.makeConstraints { make in

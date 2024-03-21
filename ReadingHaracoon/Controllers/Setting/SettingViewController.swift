@@ -10,14 +10,14 @@ import UIKit
 extension SettingViewController {
     
     enum Setting: Int, CaseIterable {
-        case support
+        //case support
         case other
         case version
         
         var sectionTitle: String {
             switch self {
-            case .support:
-                return "지원"
+//            case .support:
+//                return "지원"
             case .other:
                 return "기타"
             case .version:
@@ -27,10 +27,10 @@ extension SettingViewController {
         
         var sectionContent: [String] {
             switch self {
-            case .support:
-                return ["문의하기"]
+//            case .support:
+//                return ["문의하기"]
             case .other:
-                return ["개인정보 이용약관"]
+                return ["개인정보 처리방침"]
             case .version:
                 return ["현재 사용중인 앱 버전 : 1.0.0"]
             }
@@ -88,5 +88,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let vc = PersonalInformationPolicyViewController()
+            transition(viewController: vc, style: .push)
+        }
+    }
     
 }

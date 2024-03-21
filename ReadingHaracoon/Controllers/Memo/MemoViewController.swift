@@ -55,8 +55,13 @@ extension MemoViewController {
         
         viewModel.outputMemoList.bind { [weak self] memoList in
             guard let self else { return }
-            self.memoList = memoList
-            self.mainView.tableView.reloadData()
+            if memoList.isEmpty {
+                mainView.noMemoLabel.isHidden = false
+            } else {
+                mainView.noMemoLabel.isHidden = true
+                self.memoList = memoList
+                self.mainView.tableView.reloadData()
+            }
         }
     }
 }
@@ -96,6 +101,7 @@ extension MemoViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MemoViewController: PassResultMessageDelegate {
     func resultMessageReceived(message: String) {
+        self.memoList = []
         showToast(message: message)
     }
 }
