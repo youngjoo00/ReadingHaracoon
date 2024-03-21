@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-0l-uth">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-0l-uth">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" red="0.96862745289999996" green="0.92156863209999995" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreenImage.png" width="1417.43994140625" height="1417.43994140625"/>
+        <image name="LaunchScreenImage" width="5906" height="5906"/>
     </resources>
 </document>

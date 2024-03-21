@@ -35,7 +35,6 @@
 		8E2810CF2B998E57000BBD65 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810CE2B998E57000BBD65 /* Realm */; };
 		8E2810D12B998E57000BBD65 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810D02B998E57000BBD65 /* RealmSwift */; };
 		8E2810D42B998E65000BBD65 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8E2810D32B998E65000BBD65 /* FSCalendar */; };
-		8E2810D82B99906B000BBD65 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8E2810D72B99906B000BBD65 /* Localizable.xcstrings */; };
 		8E2810DF2B9992E1000BBD65 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810DE2B9992E0000BBD65 /* TabBarController.swift */; };
 		8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E22B99951E000BBD65 /* BaseViewController.swift */; };
 		8E2810E52B999540000BBD65 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2810E42B999540000BBD65 /* BaseView.swift */; };
@@ -88,6 +87,10 @@
 		8EA744AC2BAC239200DD5B38 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */; };
 		8EA744AE2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AD2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift */; };
 		8EA744B02BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744AF2BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift */; };
+		8EA744B22BAC399600DD5B38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EA744B12BAC399600DD5B38 /* GoogleService-Info.plist */; };
+		8EA744B62BAC3AC300DD5B38 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8EA744B52BAC3AC300DD5B38 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		8EA744B82BAC3AC300DD5B38 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8EA744B72BAC3AC300DD5B38 /* FirebaseCrashlytics */; };
+		8EA744BA2BAC3AC300DD5B38 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EA744B92BAC3AC300DD5B38 /* FirebaseMessaging */; };
 		8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */; };
 		8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */; };
 		8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */; };
@@ -146,7 +149,6 @@
 		8E2810A62B998411000BBD65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2810AB2B998411000BBD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E2810B42B99864F000BBD65 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		8E2810D72B99906B000BBD65 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8E2810DE2B9992E0000BBD65 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8E2810E22B99951E000BBD65 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E2810E42B999540000BBD65 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		8EA744AD2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationPolicyViewController.swift; sourceTree = "<group>"; };
 		8EA744AF2BAC28CD00DD5B38 /* PersonalInformationPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationPolicyView.swift; sourceTree = "<group>"; };
+		8EA744B12BAC399600DD5B38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagerViewCell.swift; sourceTree = "<group>"; };
 		8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+.swift"; sourceTree = "<group>"; };
 		8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
@@ -242,8 +245,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA744B62BAC3AC300DD5B38 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				8E2810C92B998E30000BBD65 /* Kingfisher in Frameworks */,
 				8E2810C62B998E26000BBD65 /* Alamofire in Frameworks */,
+				8EA744B82BAC3AC300DD5B38 /* FirebaseCrashlytics in Frameworks */,
 				8E2810C32B998E0E000BBD65 /* SVProgressHUD in Frameworks */,
 				8E2810D42B998E65000BBD65 /* FSCalendar in Frameworks */,
 				8E2810D12B998E57000BBD65 /* RealmSwift in Frameworks */,
@@ -252,6 +257,7 @@
 				8E2810C02B998DF5000BBD65 /* DGCharts in Frameworks */,
 				8E2810CC2B998E40000BBD65 /* Toast in Frameworks */,
 				8E2810CF2B998E57000BBD65 /* Realm in Frameworks */,
+				8EA744BA2BAC3AC300DD5B38 /* FirebaseMessaging in Frameworks */,
 				8E2810BD2B998DD6000BBD65 /* Then in Frameworks */,
 				1F3EC0388D31BAF80795A628 /* Pods_ReadingHaracoon.framework in Frameworks */,
 			);
@@ -301,6 +307,7 @@
 			children = (
 				8E2810B42B99864F000BBD65 /* .gitignore */,
 				8E28109C2B998410000BBD65 /* ReadingHaracoon */,
+				8EA744B12BAC399600DD5B38 /* GoogleService-Info.plist */,
 				8E28109B2B998410000BBD65 /* Products */,
 				8F342C88B0E9E102ED4E9904 /* Pods */,
 				258AC53DBD27A76CA4224D8A /* Frameworks */,
@@ -333,7 +340,6 @@
 				8E2810E12B9994F2000BBD65 /* Base */,
 				8E32ABF72BA9F6C10073F809 /* NetworkMoniter */,
 				8E2810F62B999B8A000BBD65 /* Observer */,
-				8E2810D62B99901E000BBD65 /* Localizing */,
 				8E2810D52B998F3E000BBD65 /* Application */,
 			);
 			path = ReadingHaracoon;
@@ -351,14 +357,6 @@
 				8E7166BE2BAAC98B0063A4AF /* APIKey.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		8E2810D62B99901E000BBD65 /* Localizing */ = {
-			isa = PBXGroup;
-			children = (
-				8E2810D72B99906B000BBD65 /* Localizable.xcstrings */,
-			);
-			path = Localizing;
 			sourceTree = "<group>";
 		};
 		8E2810DD2B9992B7000BBD65 /* Tabbar */ = {
@@ -731,6 +729,7 @@
 				8E2810972B998410000BBD65 /* Frameworks */,
 				8E2810982B998410000BBD65 /* Resources */,
 				CF28058F58AE12703EBB1E87 /* [CP] Embed Pods Frameworks */,
+				8EA744B32BAC39F400DD5B38 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -749,6 +748,9 @@
 				8E2810D02B998E57000BBD65 /* RealmSwift */,
 				8E2810D32B998E65000BBD65 /* FSCalendar */,
 				8ECE5DF52BA813EF00FE95ED /* Tabman */,
+				8EA744B52BAC3AC300DD5B38 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				8EA744B72BAC3AC300DD5B38 /* FirebaseCrashlytics */,
+				8EA744B92BAC3AC300DD5B38 /* FirebaseMessaging */,
 			);
 			productName = ReadingHaracoon;
 			productReference = 8E28109A2B998410000BBD65 /* ReadingHaracoon.app */;
@@ -771,7 +773,7 @@
 			};
 			buildConfigurationList = 8E2810952B998410000BBD65 /* Build configuration list for PBXProject "ReadingHaracoon" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -790,6 +792,7 @@
 				8E2810CD2B998E57000BBD65 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				8E2810D22B998E65000BBD65 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				8ECE5DF42BA813EF00FE95ED /* XCRemoteSwiftPackageReference "Tabman" */,
+				8EA744B42BAC3AC300DD5B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8E28109B2B998410000BBD65 /* Products */;
 			projectDirPath = "";
@@ -806,8 +809,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2810B52B99864F000BBD65 /* .gitignore in Resources */,
-				8E2810D82B99906B000BBD65 /* Localizable.xcstrings in Resources */,
 				8E3B70282B9F559700DFEE7E /* LaunchScreen.storyboard in Resources */,
+				8EA744B22BAC399600DD5B38 /* GoogleService-Info.plist in Resources */,
 				8E2810A72B998411000BBD65 /* Assets.xcassets in Resources */,
 				8E2810A52B998410000BBD65 /* Main.storyboard in Resources */,
 			);
@@ -816,6 +819,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8EA744B32BAC39F400DD5B38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 		CF28058F58AE12703EBB1E87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1116,6 +1141,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1151,6 +1177,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1265,6 +1292,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		8EA744B42BAC3AC300DD5B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
 		8ECE5DF42BA813EF00FE95ED /* XCRemoteSwiftPackageReference "Tabman" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uias/Tabman.git";
@@ -1325,6 +1360,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8E2810D22B998E65000BBD65 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		8EA744B52BAC3AC300DD5B38 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EA744B42BAC3AC300DD5B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		8EA744B72BAC3AC300DD5B38 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EA744B42BAC3AC300DD5B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8EA744B92BAC3AC300DD5B38 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EA744B42BAC3AC300DD5B38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		8ECE5DF52BA813EF00FE95ED /* Tabman */ = {
 			isa = XCSwiftPackageProductDependency;
