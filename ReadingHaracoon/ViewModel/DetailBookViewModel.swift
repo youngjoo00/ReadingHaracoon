@@ -25,7 +25,8 @@ final class DetailBookViewModel {
     var outputCreateDataResult = Observable("")
     var outputUpdateDataResult = Observable("")
     var outputDeleteDataResult = Observable("")
-        
+    var outputIsSameBookTimer = Observable(false)
+    
     var isLoading = Observable(false)
     var realmBookData: Observable<Book?> = Observable(nil)
     var viewMode: Observable<TransitionDetailBook?> = Observable(nil)
@@ -69,6 +70,15 @@ final class DetailBookViewModel {
         inputUpdateItemTrigger.bindOnChanged { [weak self] _ in
             guard let self, let bookStatus = inputBookStatus.value else { return }
             self.updateBookStatus(isbn, bookStatus: bookStatus)
+        }
+    }
+    
+    func checkSameBookTimer() -> Bool {
+        let runningTimerBookISBN = UserDefaultsManager.shared.getRunningTimerBookISBN()
+        if runningTimerBookISBN == realmBookData.value?.isbn {
+            return true
+        } else {
+            return false
         }
     }
 }

@@ -36,13 +36,11 @@ final class CustomAlertView: BaseView {
         configuration.baseForegroundColor = .white
         configuration.baseBackgroundColor = .lightGray
         $0.configuration = configuration
+        $0.layer.cornerRadius = 8
     }
     
-    let actionButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
-        $0.configuration = configuration
+    let actionButton = BottomConfirmButton(title: "", image: nil).then {
+        $0.layer.cornerRadius = 8
     }
     
     override func configureHierarchy() {

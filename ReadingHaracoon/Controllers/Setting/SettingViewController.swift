@@ -30,7 +30,7 @@ extension SettingViewController {
             case .support:
                 return ["문의하기"]
             case .other:
-                return ["서비스 이용약관"]
+                return ["개인정보 이용약관"]
             case .version:
                 return ["현재 사용중인 앱 버전 : 1.0.0"]
             }

@@ -27,10 +27,10 @@ final class CustomPresentationController: UIPresentationController {
         case .bottom:
             // containerView의 크기를 기준으로 ModalView의 크기 계산
             let size = CGSize(width: containerView.bounds.width,
-                              height: containerView.bounds.height * 0.5)
+                              height: 300)
             
             // containerView의 크기를 기준으로 ModalView의 위치 계산
-            let origin = CGPoint(x: .zero, y: containerView.bounds.height * 0.5)
+            let origin = CGPoint(x: .zero, y: containerView.bounds.height - size.height)
             
             return CGRect(origin: origin, size: size)
         case .center:
@@ -92,7 +92,8 @@ final class CustomPresentationController: UIPresentationController {
         case .alert:
             return
         case .timer:
-            return
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissController))
+            backgroundView.addGestureRecognizer(tapGesture)
         }
     }
     

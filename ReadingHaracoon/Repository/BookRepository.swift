@@ -45,10 +45,6 @@ final class BookRepository {
         return Array(fetchBookTable())
     }
     
-//    func fetchTable<T: Object>() -> Results<T> {
-//        return realm.objects(T.self)
-//    }
-    
     func updateBookStatus(_ isbn: String, newStatus: Int) throws {
         guard let book = fetchBookItem(isbn) else { throw BookError.bookNotFound }
         
@@ -66,7 +62,6 @@ final class BookRepository {
     func deleteBook(_ book: Book) throws {
         do {
             try realm.write {
-                
                 realm.delete(book.memoList)
                 realm.delete(book.statsList)
                 realm.delete(book)

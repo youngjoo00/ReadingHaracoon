@@ -22,6 +22,8 @@ final class CalendarView: BaseView {
         $0.appearance.headerTitleColor = .point //2021년 1월(헤더) 색
         $0.appearance.titleWeekendColor = .systemGray //주말 날짜 색
         $0.appearance.titleDefaultColor = .point //기본 날짜 색
+        $0.appearance.selectionColor = .gray
+        $0.appearance.todayColor = .point
     }
     
     let tableView = UITableView().then {

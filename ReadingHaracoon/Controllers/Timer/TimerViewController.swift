@@ -75,11 +75,13 @@ extension TimerViewController {
         viewModel.outputStartStopButtonState.bindOnChanged { [weak self] state in
             guard let self else { return }
             if state {
-                self.mainView.startStopButton.configuration?.title = "STOP"
+                self.mainView.startStopButton.configuration?.title = "일시 정지"
                 self.mainView.startStopButton.configuration?.baseForegroundColor = .systemRed
+                self.mainView.startStopButton.configuration?.image = UIImage(systemName: "pause.fill")
             } else {
-                self.mainView.startStopButton.configuration?.title = "START"
+                self.mainView.startStopButton.configuration?.title = "시작"
                 self.mainView.startStopButton.configuration?.baseForegroundColor = .point
+                self.mainView.startStopButton.configuration?.image = UIImage(systemName: "play.fill")
             }
         }
         

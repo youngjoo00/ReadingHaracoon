@@ -12,8 +12,14 @@ final class SearchPagerViewCell: BasePagerViewCell {
     
     let bookImageView = BookImageView(frame: .zero)
     
-    let titleLabel = Bold18Label()
-    let descriptionLabel = Normal16Label()
+    let titleLabel = Bold18Label().then {
+        $0.textColor = .black
+    }
+    
+    let descriptionLabel = Normal16Label().then {
+        $0.font = .systemFont(ofSize: 16, weight: .light)
+        $0.textColor = .darkGray
+    }
     
     override func configureHierarchy() {
         [

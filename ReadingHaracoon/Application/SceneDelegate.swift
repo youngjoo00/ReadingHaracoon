@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Then
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    let bookRepository = BookRepository()
     var window: UIWindow?
     var errorWindow: UIWindow?
     
@@ -35,8 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 break
             }
         }
-        
-        
     }
     
     private func loadNetworkErrorWindow(on scene: UIScene) {
@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.windowLevel = .statusBar
             window.makeKeyAndVisible()
             
-            let noNetworkView = NoNetworkView(frame: window.bounds)
+            let noNetworkView = NoNetworkView(frame: window.frame)
             window.addSubview(noNetworkView)
             self.errorWindow = window
         }
@@ -68,6 +68,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        guard let runningTimerBookISBN = UserDefaultsManager.shared.getRunningTimerBookISBN() else { return }
+        guard let book = bookRepository.fetchBookItem(runningTimerBookISBN) else { return }
+        let message = "[\(book.title)] 타이머가 실행되고 있다쿤!"
+        
+        guard let rootViewController = window?.rootViewController else { return }
+        self.passMessageViewController(viewController: rootViewController, message: message)
+    }
+    
+    /// RootVC 로 부터 자식 VC 순회, RunningTimerBookMessageProtocol을 채택한 경우 메세지 전달
+    func passMessageViewController(viewController: UIViewController, message: String) {
+        if let runningTimerBookMessageVC = viewController as? RunningTimerBookMessageProtocol {
+            runningTimerBookMessageVC.runningTimerBookMessageReceived(message: message)
+        }
+        
+        viewController.children.forEach {
+            passMessageViewController(viewController: $0, message: message)
+        }
     }
     
     func sceneWillResignActive(_ scene: UIScene) {

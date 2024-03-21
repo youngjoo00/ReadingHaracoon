@@ -78,6 +78,10 @@ final class DetailBookView: BaseView {
         $0.backgroundColor = .white
     }
     
+    let separateView = UIView().then {
+        $0.backgroundColor = .lightGray
+    }
+    
     let scrollBottomSpaceView = UIView()
     
     override func configureHierarchy() {
@@ -93,6 +97,7 @@ final class DetailBookView: BaseView {
             titleLabel,
             authorLabel,
             publisherLabel,
+            separateView,
             descriptionLabel,
             descriptionCotentLabel,
             linkLabel,
@@ -151,9 +156,15 @@ final class DetailBookView: BaseView {
             make.top.equalTo(authorLabel.snp.bottom).offset(10)
         }
         
+        separateView.snp.makeConstraints { make in
+            make.top.equalTo(publisherLabel.snp.bottom).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.height.equalTo(1)
+        }
+        
         descriptionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.top.equalTo(publisherLabel.snp.bottom).offset(20)
+            make.top.equalTo(separateView.snp.bottom).offset(20)
         }
         
         descriptionCotentLabel.snp.makeConstraints { make in

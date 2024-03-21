@@ -34,18 +34,15 @@ final class TimerView: BaseView {
     
     let startStopButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
-        configuration.title = "START"
-        configuration.image = UIImage(systemName: "play")
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
+        configuration.title = "시작"
+        configuration.baseBackgroundColor = .white
         configuration.imagePadding = 10
         $0.configuration = configuration
     }
     
     let resetButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
-        configuration.title = "RESET"
-        configuration.image = UIImage(systemName: "reset")
+        configuration.title = "초기화"
         configuration.baseForegroundColor = .white
         configuration.baseBackgroundColor = .lightGray
         configuration.imagePadding = 10
@@ -61,21 +58,13 @@ final class TimerView: BaseView {
     let cancelButton = UIButton().then {
         var configuration = UIButton.Configuration.gray()
         configuration.title = "취소"
-        configuration.image = UIImage(systemName: "xmark")
         configuration.baseForegroundColor = .white
         configuration.baseBackgroundColor = .lightGray
-        configuration.imagePadding = 10
         $0.configuration = configuration
     }
     
-    let saveButton = UIButton().then {
-        var configuration = UIButton.Configuration.gray()
-        configuration.title = "저장하기"
-        configuration.image = UIImage(systemName: "pencil")
-        configuration.baseForegroundColor = .white
-        configuration.baseBackgroundColor = .lightGray
-        configuration.imagePadding = 10
-        $0.configuration = configuration
+    let saveButton = BottomConfirmButton(title: "저장하기", image: nil).then {
+        $0.layer.cornerRadius = 8
     }
     
     override func configureHierarchy() {
@@ -108,8 +97,6 @@ final class TimerView: BaseView {
         
         verticalButtonStackView.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(titleLabel.snp.bottom).offset(20)
-//            make.bottom.lessThanOrEqualTo(bottomButtonStackView.snp.top).offset(-20)
-//            make.centerY.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(16)
         }
 

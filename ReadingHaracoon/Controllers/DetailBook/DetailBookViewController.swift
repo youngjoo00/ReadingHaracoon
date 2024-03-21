@@ -12,7 +12,7 @@ final class DetailBookViewController: BaseViewController {
     
     let mainView = DetailBookView()
     let viewModel = DetailBookViewModel()
-    
+    let bookRepository = BookRepository()
     private var customTransitioningDelegate = CustomTransitioningDelegate(.bottom)
     
     override func loadView() {
@@ -45,11 +45,14 @@ extension DetailBookViewController {
     }
     
     @objc func didRightBarFavortieButtonItemTapped() {
-        if viewModel.outputIsFavortie.value {
+        if viewModel.checkSameBookTimer() {
+            showToast(message: "타이머가 진행중인 책은 삭제할 수 없다쿤!")
+        } else {
             showCustomAlert(title: "이 책을 삭제한다쿤?", message: "책과 관련된 데이터가 모두 삭제된다쿤!", actionTitle: "삭제") {
                 self.viewModel.inputDidRightBarFavortieButtonItemTappedTrigger.value = ()
             }
         }
+        
     }
     
     @objc func didStorageButtonTapped() {
@@ -101,10 +104,19 @@ extension DetailBookViewController {
     }
     
     @objc func didTimerButtonTapped() {
-        let vc = TimerViewController()
-        vc.viewModel.bookData = viewModel.realmBookData.value
-        vc.delegate = self
-        showCustomModal(style: .timer, viewController: vc)
+        guard let currentBook = viewModel.realmBookData.value else { return }
+        let runningTimerBookISBN = UserDefaultsManager.shared.getRunningTimerBookISBN()
+        if runningTimerBookISBN == currentBook.isbn || runningTimerBookISBN == nil {
+            let vc = TimerViewController()
+            vc.viewModel.bookData = viewModel.realmBookData.value
+            vc.delegate = self
+            showCustomModal(style: .timer, viewController: vc)
+        } else {
+            guard let runningTimerBook = bookRepository.fetchBookItem(runningTimerBookISBN ?? "") else { return }
+            let message = "[\(runningTimerBook.title)] 타이머가 실행되고 있다쿤!"
+            showToast(message: message)
+        }
+        
     }
 }
 
@@ -178,6 +190,4 @@ extension DetailBookViewController: PassResultMessageDelegate {
     func resultMessageReceived(message: String) {
         showToast(message: message)
     }
-    
-    
 }

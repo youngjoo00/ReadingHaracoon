@@ -17,11 +17,6 @@ final class TimerViewModel {
     var scheculedTimer: Timer!
     var currentTime = 0
     
-    private let userDefaluts = UserDefaults.standard
-    private let startTimeKey = "startTime"
-    private let stopTimeKey = "stopTime"
-    private let timerCheckKey = "timerCheck"
-
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
     var inputDidStartStopButtonTappedTrigger: Observable<Void?> = Observable(nil)
     var inputDidResetButtonTappedTrigger: Observable<Void?> = Observable(nil)
@@ -46,9 +41,9 @@ final class TimerViewModel {
         inputViewDidLoadTrigger.bindOnChanged { [weak self] _ in
             guard let self else { return }
             
-            startTime = userDefaluts.object(forKey: startTimeKey) as? Date
-            stopTime = userDefaluts.object(forKey: stopTimeKey) as? Date
-            timerCheck = userDefaluts.bool(forKey: timerCheckKey)
+            startTime = UserDefaultsManager.shared.getStartTime()
+            stopTime = UserDefaultsManager.shared.getStopTime()
+            timerCheck = UserDefaultsManager.shared.getTimerCheck()
             
             if timerCheck {
                 startTimer()
@@ -86,6 +81,7 @@ final class TimerViewModel {
             
             setStopTime(date: nil)
             setStartTime(date: nil)
+            setRunningTimerBookISBN(nil)
             let timeString = TimeManager.shared.formatTimeString(hour: 0, min: 0, sec: 0)
             outputTimeLabelText.value = timeString
             stopTimer()
@@ -121,7 +117,7 @@ extension TimerViewModel {
     
     private func startTimer() {
         scheculedTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(refershValue), userInfo: nil, repeats: true)
-        setTimeCounting(true)
+        setTimeCheck(true)
         outputStartStopButtonState.value = true
     }
     
@@ -129,7 +125,7 @@ extension TimerViewModel {
         if scheculedTimer != nil {
             scheculedTimer.invalidate()
         }
-        setTimeCounting(false)
+        setTimeCheck(false)
         outputStartStopButtonState.value = false
     }
     
@@ -159,16 +155,21 @@ extension TimerViewModel {
     
     private func setStartTime(date: Date?) {
         startTime = date
-        userDefaluts.set(startTime, forKey: startTimeKey)
+        UserDefaultsManager.shared.setStartTime(startTime)
+        setRunningTimerBookISBN(bookData?.isbn)
     }
     
     private func setStopTime(date: Date?) {
         stopTime = date
-        userDefaluts.set(stopTime, forKey: stopTimeKey)
+        UserDefaultsManager.shared.setStopTime(stopTime)
     }
     
-    private func setTimeCounting(_ value: Bool) {
+    private func setTimeCheck(_ value: Bool) {
         timerCheck = value
-        userDefaluts.set(timerCheck, forKey: timerCheckKey)
+        UserDefaultsManager.shared.setTimeCheck(timerCheck)
+    }
+    
+    private func setRunningTimerBookISBN(_ isbn: String?) {
+        UserDefaultsManager.shared.setRunningTimerBookISBN(isbn)
     }
 }

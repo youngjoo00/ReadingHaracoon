@@ -73,6 +73,7 @@
 		8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */; };
 		8E7166BF2BAAC98B0063A4AF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166BE2BAAC98B0063A4AF /* APIKey.swift */; };
 		8E7166C12BAAE2FA0063A4AF /* BottomConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */; };
+		8E7166C32BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */; };
 		8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */; };
 		8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */; };
 		8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */; };
@@ -83,6 +84,7 @@
 		8E928BE92B9CB9FB004D44C7 /* AladinWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */; };
 		8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */; };
 		8E928BED2B9CC348004D44C7 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BEC2B9CC348004D44C7 /* BookRepository.swift */; };
+		8EA744A92BABD35900DD5B38 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA744A82BABD35900DD5B38 /* UserDefaultsManager.swift */; };
 		8EBF13C72B9D980A00B1FE6D /* SearchPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */; };
 		8EBF13C92B9D996F00B1FE6D /* Identifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */; };
 		8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */; };
@@ -179,6 +181,7 @@
 		8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewModel.swift; sourceTree = "<group>"; };
 		8E7166BE2BAAC98B0063A4AF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomConfirmButton.swift; sourceTree = "<group>"; };
+		8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimerBookMessageProtocol.swift; sourceTree = "<group>"; };
 		8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		8E928BE82B9CB9FB004D44C7 /* AladinWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebView.swift; sourceTree = "<group>"; };
 		8E928BEA2B9CBB19004D44C7 /* AladinWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AladinWebViewModel.swift; sourceTree = "<group>"; };
 		8E928BEC2B9CC348004D44C7 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		8EA744A82BABD35900DD5B38 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8EBF13C62B9D980A00B1FE6D /* SearchPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagerViewCell.swift; sourceTree = "<group>"; };
 		8EBF13C82B9D996F00B1FE6D /* Identifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+.swift"; sourceTree = "<group>"; };
 		8EBF13CA2B9D9D3200B1FE6D /* BasePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 			children = (
 				8ECE5E022BA8282800FE95ED /* DateManager.swift */,
 				8ECE5E082BA83C1800FE95ED /* TimeManager.swift */,
+				8EA744A82BABD35900DD5B38 /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -471,7 +476,7 @@
 				8ECE5DFB2BA8182100FE95ED /* Stats */,
 				8ECE5E142BA8B38800FE95ED /* Setting */,
 				8E28111E2B9A2583000BBD65 /* Cell */,
-				8E32ABFA2BAA00920073F809 /* NoNetworkView.swift */,
+				8EA744AA2BAC067100DD5B38 /* Network */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,6 +569,14 @@
 			path = Aladin;
 			sourceTree = "<group>";
 		};
+		8EA744AA2BAC067100DD5B38 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8E32ABFA2BAA00920073F809 /* NoNetworkView.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8EBF13DA2B9F227900B1FE6D /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 			children = (
 				8ECE5DD02BA5A46400FE95ED /* PassResultMessageDelegate.swift */,
 				8E32ABF22BA9C41D0073F809 /* Logo.swift */,
+				8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -863,6 +877,7 @@
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8ECE5E012BA823D800FE95ED /* CalendarTableViewCell.swift in Sources */,
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
+				8E7166C32BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift in Sources */,
 				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
 				8ECE5E0D2BA84D5D00FE95ED /* ChartViewModel.swift in Sources */,
@@ -908,6 +923,7 @@
 				8EBF13CB2B9D9D3200B1FE6D /* BasePagerViewCell.swift in Sources */,
 				8E012E582B9F61F800DF7512 /* Normal14Label.swift in Sources */,
 				8E2811122B99A90C000BBD65 /* StorageBookViewModel.swift in Sources */,
+				8EA744A92BABD35900DD5B38 /* UserDefaultsManager.swift in Sources */,
 				8ECE5E182BA8B41400FE95ED /* SettingTableViewCell.swift in Sources */,
 				8EBF13CD2B9DB71D00B1FE6D /* SearchTableViewCell.swift in Sources */,
 				8E928BEB2B9CBB19004D44C7 /* AladinWebViewModel.swift in Sources */,

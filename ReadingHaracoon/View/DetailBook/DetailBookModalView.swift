@@ -71,7 +71,7 @@ final class DetailBookModalView: BaseView {
         }
         
         buttonStackView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-20)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(100)
         }
