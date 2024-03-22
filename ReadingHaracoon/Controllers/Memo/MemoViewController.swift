@@ -57,8 +57,10 @@ extension MemoViewController {
             guard let self else { return }
             if memoList.isEmpty {
                 mainView.noMemoLabel.isHidden = false
+                self.mainView.tableView.isHidden = true
             } else {
                 mainView.noMemoLabel.isHidden = true
+                mainView.tableView.isHidden = false
                 self.memoList = memoList
                 self.mainView.tableView.reloadData()
             }

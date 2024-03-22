@@ -39,12 +39,15 @@ final class StorageBookView: BaseView {
     }
     
     let noStorageLabel = BasePaddingLabel().then {
-        $0.text = "검색에서 책을 저장하라쿤!"
-        $0.textAlignment = .center
+        $0.text = "검색화면에서 책을 검색하고 저장하라쿤!"
         $0.backgroundColor = .white
+        $0.font = .boldSystemFont(ofSize: 20)
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
         $0.textColor = .point
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
+        $0.preferredMaxLayoutWidth = 200
     }
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
@@ -81,7 +84,8 @@ final class StorageBookView: BaseView {
         }
         
         noStorageLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(50)
         }
         
         collectionView.snp.makeConstraints { make in

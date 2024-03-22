@@ -64,6 +64,7 @@
 		8E32ABF92BA9F6E30073F809 /* NetworkMoniter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E32ABF82BA9F6E30073F809 /* NetworkMoniter.swift */; };
 		8E32ABFB2BAA00920073F809 /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E32ABFA2BAA00920073F809 /* NoNetworkView.swift */; };
 		8E3B70282B9F559700DFEE7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */; };
+		8E41DAFC2BAC89B5006023F9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8E41DAFB2BAC89B5006023F9 /* PrivacyInfo.xcprivacy */; };
 		8E693E692BA34E100099597A /* MemoViewController_CollectionViewVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E682BA34E100099597A /* MemoViewController_CollectionViewVersion.swift */; };
 		8E693E6B2BA34E450099597A /* MemoViewCollectionViewVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E6A2BA34E450099597A /* MemoViewCollectionViewVersion.swift */; };
 		8E693E6D2BA358430099597A /* MemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E6C2BA358430099597A /* MemoCollectionViewCell.swift */; };
@@ -178,6 +179,7 @@
 		8E32ABF82BA9F6E30073F809 /* NetworkMoniter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMoniter.swift; sourceTree = "<group>"; };
 		8E32ABFA2BAA00920073F809 /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E41DAFB2BAC89B5006023F9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		8E693E682BA34E100099597A /* MemoViewController_CollectionViewVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController_CollectionViewVersion.swift; sourceTree = "<group>"; };
 		8E693E6A2BA34E450099597A /* MemoViewCollectionViewVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewCollectionViewVersion.swift; sourceTree = "<group>"; };
 		8E693E6C2BA358430099597A /* MemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -307,7 +309,6 @@
 			children = (
 				8E2810B42B99864F000BBD65 /* .gitignore */,
 				8E28109C2B998410000BBD65 /* ReadingHaracoon */,
-				8EA744B12BAC399600DD5B38 /* GoogleService-Info.plist */,
 				8E28109B2B998410000BBD65 /* Products */,
 				8F342C88B0E9E102ED4E9904 /* Pods */,
 				258AC53DBD27A76CA4224D8A /* Frameworks */,
@@ -325,6 +326,14 @@
 		8E28109C2B998410000BBD65 /* ReadingHaracoon */ = {
 			isa = PBXGroup;
 			children = (
+				8E41DAFB2BAC89B5006023F9 /* PrivacyInfo.xcprivacy */,
+				8E2810AB2B998411000BBD65 /* Info.plist */,
+				8EA744B12BAC399600DD5B38 /* GoogleService-Info.plist */,
+				8E7166BE2BAAC98B0063A4AF /* APIKey.swift */,
+				8E2810A62B998411000BBD65 /* Assets.xcassets */,
+				8E28109D2B998410000BBD65 /* AppDelegate.swift */,
+				8E28109F2B998410000BBD65 /* SceneDelegate.swift */,
+				8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */,
 				8E2810DD2B9992B7000BBD65 /* Tabbar */,
 				8E2810F92B999BE3000BBD65 /* View */,
 				8E2810E02B9994E1000BBD65 /* Controllers */,
@@ -348,13 +357,7 @@
 		8E2810D52B998F3E000BBD65 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				8E28109D2B998410000BBD65 /* AppDelegate.swift */,
-				8E28109F2B998410000BBD65 /* SceneDelegate.swift */,
 				8E2810A32B998410000BBD65 /* Main.storyboard */,
-				8E3B70272B9F559700DFEE7E /* LaunchScreen.storyboard */,
-				8E2810A62B998411000BBD65 /* Assets.xcassets */,
-				8E2810AB2B998411000BBD65 /* Info.plist */,
-				8E7166BE2BAAC98B0063A4AF /* APIKey.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E41DAFC2BAC89B5006023F9 /* PrivacyInfo.xcprivacy in Resources */,
 				8E2810B52B99864F000BBD65 /* .gitignore in Resources */,
 				8E3B70282B9F559700DFEE7E /* LaunchScreen.storyboard in Resources */,
 				8EA744B22BAC399600DD5B38 /* GoogleService-Info.plist in Resources */,
@@ -1038,7 +1042,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1130,13 +1134,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N63SBJ4UPF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReadingHaracoon/Application/Info.plist;
+				INFOPLIST_FILE = ReadingHaracoon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "독서하라쿤";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1166,13 +1172,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N63SBJ4UPF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReadingHaracoon/Application/Info.plist;
+				INFOPLIST_FILE = ReadingHaracoon/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "독서하라쿤";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
