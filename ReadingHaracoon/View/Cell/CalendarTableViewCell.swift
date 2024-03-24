@@ -47,7 +47,7 @@ final class CalendarTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-
+        selectionStyle = .none
     }
 }
 

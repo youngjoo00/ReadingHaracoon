@@ -19,6 +19,7 @@ final class DetailMemoView: BaseView {
     let contentTextView = UITextView().then {
         $0.layer.cornerRadius = 16
         $0.font = .systemFont(ofSize: 15)
+        $0.textContainer.lineFragmentPadding = 10
     }
     
     let saveButton = BottomConfirmButton(title: "저장하기", image: nil)
@@ -51,6 +52,18 @@ final class DetailMemoView: BaseView {
     }
     
     override func configureLayout() {
+        var hasHomeButton: Bool {
+                let window = UIApplication
+                    .shared
+                    .connectedScenes
+                    .compactMap { $0 as? UIWindowScene }
+                    .flatMap { $0.windows }
+                    .first { $0.isKeyWindow }
+                guard let safeAreaBottom =  window?.safeAreaInsets.bottom else {
+                    return false
+                }
+                return safeAreaBottom <= 0
+            }
         titleTextField.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(16)

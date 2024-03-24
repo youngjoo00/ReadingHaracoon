@@ -94,7 +94,11 @@ extension DetailBookViewController {
     
     // 책 상태 업데이트
     @objc func didBookStatusButtonTapped() {
-        presentStorageModalViewController(true)
+        if viewModel.checkSameBookTimer() {
+            showToast(message: "타이머가 진행중인 책의 상태는 변경할 수 없다쿤!")
+        } else {
+            presentStorageModalViewController(true)
+        }
     }
     
     @objc func didMemoButtonTapped() {
