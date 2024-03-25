@@ -166,7 +166,7 @@ inputDidStartStopButtonTappedTrigger.bindOnChanged { [weak self] _ in
 }
 ```
 
-### POP
+### Delegate Pattern, POP (Protocol-Oriented Programming)
 
 - swift 의 강력한 패러다임인 POP 를 학습하여 Protocol + Extension 활용
 ```swift
@@ -195,7 +195,11 @@ extension UIViewController: Logo {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: container)
     }
 }
+```
 
+- VC Transtion 시 값 전달에 사용
+
+```swift
 // RunningTimerBookMessageProtocol.swift
 protocol RunningTimerBookMessageProtocol {
     func runningTimerBookMessageReceived(message: String)
@@ -209,7 +213,6 @@ extension BaseViewController: RunningTimerBookMessageProtocol {
 ```
 
 ### Alamofire
-
 - Router Pattern 을 통해 네트워크 통신을 위한 Endpoint 를 생성하는 로직 추상화
 - Singleton pattern, Generic, Result Type 을 통해 네트워크 통신
 - Request 실패했을 때, switch 구문으로 분기처리하여 다양한 상황에 대응
@@ -223,5 +226,36 @@ extension BaseViewController: RunningTimerBookMessageProtocol {
 
 ## 트러블 슈팅
 
-## 회고
+- 타이머 화면에서 저장할 때 뷰의 계층 관계
+Detail Book 화면에서 타이머를 이용하면 타이머 화면(modal)을 띄우게 되고, 저장 버튼을 누르면 Custom Alert 화면이 등장한다.
+이 때 저장이 완료되면 Alert + Timer 화면이 Dismiss 되고, 토스트를 Detail Book 화면에 띄워야 했기에 dismiss 를 한 코드에 2번 진행했지만,
+dismiss 는 한 번만 실행 되어 Alert 화면만 사라지고, Timer 화면은 그대로 남아서 Timer 화면에서 토스트가 띄워지는 현상이 발생했다.
 
+이를 해결하기 위해 dismiss 를 진행하여 Alert 을 먼저 내리고, DisPatchQueueAfter 를 사용해 시간의 간격을 두고 dismiss 를 진행해도, 한 번만 진행되어 똑같은 결과가 발생했었다.
+한 번에 원하는 뷰로 dismiss 할 방법을 찾던 중 presentingViewController.dismiss 를 통해 한 번에 모든 Modal 을 내리고, Detail Book 화면에서 토스트를 띄울 수 있었다.
+
+```swift
+self.presentingViewController?.dismiss(animated: true, completion: nil)
+```
+
+
+
+
+## 추후 업데이트 기능
+
+| 번호 | 작업명 | 비고 |
+|-----|-----------------------------------|----------------------------------|
+| 1 | 카테고리별 필터링 기능 구현 | 검색 및 추천 목록에서 책을 카테고리별로 필터링하여 찾아볼 수 있는 기능 |
+| 2 | 차트 터치 시 초 단위 수정 | 차트에서 터치 시 초 단위가 나오지 않도록 수정 |
+| 3 | 런치스크린 등록 |  |
+| 4 | 베젤 대응 레이아웃 수정 | 베젤이 있는 기기에 대한 레이아웃 대응 |
+| 5 | FB 애널리틱스 이슈 해결 | Facebook Analytics 사용 불가한 이슈 해결 |
+| 6 | 태그 기능 추가 | 사용자가 직접 책에 태그 추가하는 기능 구현 |
+| 7 | 로그인 및 백업 기능 |  |
+| 8 | 읽은 책 기록 기능 추가 | 읽은 책의 날짜와 시간을 기록하여 저장 |
+| 9 | 타이머 UI/UX 개선 |  |
+| 10 | 읽을 책 가격 정보 표시 | 알라딘 API를 통해 책의 가격 정보를 받아와 DB에 저장 |
+| 11 | 책의 서평 표시 기능 추가 | 알라딘 API에서 책의 서평 정보를 받아와서 표시 |
+| 12 | 다양한 포털 서평 표시 기능 | 네이버, 카카오, 구글, 교보문고 등의 포털 사이트에서 서평을 모아서 표시 |
+| 13 | 메인화면 안내 메세지 구현 | 메인화면의 안내 메세지를 터치하면 검색 탭으로 이동하도록 구현 |
+| 14 | 메모 작성 버튼 위치 수정 | 키보드가 올라왔을 때 메모 작성 버튼이 키보드 위에 오도록 위치 조정 |
