@@ -91,12 +91,12 @@ private func removeNetworkErrorWindow() {
 
 ### Custom Modal · Alert
 
-- UIPresentationController 프로토콜 사용
+- CustomPresentationController: UIPresentationController
 frameOfPresentedViewInContainerView 함수에서 containerView, PresentedView 의 사이즈와 위치를 열거형 case 로 분기처리하여 사용했습니다.
 
-- UIViewControllerTransitioningDelegate 프로토콜 사용
+- CustomTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate
 생성한 CustomPresentationController 클래스에서 customModalPresentationStyle 을 지정해둔 열거형 스타일로 설정했습니다.
-```
+```swift
 // BaseVC 에서 사용하려 했으나, Tabman 은 커스텀 VC 를 사용할 수 없으므로, VC 를 확장하여 사용
 extension UIViewController {
     
@@ -122,20 +122,101 @@ extension UIViewController {
         self.present(modalViewController, animated: true)
     }
 }
-
 ```
 
 ### Timer
 
-- UserDefalutsManager, TimeManager 등 Singleton pattern 을 사용하여 한 개의 인스턴스로 전역에서 사용할 수 있도록 함
-- 
+- UserDefalutsManager, TimeManager 등 Singleton pattern 을 통해 객체에 하나의 인스턴스 사용
+```swift
+inputViewDidLoadTrigger.bindOnChanged { [weak self] _ in
+    guard let self = self else { return }
+    
+    startTime = UserDefaultsManager.shared.getStartTime()
+    stopTime = UserDefaultsManager.shared.getStopTime()
+    timerCheck = UserDefaultsManager.shared.getTimerCheck()
+    
+    if timerCheck {
+        startTimer()
+    } else {
+        stopTimer()
+        if let start = startTime, let stop = stopTime {
+            let time = calcRestartTime(start: start, stop: stop)
+            let diff = Date().timeIntervalSince(time)
+            setTimeLabel(Int(diff))
+        }
+    }
+}
+
+inputDidStartStopButtonTappedTrigger.bindOnChanged { [weak self] _ in
+    guard let self = self else { return }
+    
+    if timerCheck {
+        setStopTime(date: Date())
+        stopTimer()
+    } else {
+        if let stop = stopTime {
+            let restartTime = calcRestartTime(start: startTime ?? Date(), stop: stop)
+            setStopTime(date: nil)
+            setStartTime(date: restartTime)
+        } else {
+            setStartTime(date: Date())
+        }
+        startTimer()
+    }
+}
+```
 
 ### POP
 
-### Alamofire - Router pattern
+- swift 의 강력한 패러다임인 POP 를 학습하여 Protocol + Extension 활용
+```swift
+// Logo.swift
+protocol Logo {
+    func configureLogo()
+}
+
+extension UIViewController: Logo {
+    func configureLogo() {
+        let logoImage = UIImage(resource: .logo)
+        let logoImageView = UIImageView(image: logoImage)
+        logoImageView.contentMode = .scaleAspectFill
+        
+        let logoTypeImage = UIImage(resource: .logotype)
+        let logoTypeImageView = UIImageView(image: logoTypeImage)
+        logoTypeImageView.contentMode = .scaleAspectFill
+        
+        logoImageView.frame = CGRect(x: 0, y: 0, width: 33, height: 40)
+        logoTypeImageView.frame = CGRect(x: 20, y: 0, width: 150, height: 40)
+        
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        container.addSubview(logoImageView)
+        container.addSubview(logoTypeImageView)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: container)
+    }
+}
+
+// RunningTimerBookMessageProtocol.swift
+protocol RunningTimerBookMessageProtocol {
+    func runningTimerBookMessageReceived(message: String)
+}
+
+extension BaseViewController: RunningTimerBookMessageProtocol {
+    func runningTimerBookMessageReceived(message: String) {
+        showToast(message: message)
+    }
+}
+```
+
+### Alamofire
+
+- Router Pattern 을 통해 네트워크 통신을 위한 Endpoint 를 생성하는 로직 추상화
+- Singleton pattern, Generic, Result Type 을 통해 네트워크 통신
+- Request 실패했을 때, switch 구문으로 분기처리하여 다양한 상황에 대응
 
 ### MVVM + Custom Observer Pattern
-- 
+- Model, View, ViewModel 역할 분리
+- Observable 클래스를 생성하여 비동기성 처리 및 데이터 스트림 처리
 
 ### 트러블 슈팅 - POP (프로토콜 + 익스텐션 조합), customPresent, Timer
 
