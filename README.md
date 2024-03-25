@@ -218,7 +218,7 @@ extension BaseViewController: RunningTimerBookMessageProtocol {
 - Model, View, ViewModel 역할 분리
 - Observable 클래스를 생성하여 비동기성 처리 및 데이터 스트림 처리
 
-### 트러블 슈팅 - POP (프로토콜 + 익스텐션 조합), customPresent, Timer
+## 트러블 슈팅
 
-### 회고
+## 회고
 
