@@ -226,13 +226,15 @@ extension BaseViewController: RunningTimerBookMessageProtocol {
 
 ## 트러블 슈팅
 
-- 타이머 화면에서 저장할 때 뷰의 계층 관계
-Detail Book 화면에서 타이머를 이용하면 타이머 화면(modal)을 띄우게 되고, 저장 버튼을 누르면 Custom Alert 화면이 등장한다.
-이 때 저장이 완료되면 Alert + Timer 화면이 Dismiss 되고, 토스트를 Detail Book 화면에 띄워야 했기에 dismiss 를 한 코드에 2번 진행했지만,
-dismiss 는 한 번만 실행 되어 Alert 화면만 사라지고, Timer 화면은 그대로 남아서 Timer 화면에서 토스트가 띄워지는 현상이 발생했다.
+### 다중 모달 뷰에서의 dismiss 이슈
 
-이를 해결하기 위해 dismiss 를 진행하여 Alert 을 먼저 내리고, DisPatchQueueAfter 를 사용해 시간의 간격을 두고 dismiss 를 진행해도, 한 번만 진행되어 똑같은 결과가 발생했었다.
-한 번에 원하는 뷰로 dismiss 할 방법을 찾던 중 presentingViewController.dismiss 를 통해 한 번에 모든 Modal 을 내리고, Detail Book 화면에서 토스트를 띄울 수 있었다.
+이 프로젝트에서는 Detail Book 화면에서 타이머를 사용하고 저장하는 과정에서 다중 모달 뷰의 dismiss에 대한 문제를 마주했습니다. 타이머 화면은 Modal로 표시되며, 저장 버튼을 누르면 Alert 화면이 추가적으로 등장하게 됩니다.
+
+저장이 완료되면 Alert와 Timer 화면을 모두 dismiss하고 Detail Book 화면에서 토스트 메시지를 표시하는 것이 목표였습니다. 초기 구현에서는 dismiss 메소드를 두 번 연속으로 호출하여 두 모달 뷰를 내리려고 시도했지만, 실제로는 한 번만 실행되어 Alert 화면만 dismiss 되었습니다.
+
+이 문제를 해결하기 위해 DispatchAfter를 사용하여 시간 간격을 두고 dismiss 메소드를 호출하는 방법도 시도해보았습니다. 하지만 이 방법 역시 원하는 결과를 얻지 못했습니다.
+
+탐색을 계속하던 중 `presentingViewController.dismiss` 메소드를 발견했습니다. 이 메소드는 `presentingViewController` 아래의 모든 모달 뷰를 한 번에 dismiss할 수 있어서 필요한 결과를 얻을 수 있었습니다.
 
 ```swift
 self.presentingViewController?.dismiss(animated: true, completion: nil)
