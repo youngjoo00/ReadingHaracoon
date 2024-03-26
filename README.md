@@ -168,7 +168,7 @@ inputDidStartStopButtonTappedTrigger.bindOnChanged { [weak self] _ in
 
 ### Delegate Pattern, POP (Protocol-Oriented Programming)
 
-- swift 의 강력한 패러다임인 POP 를 학습하여 Protocol + Extension 활용
+- Protocol + Extension 활용하여 공통 기능 모듈화
 ```swift
 // Logo.swift
 protocol Logo {
