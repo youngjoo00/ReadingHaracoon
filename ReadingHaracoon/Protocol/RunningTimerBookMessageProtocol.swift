@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RunningTimerBookMessageProtocol {
+protocol RunningTimerBookMessageProtocol: AnyObject {
     func runningTimerBookMessageReceived(message: String)
 }
 

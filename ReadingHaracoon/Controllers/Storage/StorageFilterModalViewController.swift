@@ -12,7 +12,7 @@ enum FilterContent: Int, CaseIterable {
 
 import UIKit
 
-final class StorageFilterModalViewController: BaseViewController {
+final class StorageFilterModalViewController: ModalViewController {
     
     let mainView = StorageFilterModalView()
     var selectedSegmentControl = 0

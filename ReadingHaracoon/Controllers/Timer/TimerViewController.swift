@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TimerViewController: BaseViewController {
+final class TimerViewController: ModalViewController {
     
     let mainView = TimerView()
     let viewModel = TimerViewModel()

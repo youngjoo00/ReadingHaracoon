@@ -47,13 +47,13 @@ extension StorageBookViewController {
         configureTapGesture()
         configureLogo()
     }
-
+    
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardDisMiss))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
-
+    
     @objc func keyboardDisMiss() {
         keyboardEndEditing()
     }
@@ -90,7 +90,7 @@ extension StorageBookViewController {
         storageModalViewController.transitioningDelegate = customTransitioningDelegate
         storageModalViewController.selectedSegmentControl = self.viewModel.inputSelectedFilter.value.0
         storageModalViewController.selectedTag = self.viewModel.inputSelectedFilter.value.1
-
+        
         storageModalViewController.selectedFilterClosure = { [weak self] sort, content in
             guard let self else { return }
             self.viewModel.inputSelectedFilter.value = (sort, content)

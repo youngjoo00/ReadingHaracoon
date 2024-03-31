@@ -1,14 +1,14 @@
 //
-//  BaseViewController.swift
+//  ModalViewController.swift
 //  ReadingHaracoon
 //
-//  Created by youngjoo on 3/7/24.
+//  Created by youngjoo on 3/31/24.
 //
 
 import UIKit
 import Toast
 
-class BaseViewController: UIViewController {
+class ModalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,6 @@ class BaseViewController: UIViewController {
         navigationBarAppearance.backgroundColor = .white
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleMessage), name: .receivedMessage, object: nil)
-    }
-    
-    @objc func handleMessage(_ notification: Notification) {
-        if let message = notification.userInfo?["message"] as? String {
-            runningTimerBookMessageReceived(message: message)
-        }
     }
     
     func showToast(message: String) {
@@ -40,10 +32,6 @@ class BaseViewController: UIViewController {
     
     func keyboardEndEditing() {
         view.endEditing(true)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
 }

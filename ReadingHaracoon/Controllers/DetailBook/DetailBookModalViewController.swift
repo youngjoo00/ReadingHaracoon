@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DetailBookModalViewController: BaseViewController {
+final class DetailBookModalViewController: ModalViewController {
     
     private let mainView = DetailBookModalView()
     private let viewModel = DetailBookViewModel()
