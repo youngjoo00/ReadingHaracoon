@@ -111,6 +111,20 @@ final class StorageFilterModalView: BaseView {
             button.tag = FilterContent.allCases[index].rawValue
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if safeAreaInsets.bottom == 0 {
+            storageButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+        } else {
+            storageButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+        }
+    }
 }
 
 extension StorageFilterModalView {
@@ -144,4 +158,6 @@ extension StorageFilterModalView {
             selectedButton.setTitleColor(.white, for: .normal)
         }
     }
+    
+    
 }

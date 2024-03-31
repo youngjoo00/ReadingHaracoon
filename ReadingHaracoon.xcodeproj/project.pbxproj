@@ -127,6 +127,7 @@
 		8ECE5E132BA8A4DB00FE95ED /* ChartMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E122BA8A4DB00FE95ED /* ChartMarker.swift */; };
 		8ECE5E162BA8B39600FE95ED /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E152BA8B39600FE95ED /* SettingView.swift */; };
 		8ECE5E182BA8B41400FE95ED /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE5E172BA8B41400FE95ED /* SettingTableViewCell.swift */; };
+		8EE4F3682BB3A293008B43A0 /* PointBackgroundColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4F3672BB3A293008B43A0 /* PointBackgroundColorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -238,6 +239,7 @@
 		8ECE5E122BA8A4DB00FE95ED /* ChartMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMarker.swift; sourceTree = "<group>"; };
 		8ECE5E152BA8B39600FE95ED /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		8ECE5E172BA8B41400FE95ED /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		8EE4F3672BB3A293008B43A0 /* PointBackgroundColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointBackgroundColorButton.swift; sourceTree = "<group>"; };
 		C75238F593DB54967EC23BCA /* Pods-ReadingHaracoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.release.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.release.xcconfig"; sourceTree = "<group>"; };
 		D42D7A15306E0B8BFD7ECBC3 /* Pods-ReadingHaracoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadingHaracoon.debug.xcconfig"; path = "Target Support Files/Pods-ReadingHaracoon/Pods-ReadingHaracoon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -457,6 +459,7 @@
 				8E012E5B2B9F7D7A00DF7512 /* BookImageView.swift */,
 				8E012E722BA09F0700DF7512 /* BlockView.swift */,
 				8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */,
+				8EE4F3672BB3A293008B43A0 /* PointBackgroundColorButton.swift */,
 				8EA744AB2BAC239200DD5B38 /* PaddingLabel.swift */,
 			);
 			path = CustomView;
@@ -891,6 +894,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE4F3682BB3A293008B43A0 /* PointBackgroundColorButton.swift in Sources */,
 				8ECE5DD92BA5B45400FE95ED /* MemoView.swift in Sources */,
 				8E28110E2B99A768000BBD65 /* SearchView.swift in Sources */,
 				8E012E5C2B9F7D7A00DF7512 /* BookImageView.swift in Sources */,

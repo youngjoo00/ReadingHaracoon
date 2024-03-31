@@ -27,17 +27,17 @@ final class DetailBookModalView: BaseView {
         $0.spacing = 10
     }
     
-    let toReadButton = BottomConfirmButton(title: "읽을 책", image: UIImage(systemName: "bookmark.fill")).then {
+    let toReadButton = PointBackgroundColorButton(title: "읽을 책", image: UIImage(systemName: "bookmark.fill")).then {
         $0.configuration?.imagePlacement = .top
         $0.tag = 0
     }
     
-    let readingButton = BottomConfirmButton(title: "읽고 있는 책", image: UIImage(systemName: "book.fill")).then {
+    let readingButton = PointBackgroundColorButton(title: "읽고 있는 책", image: UIImage(systemName: "book.fill")).then {
         $0.configuration?.imagePlacement = .top
         $0.tag = 1
     }
     
-    let readButton = BottomConfirmButton(title: "읽은 책", image: UIImage(systemName: "book.closed")).then {
+    let readButton = PointBackgroundColorButton(title: "읽은 책", image: UIImage(systemName: "book.closed")).then {
         $0.configuration?.imagePlacement = .top
         $0.tag = 2
     }
@@ -77,7 +77,6 @@ final class DetailBookModalView: BaseView {
         }
         
         confirmButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -85,6 +84,20 @@ final class DetailBookModalView: BaseView {
     
     override func configureView() {
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if safeAreaInsets.bottom == 0 {
+            confirmButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+        } else {
+            confirmButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+        }
     }
 }
 

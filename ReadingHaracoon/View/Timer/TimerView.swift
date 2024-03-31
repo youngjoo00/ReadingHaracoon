@@ -105,7 +105,6 @@ final class TimerView: BaseView {
         }
         
         bottomButtonStackView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(44)
         }
@@ -113,5 +112,19 @@ final class TimerView: BaseView {
     
     override func configureView() {
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if safeAreaInsets.bottom == 0 {
+            bottomButtonStackView.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+        } else {
+            bottomButtonStackView.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@ final class CustomAlertView: BaseView {
         $0.layer.cornerRadius = 8
     }
     
-    let actionButton = BottomConfirmButton(title: "", image: nil).then {
+    let actionButton = PointBackgroundColorButton(title: "", image: nil).then {
         $0.layer.cornerRadius = 8
     }
     

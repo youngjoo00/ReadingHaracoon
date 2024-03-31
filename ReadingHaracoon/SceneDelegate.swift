@@ -66,26 +66,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        // 활성화 상태로 전환될 때 호출됨
         guard let runningTimerBookISBN = UserDefaultsManager.shared.getRunningTimerBookISBN() else { return }
         guard let book = bookRepository.fetchBookItem(runningTimerBookISBN) else { return }
         let message = "[\(book.title)] 타이머가 실행되고 있다쿤!"
-        
-        guard let rootViewController = window?.rootViewController else { return }
-        self.passMessageViewController(viewController: rootViewController, message: message)
+
+        // 현재 활성화된 뷰 컨트롤러를 찾음
+        if let currentViewController = window?.rootViewController?.presentedViewController ?? window?.rootViewController {
+            passMessageDirectlyToViewController(viewController: currentViewController, message: message)
+        }
     }
-    
-    /// RootVC 로 부터 자식 VC 순회, RunningTimerBookMessageProtocol을 채택한 경우 메세지 전달
-    func passMessageViewController(viewController: UIViewController, message: String) {
+
+    /// 메시지를 직접 전달하는 함수. 여기서는 현재 활성화된 VC에만 메시지를 전달합니다.
+    func passMessageDirectlyToViewController(viewController: UIViewController, message: String) {
         if let runningTimerBookMessageVC = viewController as? RunningTimerBookMessageProtocol {
             runningTimerBookMessageVC.runningTimerBookMessageReceived(message: message)
         }
-        
-        viewController.children.forEach {
-            passMessageViewController(viewController: $0, message: message)
-        }
     }
+    
+//    func sceneDidBecomeActive(_ scene: UIScene) {
+//        // Called when the scene has moved from an inactive state to an active state.
+//        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+//        guard let runningTimerBookISBN = UserDefaultsManager.shared.getRunningTimerBookISBN() else { return }
+//        guard let book = bookRepository.fetchBookItem(runningTimerBookISBN) else { return }
+//        let message = "[\(book.title)] 타이머가 실행되고 있다쿤!"
+//        
+//        guard let rootViewController = window?.rootViewController else { return }
+//        self.passMessageViewController(viewController: rootViewController, message: message)
+//    }
+//    
+//    /// RootVC 로 부터 자식 VC 순회, RunningTimerBookMessageProtocol을 채택한 경우 메세지 전달
+//    func passMessageViewController(viewController: UIViewController, message: String) {
+//        if let runningTimerBookMessageVC = viewController as? RunningTimerBookMessageProtocol {
+//            runningTimerBookMessageVC.runningTimerBookMessageReceived(message: message)
+//        }
+//        
+//        viewController.children.forEach {
+//            passMessageViewController(viewController: $0, message: message)
+//        }
+//    }
     
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.

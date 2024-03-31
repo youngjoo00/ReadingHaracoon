@@ -77,13 +77,11 @@ final class DetailMemoView: BaseView {
         }
         
         saveButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(safeAreaInsets).inset(16)
             make.height.equalTo(50)
         }
         
         buttonStackView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(safeAreaInsets).inset(16)
             make.height.equalTo(50)
         }
@@ -91,5 +89,27 @@ final class DetailMemoView: BaseView {
     
     override func configureView() {
         titleTextField.addLeftPadding()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if safeAreaInsets.bottom == 0 {
+            saveButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+            
+            buttonStackView.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+        } else {
+            saveButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+            
+            buttonStackView.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+        }
     }
 }

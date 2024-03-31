@@ -60,15 +60,15 @@ final class DetailBookView: BaseView {
         $0.spacing = 10
     }
     
-    let bookStatusButton = BottomConfirmButton(title: "책 상태", image: UIImage(systemName: "book.pages")).then {
+    let bookStatusButton = PointBackgroundColorButton(title: "책 상태", image: UIImage(systemName: "book.pages")).then {
         $0.layer.cornerRadius = 8
     }
     
-    let memoButton = BottomConfirmButton(title: "메모", image: UIImage(systemName: "pencil")).then {
+    let memoButton = PointBackgroundColorButton(title: "메모", image: UIImage(systemName: "pencil")).then {
         $0.layer.cornerRadius = 8
     }
     
-    let timerButton = BottomConfirmButton(title: "타이머", image: UIImage(systemName: "timer")).then {
+    let timerButton = PointBackgroundColorButton(title: "타이머", image: UIImage(systemName: "timer")).then {
         $0.layer.cornerRadius = 8
     }
     

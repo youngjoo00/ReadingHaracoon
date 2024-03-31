@@ -19,7 +19,6 @@ final class AladinWebViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
         bindViewModel()
         navigationItem.titleView = mainView.navigationTitle
     }
@@ -35,16 +34,11 @@ final class AladinWebViewController: BaseViewController {
 // MARK: - Custom Func
 extension AladinWebViewController {
     
-    func configureView() {
-        
-    }
-    
     func bindViewModel() {
         viewModel.outputURLRequest.bind { [weak self] urlRequest in
             guard let self, let urlRequest else { return }
             self.mainView.webView.load(urlRequest)
         }
     }
-    
     
 }

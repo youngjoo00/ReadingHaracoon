@@ -1,17 +1,18 @@
 //
-//  BottomConfirmButton.swift
+//  PointBackgroundColorButton.swift
 //  ReadingHaracoon
 //
-//  Created by youngjoo on 3/20/24.
+//  Created by youngjoo on 3/27/24.
 //
 
 import UIKit
 import Then
 
-class BottomConfirmButton: UIButton {
+class PointBackgroundColorButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
     }
     
     convenience init(title: String, image: UIImage?) {
@@ -25,7 +26,7 @@ class BottomConfirmButton: UIButton {
     
 }
 
-extension BottomConfirmButton {
+extension PointBackgroundColorButton {
     
     func configureView(_ title: String, image: UIImage?) {
         var configuration = UIButton.Configuration.gray()
@@ -38,5 +39,4 @@ extension BottomConfirmButton {
         layer.cornerRadius = 16
         self.configuration = configuration
     }
-    
 }

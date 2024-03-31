@@ -50,7 +50,6 @@ final class MemoView: BaseView {
         }
         
         writeButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -59,4 +58,19 @@ final class MemoView: BaseView {
     override func configureView() {
 
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if safeAreaInsets.bottom == 0 {
+            writeButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaInsets).offset(-16)
+            }
+        } else {
+            writeButton.snp.makeConstraints { make in
+                make.bottom.equalTo(safeAreaLayoutGuide)
+            }
+        }
+    }
 }
+
