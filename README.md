@@ -76,18 +76,12 @@
 **Timer**
 
 - UserDefaults 를 이용한 Background Timer 구현
-- 타이머가 진행 중인 경우
-    
-    SceneDelegate 의 sceneDidBecomeActive 메서드를 통해 Active 상태일 때, 유저 현재 화면에 Toast
+- 타이머가 진행 중인 경우 SceneDelegate 의 sceneDidBecomeActive 메서드를 통해 Active 상태일 때 Toast
     
 
 **Singleton pattern**
 
-- 하나의 인스턴스 사용으로 인한 메모리 사용 최소화
-
-**Delegate Pattern, POP (Protocol-Oriented Programming)**
-
-- Protocol + Extension 활용하여 공통 기능 모듈화
+- 하나의 인스턴스를 통해 메모리 사용 최소화
 
 **MVVM + Custom Observer Pattern**
 
