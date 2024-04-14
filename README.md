@@ -118,18 +118,19 @@ SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비
 - 개선 결과
 <img width="1803" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/49ccd16a-a085-4c4b-a5c2-f1affdc7a0b5">
 
-> 개선 과정
-1. CustomPresentaionController + Enum
-- 분기별로 사용할 PresentStyle 생성
-<img width="1556" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/dc341a0b-c9b2-4769-aeea-95c65df42072">
+<details>
+  <summary>개선 과정</summary>
+
+1. CustomPresentationController + Enum
+   - 분기별로 사용할 PresentStyle 생성
+   <img width="1556" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/dc341a0b-c9b2-4769-aeea-95c65df42072">
 
 2. init 구문을 활용한 PresentationStyle 할당
-<img width="1806" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/f7546ad9-37c3-4662-b675-13787b6c70f3">
+   <img width="1806" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/f7546ad9-37c3-4662-b675-13787b6c70f3">
 
 3. UIViewController + Extension
-- 모든 뷰컨트롤러에서 쉽게 사용할 수 있도록 ShowCustomAlert, ShowCustomModal 메서드 생성
-- PresentationStyle 을 매개변수로 받아서 CustonTransitioningDelegate 를 생성할 때 받아온 Style 값을 넣어줍니다.
-<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
+   - 모든 뷰컨트롤러에서 쉽게 사용할 수 있도록 ShowCustomAlert, ShowCustomModal 메서드 생성
+   - PresentationStyle을 매개변수로 받아서 CustomTransitioningDelegate를 생성할 때 받아온 Style 값을 넣어줍니다.
+   <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
 
-
-
+</details>
