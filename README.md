@@ -100,10 +100,7 @@
 
 ### BackgroundTimer 사용 시 사용자에게 Toast
 
-앱이 백그라운드에서 포그라운드로 전환될 때 타이머가 실행중임을 알리는 Toast 를 제공하고자 했습니다.
-하지만, sceneWillEnterForeground 메서드에서 토스트 메시지를 실행하려고 시도했을 때, 앱이 이벤트를 온전히 처리할 준비가 되어 있지 않아 메시지가 정상적으로 표시되지 않는 문제가 발생했습니다.
 SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비가 완전히 된 시점에 호출하기 위해 `sceneDidBecomeActive` + `NotificationCenter` 를 통해 화면에 들어온 ViewController 에 Toast 를 전달하는 방식으로 구현했습니다.
-
 
 <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/d3ac2ffc-8df7-4a24-aa06-64a01c46ae77">
 
