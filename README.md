@@ -95,3 +95,41 @@
 **Search**
 
 - offset 기반 무한스크롤 구현
+
+## 트러블슈팅
+
+### BackgroundTimer 사용 시 사용자에게 Toast
+
+앱이 백그라운드에서 포그라운드로 전환될 때 타이머가 실행중임을 알리는 Toast 를 제공하고자 했습니다.
+하지만, sceneWillEnterForeground 메서드에서 토스트 메시지를 실행하려고 시도했을 때, 앱이 이벤트를 온전히 처리할 준비가 되어 있지 않아 메시지가 정상적으로 표시되지 않는 문제가 발생했습니다.
+SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비가 완전히 된 시점에 호출하기 위해 `sceneDidBecomeActive` + `NotificationCenter` 를 통해 화면에 들어온 ViewController 에 Toast 를 전달하는 방식으로 구현했습니다.
+
+
+<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/d3ac2ffc-8df7-4a24-aa06-64a01c46ae77">
+
+### UIPresentationController 추상화
+
+`UIPresentationController` + `UIViewControllerTransitioningDelegate` 를 통해 Custom Modal 화면을 구현했습니다.
+하지만, Presentaion View 가 늘어남에 따라 코드의 중복성과 비효율성이 느껴졌기에 추상화하고 유지보수하기 용이한 코드로 개선했습니다.
+
+- 중복되는 코드
+<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/68210701-4ef7-443a-91bf-ab83bed3f796">
+
+- 개선 결과
+<img width="1803" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/49ccd16a-a085-4c4b-a5c2-f1affdc7a0b5">
+
+> 개선 과정
+1. CustomPresentaionController + Enum
+- 분기별로 사용할 PresentStyle 생성
+<img width="1556" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/dc341a0b-c9b2-4769-aeea-95c65df42072">
+
+2. init 구문을 활용한 PresentationStyle 할당
+<img width="1806" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/f7546ad9-37c3-4662-b675-13787b6c70f3">
+
+3. UIViewController + Extension
+- 모든 뷰컨트롤러에서 쉽게 사용할 수 있도록 ShowCustomAlert, ShowCustomModal 메서드 생성
+- PresentationStyle 을 매개변수로 받아서 CustonTransitioningDelegate 를 생성할 때 받아온 Style 값을 넣어줍니다.
+<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
+
+
+
