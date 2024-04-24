@@ -76,18 +76,12 @@
 **Timer**
 
 - UserDefaults 를 이용한 Background Timer 구현
-- 타이머가 진행 중인 경우
-    
-    SceneDelegate 의 sceneDidBecomeActive 메서드를 통해 Active 상태일 때, 유저 현재 화면에 Toast
+- 타이머가 진행 중인 경우 SceneDelegate 의 sceneDidBecomeActive 메서드를 통해 Active 상태일 때 Toast
     
 
 **Singleton pattern**
 
-- 하나의 인스턴스 사용으로 인한 메모리 사용 최소화
-
-**Delegate Pattern, POP (Protocol-Oriented Programming)**
-
-- Protocol + Extension 활용하여 공통 기능 모듈화
+- 하나의 인스턴스를 통해 메모리 사용 최소화
 
 **MVVM + Custom Observer Pattern**
 
@@ -101,3 +95,39 @@
 **Search**
 
 - offset 기반 무한스크롤 구현
+
+## 트러블슈팅
+
+### BackgroundTimer 사용 시 사용자에게 Toast
+
+SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비가 완전히 된 시점에 호출하기 위해 `sceneDidBecomeActive` + `NotificationCenter` 를 통해 화면에 들어온 ViewController 에 Toast 를 전달하는 방식으로 구현했습니다.
+
+<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/d3ac2ffc-8df7-4a24-aa06-64a01c46ae77">
+
+### UIPresentationController 추상화
+
+`UIPresentationController` + `UIViewControllerTransitioningDelegate` 를 통해 Custom Modal 화면을 구현했습니다.
+하지만, Presentaion View 가 늘어남에 따라 코드의 중복성과 비효율성이 느껴졌기에 추상화하고 유지보수하기 용이한 코드로 개선했습니다.
+
+- 중복되는 코드
+<img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/68210701-4ef7-443a-91bf-ab83bed3f796">
+
+- 개선 결과
+<img width="1803" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/49ccd16a-a085-4c4b-a5c2-f1affdc7a0b5">
+
+<details>
+  <summary>개선 과정</summary>
+
+1. CustomPresentationController + Enum
+   - 분기별로 사용할 PresentStyle 생성
+   <img width="1556" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/dc341a0b-c9b2-4769-aeea-95c65df42072">
+
+2. init 구문을 활용한 PresentationStyle 할당
+   <img width="1806" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/f7546ad9-37c3-4662-b675-13787b6c70f3">
+
+3. UIViewController + Extension
+   - 모든 뷰컨트롤러에서 쉽게 사용할 수 있도록 ShowCustomAlert, ShowCustomModal 메서드 생성
+   - PresentationStyle을 매개변수로 받아서 CustomTransitioningDelegate를 생성할 때 받아온 Style 값을 넣어줍니다.
+   <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
+
+</details>
