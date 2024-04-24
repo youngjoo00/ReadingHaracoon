@@ -74,7 +74,6 @@
 		8E693E732BA3704C0099597A /* DetailMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */; };
 		8E7166BF2BAAC98B0063A4AF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166BE2BAAC98B0063A4AF /* APIKey.swift */; };
 		8E7166C12BAAE2FA0063A4AF /* BottomConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */; };
-		8E7166C32BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */; };
 		8E928BD92B9C6925004D44C7 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */; };
 		8E928BDB2B9C7D8F004D44C7 /* DetailBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */; };
 		8E928BDD2B9C7DA8004D44C7 /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */; };
@@ -192,7 +191,6 @@
 		8E693E722BA3704C0099597A /* DetailMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemoViewModel.swift; sourceTree = "<group>"; };
 		8E7166BE2BAAC98B0063A4AF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8E7166C02BAAE2FA0063A4AF /* BottomConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomConfirmButton.swift; sourceTree = "<group>"; };
-		8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimerBookMessageProtocol.swift; sourceTree = "<group>"; };
 		8E928BD82B9C6925004D44C7 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		8E928BDA2B9C7D8F004D44C7 /* DetailBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookViewController.swift; sourceTree = "<group>"; };
 		8E928BDC2B9C7DA8004D44C7 /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
@@ -618,7 +616,6 @@
 			children = (
 				8ECE5DD02BA5A46400FE95ED /* PassResultMessageDelegate.swift */,
 				8E32ABF22BA9C41D0073F809 /* Logo.swift */,
-				8E7166C22BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -927,7 +924,6 @@
 				8E2810E32B99951E000BBD65 /* BaseViewController.swift in Sources */,
 				8ECE5E012BA823D800FE95ED /* CalendarTableViewCell.swift in Sources */,
 				8EBF13CF2B9DB74D00B1FE6D /* BaseTableViewCell.swift in Sources */,
-				8E7166C32BAB3AC10063A4AF /* RunningTimerBookMessageProtocol.swift in Sources */,
 				8EA744AE2BAC289A00DD5B38 /* PersonalInformationPolicyViewController.swift in Sources */,
 				8ECE5DE82BA6F96300FE95ED /* StatsRepository.swift in Sources */,
 				8E2810F12B999634000BBD65 /* SettingViewController.swift in Sources */,
@@ -1166,7 +1162,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youngjoo.ReadingHaracoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1205,7 +1201,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youngjoo.ReadingHaracoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

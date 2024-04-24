@@ -32,7 +32,7 @@ extension SettingViewController {
             case .other:
                 return ["개인정보 처리방침"]
             case .version:
-                return ["현재 사용중인 앱 버전 : 1.0.0"]
+                return ["현재 사용중인 앱 버전 : 1.0.2"]
             }
         }
     }

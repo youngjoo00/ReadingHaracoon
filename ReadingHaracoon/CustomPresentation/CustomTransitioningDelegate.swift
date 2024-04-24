@@ -16,7 +16,7 @@ final class CustomTransitioningDelegate: NSObject, UIViewControllerTransitioning
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = CustomPresentationController(presentedViewController: presented, presenting: presenting)
+        let presentationController = CustomPresentationController(presentedViewController: presented, presenting: nil)
         presentationController.customModalPresentationStyle = customModalPresentationStyle
         return presentationController
     }

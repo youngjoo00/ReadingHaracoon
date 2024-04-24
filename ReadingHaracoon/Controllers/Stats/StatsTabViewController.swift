@@ -21,6 +21,7 @@ final class StatsTabViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .background
         configureView()
     }
 }

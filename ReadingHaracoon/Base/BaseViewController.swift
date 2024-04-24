@@ -27,7 +27,7 @@ class BaseViewController: UIViewController {
     
     @objc func handleMessage(_ notification: Notification) {
         if let message = notification.userInfo?["message"] as? String {
-            runningTimerBookMessageReceived(message: message)
+            showToast(message: message)
         }
     }
     
