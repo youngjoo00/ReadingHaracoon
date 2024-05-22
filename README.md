@@ -100,14 +100,15 @@
 
 ### BackgroundTimer 사용 시 사용자에게 Toast
 
-SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비가 완전히 된 시점에 호출하기 위해 `sceneDidBecomeActive` + `NotificationCenter` 를 통해 화면에 들어온 ViewController 에 Toast 를 전달하는 방식으로 구현했습니다.
+SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비가 완전히 된 시점에 호출하기 위해 `sceneDidBecomeActive` + `NotificationCenter` 를 통해 화면에 들어온 ViewController 에 Toast 를 전달하는 방식으로 구현
 
 <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/d3ac2ffc-8df7-4a24-aa06-64a01c46ae77">
 
 ### UIPresentationController 추상화
 
-`UIPresentationController` + `UIViewControllerTransitioningDelegate` 를 통해 Custom Modal 화면을 구현했습니다.
-하지만, Presentaion View 가 늘어남에 따라 코드의 중복성과 비효율성이 느껴졌기에 추상화하고 유지보수하기 용이한 코드로 개선했습니다.
+`UIPresentationController` + `UIViewControllerTransitioningDelegate` 를 통해 Custom Modal 화면 구현
+
+하지만, Presentaion View 가 늘어남에 따라 코드의 중복성과 비효율성이 느껴졌기에 추상화하고 유지보수하기 용이한 코드로 개선
 
 - 중복되는 코드
 <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/68210701-4ef7-443a-91bf-ab83bed3f796">
@@ -127,7 +128,7 @@ SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비
 
 3. UIViewController + Extension
    - 모든 뷰컨트롤러에서 쉽게 사용할 수 있도록 ShowCustomAlert, ShowCustomModal 메서드 생성
-   - PresentationStyle을 매개변수로 받아서 CustomTransitioningDelegate를 생성할 때 받아온 Style 값을 넣어줍니다.
+   - PresentationStyle을 매개변수로 받아서 CustomTransitioningDelegate를 생성할 때 받아온 Style 값을 넣어줌
    <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
 
 </details>
