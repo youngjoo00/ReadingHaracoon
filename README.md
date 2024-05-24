@@ -132,3 +132,24 @@ SceneDelegate LifeCycle 중 앱이 사용자와의 상호작용을 받을 준비
    <img width="1920" alt="image" src="https://github.com/youngjoo00/ReadingHaracoon/assets/90439413/e466eeea-fde5-464d-adf5-4599be670c5e">
 
 </details>
+
+## **프로젝트 회고**
+
+### **좋았던 점**
+
+- 다양한 디자인 패턴을 사용해 코드를 추상화 및 모듈화했습니다.
+- GitHub 예시 프로젝트를 참고하며 처음 사용하는 라이브러리에 대한 두려움을 극복했습니다.
+- DB를 직접 설계하여 To-Many Relationship 관계로 필터링과 데이터 추적이 용이했습니다.
+- 개발 기간에 맞춰 빠르게 최소 단위 기능을 구현했습니다.
+
+### **아쉬웠던 점**
+
+- Dynamic Dispatch, Static Dispatch와 관련된 접근 제어자 private 키워드 사용이 미흡했습니다.
+- View와 ViewModel 간 Input/Output 역할이 명확히 구분되지 않아 가독성이 떨어졌습니다.
+
+### **추후 목표**
+
+- 컴파일 속도 향상 및 가독성을 위해 접근 제어를 철저히 사용하겠습니다.
+- RxSwift와 MVVM Input/Output을 사용하여 역할 분리 및 가독성을 향상시키겠습니다.
+
+좋은 코드도 중요하지만, 기간 내에 기능을 구현하는 것이 가장 큰 도전임을 느꼈습니다. 정해진 시간에 맞춰 개발 속도를 유지하면서도 가독성 좋은 코드를 작성할 수 있는 개발자로 성장하기 위해 노력하겠습니다.
